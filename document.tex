@@ -1,0 +1,87 @@
+\documentclass[openany, longbibliography,slovene,a4paper,12pt]{book}
+\usepackage[a4paper,inner=3.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+\usepackage{braket}
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+\usepackage[tbtags]{amsmath}
+\usepackage[T1]{fontenc}
+\graphicspath{{../slike/}{../slike_vezikel_z_robom/}{/home/jure/sola/magisterij/uporabljene_slike/}
+{../eps_pdf/}}
+\DeclareGraphicsExtensions{.eps,.jpeg,.png,.gif,.pdf}
+\usepackage[outdir=../uporabljene_slike/]{epstopdf}
+\epstopdfsetup{
+	suffix=,
+}
+\usepackage[multidot]{grffile}
+
+\usepackage[slovene]{babel}      % slovenski delilni vzorci (!)
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{enumerate}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[tbtags]{mathtools}
+
+\usepackage[section]{placeins}
+
+\usepackage[hyphens,spaces,obeyspaces]{url}
+\usepackage{breakurl}
+
+
+\usepackage{ragged2e}
+\edef\UrlBreaks{\do\-\UrlBreaks}
+
+\usepackage{makeidx}
+\pagestyle{headings}
+\makeindex
+\usepackage{fancyhdr}
+\usepackage[titletoc,title]{appendix}
+
+
+\usepackage[sort, numbers]{natbib}
+\usepackage[pdfa]{hyperref}
+\usepackage[x-1a]{pdfx}
+\usepackage{pdfpages}
+
+
+\DeclareMathOperator{\arcsinh}{arcsinh}
+
+\def\epsfg#1#2{\epsfig{file=#1.eps,width=#2}}
+\def\legendamp#1#2{\vbox{\hsize=#1\caption{\small #2}}}
+
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{4}
+\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{0.99}
+\renewcommand{\bottomfraction}{0.99}
+\renewcommand{\textfraction}{0.0}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+
+\def\bi#1{\hbox{\boldmath{$#1$}}}
+\let\oldvec\vec
+\def\vec#1{\mbox{\boldmath$#1$}}
+\def\pol{{\textstyle{1\over2}}}
+\def\svec#1{\mbox{{\scriptsize \boldmath$#1$}}}
+
+\newcommand{\dif}{\mathrm{d}}
+\usepackage{xparse}
+\DeclareDocumentCommand{\myint}{o m o o}  
+{%
+	\int \IfValueT{#1}{#1} \dif #2 \IfValueT{#3}{\dif#3} \IfValueT{#4}{\dif#4}
+}
+\newcommand{\Alpha}{A}
+\newcommand{\Beta}{B}
+\newcommand{\Epsilon}{E}
+\newcommand{\Kappa}{K}
+
+
+\begin{document}
+\section{Introduction}
+Calculation of electronic structure of different substances has always been a challenge. It quickly became apparent that direct use of schroedinger equation is not a realistic prospect for calculation of electronic structure, except for some small molecules. It's time complexity grows exponentially as a function of electron number. With the development of computers different numerical shemes for computation of electronic structure and optimization of mlecular structure have emerged. One of them is also density functional theory, which has been known for roughly 50 years.	
+	
+\end{document}
