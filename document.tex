@@ -1,4 +1,4 @@
-\documentclass[openany, longbibliography,slovene,a4paper,12pt]{book}
+\documentclass[openany, longbibliography,slovene,a4paper,12pt]{article}
 \usepackage[a4paper,inner=3.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 \usepackage{braket}
@@ -84,5 +84,24 @@
 \section{Introduction}
 One of the most important basic problems in physics is the dynamics of many-body system. Specificaly, in quantum physics and chemistry, the dynamics of electrons and their spatial distribution determine the stability of matter. But it is not just the stability that matters. Electronic structure of materials determines many macroscopic properties like thermal and electrical conductivity, their response to electronic and magnetic field, etc.
 
-Calculation of electronic structure has always been a challenge. It quickly became apparent that direct use of schroedinger equation is not a realistic prospect for calculation of electronic structure, except for some small molecules, as it's time complexity grows exponentially as a function of electron number. With the development of computers different numerical schemes for computation of electronic structure and optimization of molecular structure have emerged. One of them is also density functional theory (DFT from now on), which has been known for roughly 50 years. Through the years DFT has developed and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals. 
+Calculation of electronic structure has always been a challenge. It quickly became apparent that direct use of schroedinger equation is not a realistic prospect for calculation of electronic structure, except for some small molecules, as it's time complexity grows exponentially as a function of electron number. With the development of computers different numerical schemes for computation of electronic structure and optimization of molecular structure have emerged. One of them is also density functional theory (DFT from now on), which has been known for roughly 50 years. Through the years DFT has developed and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals.
+
+\section{Matter description}
+Physical description of matter surrounding us is given by hamiltonian:
+\begin{equation}
+H=T_n + T_e + W_{n-n} + W_{e-e} + W_{n-e} + V_{ext},
+\end{equation}
+where $T_n$ and $T_e$ are kinetic energies of nuclei and electrons respectively, $W_{n-n}$, $W_{e-e}$ and $W_{e-n}$ represent  nuclei-nuclei, electron-electron and electron-nuclei interaction terms. $V_ext$ represents external potential. Ground state of such system is given by the solution of time independant Schroedinger equation:
+\begin{equation}
+\hat H \psi = \epsilon_0 \psi_0,
+\end{equation} 
+where index $0$ denotes the solution with the lowest energy. In general $\psi_0$ depends on $3N$ coordinates, where $N$ is total number of particles. This means that complex systems with more than e.g. 10 atoms are very computationally demanding. It is common to reduce the dimensionality of the problem by employing Born-Oppenheimer approximation in which nuclei have fixed positions.
+
+\section{Density functional theory}
+DFT is a method, which allows us to replace wavefunctions with density of particles
+DFT is based upon the fact that for every hamiltonian of the form:
+\begin{equation}
+\hat H = \hat T + \hat W + \hat V_{ext},
+\end{equation}
+where $T$ is kinetic energy, $W$ is particle interaction and $V$ is external potential determined up to a constant, there exists a unique ground state. For every ground state there also exists a unique ground state particle density. 
 \end{document}
