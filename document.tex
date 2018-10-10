@@ -97,7 +97,14 @@ where $T_n$ and $T_e$ are kinetic energies of nuclei and electrons respectively,
 \begin{equation}
 \hat H \psi = \epsilon_0 \psi_0,
 \end{equation} 
-where index $0$ denotes the solution with the lowest energy. In general $\psi_0$ depends on $3N$ coordinates, where $N$ is total number of particles. This means that complex systems with more than e.g. 10 atoms are very computationally demanding. It is common to reduce the dimensionality of the problem by employing Born-Oppenheimer approximation in which nuclei have fixed positions.
+where index $0$ denotes the solution with the lowest energy. In general $\psi_0$
+depends on $3N$ coordinates, where $N$ is total number of particles. This means
+that complex systems with more than e.g. 10 atoms are very computationally
+demanding. It is common to reduce the dimensionality of the problem by employing
+Born-Oppenheimer approximation in which nuclei have fixed positions.  Even in
+cases where core positions are not fixed, they are optimized in a separate procedure
+from electronic wave function.
+
 
 \section{Density functional theory}
 DFT is a method, which allows us to replace operator, which operate on
@@ -136,6 +143,17 @@ The map from $\mathcal{V}$ to $\mathcal{G}$ is surjective by definition. What we
 would like to know is if it is also injective  \ref{bijection}, i.e. can a single $\psi_0$ be a
 ground state for two non-equivalent potentials? Suppose now that $\psi_0$ is a
 ground state for two non-equivalent potentials $V_{ext}$ and $V'_{ext}$.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.55\textwidth]{bijekcija_med_v_psi_n.png}.
+  \caption{Bijection between the set of potentials, their corresponding ground
+    states and ground state densities. Existance of such bijection is proved by
+    Kohn-Sham theorems and proves that multi-particle system is
+    uniquely determined by it's ground state particle density.}
+  \label{bijection}
+\end{figure}
+
 \begin{dgroup*}
 \begin{dmath}
  \hat H\ket{\psi_0} =(\hat T + \hat W + \hat V_{ext}) \ket{\psi_0}\hiderel{=}\epsilon_0\ket{\psi_0}
@@ -157,16 +175,78 @@ subtracting above equation yields:
   (\hat V_{ext} - \hat V'_{ext})=(\epsilon_0-\epsilon'_0),
   \end{dmath}
 \end{dgroup*}
-which is contradiction, since ourjkhfhg 
+which is contradiction, since $V_{ext}$ and $V'_{ext}$ differ for more than a
+constant. Similarly one can show that two different grounds state wave functions,
+corresponding to two different external potentials, cannot lead to the same
+ground state densities.  To see this we compare ground state energies and rewrite
+them using ground state density, which is supposed to be the same for both wavefunctions:
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.55\textwidth]{bijekcija_med_v_psi_n.png}
-  \caption{Bijection between the set of potentials, their corresponding ground
-    states and ground state densities. Existance of such bijection is proved by
-    Kohn-Sham theorems and proves that multi-particle system is
-    uniquely determined by it's ground state particle density.}
-  \label{bijection}
-  \end{figure}
+\begin{dgroup*}
+\begin{dmath}
+ \bra{\psi_o}\hat H\ket{\psi_0}=\epsilon_0 < \bra{\psi'_o}\hat H\ket{\psi'_0}=
+ \bra{\psi'_o}\hat H + \hat V'_{ext} - \hat V'_{ext} \ket{\psi'_0}=\\ \epsilon'_0
+ +  \bra{\psi'_o} \hat V_{ext} - \hat V'_{ext} \ket{\psi'_0}.
+\end{dmath}
+\begin{dsuspend}
+ Rewriting this in terms of densities and taking into account equivalence of H
+ and H' yields:
+\end{dsuspend}
+\begin{dmath}
+\epsilon_0 <  \epsilon'_0 + \int (V_{ext}(\vec r)-V'_{ext}(\vec r))n(\vec r)
+\dif \vec r ,
+\end{dmath}
+\begin{dmath}
+\epsilon'_0 <  \epsilon_0 + \int (V'_{ext}(\vec r)-V_{ext}(\vec r))n(\vec r)
+\dif \vec r.
+\end{dmath}
+\begin{dsuspend}
+  Upon subtracting both equations one obtains a contradiction:
+\end{dsuspend}
+\begin{dmath}
+  \epsilon_0 + \epsilon'_0< \epsilon_0 + \epsilon'_0,
+\end{dmath}
+\end{dgroup*}
+which proves that for hamiltonians which yield non-degenerate ground states,
+each ground state leads to a different ground state particle density. Ground
+state particle densities form a set where each density corresponds to a single
+wave function from $\mathcal G$:
+\begin{equation}
+  \mathcal N = \left\{n; \bra{\psi}\hat n \ket{\psi}, \psi \in \mathcal G \right\},
+\end{equation}
+where $\hat n$ is quantum mechanical particle density operator.
 
+Extension of this simple prove to hamiltonians with degenerate ground states is possible
+by replacing ground state wave functions by linear span of degenerate ground
+states. Thus in degenerate case one obtains bijection between external
+potential, set of linear spans, each belonging to a certain external potential
+and a set of sets of ground state densities. Special treatment is necessary also
+for systems containing magnetic fields, where one can separate hamiltonian into
+two hamiltonians (one for each spin) of the form \ref{ks_hamiltonian}.
+
+Since there exists bijection between ground state wave functions and ground
+state densities, one can formally rewrite ground state wave functions as functionals of ground
+state particle density:
+\begin{equation}
+  \ket{\psi'_0} =  \ket{\psi'_0[n]},
+  \end{equation}
+and using above formula one can also rewrite operators in terms of ground state
+density. As an example, let us rewrite ground state energy as functional of
+ground state particle density:
+\begin{equation}
+  E[n_0] = \bra{\psi_0[n_0]}\hat H \ket{\psi_0[n_0]}.
+  \end{equation}
+  Further, one can define more general energy functional:
+\begin{equation}
+  E[n] = \bra{\psi[n]}\hat H \ket{\psi[n]},
+\end{equation}
+for which one can find minimum energy principle: $E[n_0]<E[n]$ whenever n
+belongs to $\mathcal N$. This an obvious consequence of wave function functional
+$\ket{\psi [n]}$, which is only defined for densities which are in $\mathcal N$.
+In practice this is not such a problem. The reason for this is discretization of space into
+grid points. On final grid for any strictly positive particle density ($n(\vec r) > 0$),
+which is compatible with Pauli principle, there exists a  potential for which the
+density represents ground state density and is thus contained in $\mathcal N$.
+
+One can also show that $E[n]$ be reasonably extended, to a larger set of
+densities $n(\vec r)$. Since the Hamiltonian \ref{ks_hamiltonian}
 \end{document}
