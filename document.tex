@@ -116,17 +116,17 @@ The number of electrons $N$ for a small molecules, like water, is of the order $
 hundred, while in large molecules, like proteins, the number can grow into
 thousands and ten-thousands. As one can imagine, solving a system of coupled differential equations
 with such huge number of coordinates ($3N$) is still too big problem for present
-computational power. This is the reason for development of approaches which
-while still being sufficiently accurate, offer faster computational times. In
-this paper we will discus dft and it's applications to organo-metalic materials.
+computational power. This is the reason for development of approaches which,
+while still being sufficiently accurate, offer faster computational times. One
+of the most used theory today is density functional theory.
 
-\section{Density functional theory}
-DFT is a method, which allows us to replace operator, which operate on
-wavefunctions, with operators which depend only on density of particles of
-particular spin. The core of dft lies in Kohn-Sham theorems. These two theorems
+\section{Density functional theory - DFT}
+DFT is a method, which allows us to map many-particle problem to a
+single particle problem. It effectively replaces electron wave functions with
+particle density.  The core of dft lies in Kohn-Sham theorems. These two theorems
 ensure that stationary many-particle systems are fully characterized by their
-ground state density. For non-degenerate case the latter is uniquely determined
-by many-particle wave function, which in turn is uniquely determined by the
+ground state particle density. For non-degenerate case the latter is uniquely determined
+by ground state many-particle wave function, which in turn is uniquely determined by the
 external potential. For a simple non-degenerate case we will prove this theorem. Let us consider hamiltonian of the form:
 \begin{equation} \label{ks_hamiltonian}
 \hat H = \hat T + \hat W + \hat V_{ext},
