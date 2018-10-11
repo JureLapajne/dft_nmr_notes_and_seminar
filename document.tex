@@ -89,22 +89,36 @@ One of the most important basic problems in physics is the dynamics of many-body
 Calculation of electronic structure has always been a challenge. It quickly became apparent that direct use of schroedinger equation is not a realistic prospect for calculation of electronic structure, except for some small molecules, as it's time complexity grows exponentially as a function of electron number. With the development of computers different numerical schemes for computation of electronic structure and optimization of molecular structure have emerged. One of them is also density functional theory (DFT from now on), which has been known for roughly 50 years. Through the years DFT has developed and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals.
 
 \section{Matter description}
-Physical description of matter surrounding us is given by hamiltonian:
-\begin{equation}
-H=T_n + T_e + W_{n-n} + W_{e-e} + W_{n-e} + V_{ext},
+Non-relativistic hamiltonian describing the interaction system on nuclei and electrons can be
+written as follows:
+\begin{equation} \label{full_hamiltonian}
+\hat H= \hat T_n + \hat  T_e + \hat  W_{n-n} + \hat W_{e-e} + \hat W_{n-e} + \hat V_{ext},
 \end{equation}
-where $T_n$ and $T_e$ are kinetic energies of nuclei and electrons respectively, $W_{n-n}$, $W_{e-e}$ and $W_{e-n}$ represent  nuclei-nuclei, electron-electron and electron-nuclei interaction terms. $V_ext$ represents external potential. Ground state of such system is given by the solution of time independant Schroedinger equation:
-\begin{equation}
+where $T_n$ and $T_e$ are kinetic energies of nuclei and electrons respectively,
+$W_{n-n}$, $W_{e-e}$ and $W_{e-n}$ represent  nuclei-nuclei, electron-electron
+and electron-nuclei interaction terms. $V_{ext}$ represents external potential
+and is strictly of multiplicative nature.  Ground state of such system is given by the solution of time independent Schr{\"o}dinger equation:
+\begin{equation} \label{ham_solution}
 \hat H \psi = \epsilon_0 \psi_0,
 \end{equation} 
 where index $0$ denotes the solution with the lowest energy. In general $\psi_0$
 depends on $3N$ coordinates, where $N$ is total number of particles. This means
 that complex systems with more than e.g. 10 atoms are very computationally
 demanding. It is common to reduce the dimensionality of the problem by employing
-Born-Oppenheimer approximation in which nuclei have fixed positions.  Even in
-cases where core positions are not fixed, they are optimized in a separate procedure
-from electronic wave function.
-
+Born-Oppenheimer approximation in which motion of nuclei is separated from
+motion of electrons, sometimes even fixed. Thus, from now on we will restrict
+ourselves to hamiltonian describing only motion of electrons:
+\begin{equation} \label{electron_hamiltonian}
+\hat H=  \hat  T_e  + \hat W_{e-e} + \hat W_{n-e} + \hat V_{ext}.
+\end{equation}
+The number of electrons $N$ for a small molecules, like water, is of the order $\sim
+10$. In medium sized molecules with $\sim 50-100$ atoms, the number can grow to a few
+hundred, while in large molecules, like proteins, the number can grow into
+thousands and ten-thousands. As one can imagine, solving a system of coupled differential equations
+with such huge number of coordinates ($3N$) is still too big problem for present
+computational power. This is the reason for development of approaches which
+while still being sufficiently accurate, offer faster computational times. In
+this paper we will discus dft and it's applications to organo-metalic materials.
 
 \section{Density functional theory}
 DFT is a method, which allows us to replace operator, which operate on
@@ -248,5 +262,6 @@ which is compatible with Pauli principle, there exists a  potential for which th
 density represents ground state density and is thus contained in $\mathcal N$.
 
 One can also show that $E[n]$ be reasonably extended, to a larger set of
-densities $n(\vec r)$. Since the Hamiltonian \ref{ks_hamiltonian}
+densities $n(\vec r)$. Since the Hamiltonian \ref{ks_hamiltonian} is defined for
+all
 \end{document}
