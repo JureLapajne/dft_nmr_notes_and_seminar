@@ -249,10 +249,7 @@ ground state particle density:
 \begin{equation}
   E[n_0] = \bra{\psi_0[n_0]}\hat H \ket{\psi_0[n_0]}.
   \end{equation}
-  Further, one can define more general energy functional:
-\begin{equation}
-  E[n] = \bra{\psi[n]}\hat H \ket{\psi[n]},
-\end{equation}
+
 for which one can find minimum energy principle: $E[n_0]<E[n]$ whenever n
 belongs to $\mathcal N$. This an obvious consequence of wave function functional
 $\ket{\psi [n]}$, which is only defined for densities which are in $\mathcal N$.
@@ -262,14 +259,100 @@ which is compatible with Pauli principle, there exists a  potential for which th
 density represents ground state density and is thus contained in $\mathcal N$.
 
 To see that something similar also holds in general, one has to show, that
-suitable wavefunctions can be constructed from a set of non-negative, normalizable densities.
-Solutions to hamiltonian of the form  \ref{electron_hamiltonian} are anti-symmetric many particle
+suitable wavefunctions can be constructed from a set of non-negative,
+normalizable densities.
+Solutions to hamiltonian of the form  \ref{electron_hamiltonian} are anti-symmetric $N$-particle
 wave functions. Each such wave function represents a ground state corresponding
 to a certain potential and for each such wavefunction on can find particle
 density simpliy by applying quantum-mechanical particle density operator. But
 more importantly, the conversely is also true. From each non-negative particle
-density $n(\vec r)$, one can construct $N$ particle antisymmetric wavefunction.
-There is thus
+density $n(\vec r)$, one can construct $N$ particle antisymmetric wavefunction
+as follows:
+
+\begin{dgroup*}
+\begin{dmath}
+\Phi_k(\vec r) = \sqrt { \frac{n(\vec r)}{N}} e^{i \left [\vec k \cdot \vec f (\vec r) + \phi
+  (\vec r)\right]}; \quad  k \hiderel \in \mathbb{Z}, 
+\end{dmath}
+\begin{dsuspend}
+  where $\phi(\vec r)$ is an arbitrary scalar function and $f(\vec r)$ is a
+  vector field given by:
+\end{dsuspend}
+\begin{dmath}
+  f_x(\vec r) = 2\pi \frac{ \int_{-\infty}^{x}\dif x' n(x', y,z)  } {
+    \int_{-\infty}^{\infty} \dif x' n(x', y,z)    }
+\end{dmath}
+\begin{dmath}
+  f_x(\vec r) = 2\pi \frac{ \int_{-\infty}^{\infty} \dif x'
+    \int_{-\infty}^{y}\dif y' n(x', y',z)  } {
+    \int_{-\infty}^{\infty} \dif x'  \int_{-\infty}^{\infty} \dif y' n(x', y' ,z)    }
+\end{dmath}
+\begin{dmath}
+  f_x(\vec r) = 2\pi \frac{ \int_{-\infty}^{\infty} \dif x'  \int_{-\infty}^{\infty}
+    \dif y'
+     \int_{-\infty}^{z} \dif z' n(x', y',z')  } {
+    \int_{-\infty}^{\infty} \dif x'  \int_{-\infty}^{\infty}
+    \dif y'
+     \int_{-\infty}^{\infty} \dif z' n(x', y', z')   }.
+ \end{dmath}
+ \begin{dsuspend}
+Using Slater determinan one can  now construct  $N$-particle wave function from
+$\phi_k({\vec r})$:
+\end{dsuspend}
+\begin{dmath}
+  \Phi_k ({\vec r}) = \frac{1}{\sqrt{N}} S_- \left(  \phi_1
+    \phi_2 ...  \phi_N  \right).
+  \end{dmath}
+\end{dgroup*}
+
+Above discussion tells us that minimization principle indeed holds for all
+non-negative, normalizable densities, but it says nothing about definitness of
+functional. For a given functional to be even defined for given particle
+density, the following has to hold separately:
+\begin{dgroup*}
+  \begin{dmath} \label{kinetic_inequality}
+    \bra{\psi}\hat T \ket{\psi} < \infty
+    \end{dmath}
+  \begin{dmath} \label{interaction_inequality}
+    \bra{\psi}\hat W \ket{\psi} < \infty
+  \end{dmath}
+    \begin{dmath} \label{potential_inequality}
+    \bra{\psi}\hat V \ket{\psi} < \infty.
+    \end{dmath}
+  \end{dgroup*}
+  After deeper mathematical analysis of above equations, on can deduce that both
+  $\psi$ and $n^{1/2}$ have to be from Sobolev space defined by:
+  \begin{equation}
+    \mathbb{H} = \left\{  f; f \in \mathbb{L}^2 \textrm{ and  } \nabla f \in \mathbb{L}^2  \right\},
+    \end{equation}
+  where $\mathbb{L}$ is a space of functions with finite second norm.
+  Equations \ref{kinetic_inequality} and \ref{interaction_inequality} have
+  imposed restrictions on permissible wavefunctions and densities. Equation
+  \ref{potential_inequality} also imposes restriction on potentials. They should
+  be of the form $\mathbb{L}^{3/2}+ \mathbb{L}^{\infty}$, thus every potential
+  should consist of a part with a finite $\infty$-norm and a part with a
+  finite ${3/2}$-norm. As it turn out, the coluomb potential satisfies all requirements.
+
+\subsection{All electron dft calculations}
+All electron dft calculation is mostly used to calculate electronic structure of
+ a single molecule. The molecule should not be too big, as otherwise the problem
+ may become too computationally expensive. 
+
+
+
+\subsection{Dft using pseudopotentials}
+Electronic states of an atom can be divided into three cathegories; core states,
+semi-core states and valence states. The latter are the most actively included
+in formation of bonds. Valence states may be completely deformed once the atom
+is put into molecules/crystals. Semi-core state are states which do not
+directly contribute to bonding, but may still be polarized or spatially
+deformed. Lastly, core states, are highly localized and are assumed to be
+unaffected by chemical bonding. This means that there should be very little loss
+of accuracy if core states are replaced by a pseudo wavefunction.
+Pseudopotentials are constructs which try to
+replicate effects of core electrons exerted on semi-core, valence electrons and
+thus reproduce correct chemical and physical properties (bonding energy, bond
+length, electron localization, magnetization,...).
 
 
 \end{document}
