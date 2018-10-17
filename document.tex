@@ -331,7 +331,7 @@ density, the following has to hold separately:
   \ref{potential_inequality} also imposes restriction on potentials. They should
   be of the form $\mathbb{L}^{3/2}+ \mathbb{L}^{\infty}$, thus every potential
   should consist of a part with a finite $\infty$-norm and a part with a
-  finite ${3/2}$-norm. As it turn out, the coluomb potential satisfies all requirements.
+  finite ${3/2}$-norm. As it turns out, the coluomb potential satisfies all requirements.
 
 \subsection{All electron dft calculations}
 All electron dft calculation is mostly used to calculate electronic structure of
@@ -353,6 +353,13 @@ Pseudopotentials are constructs which try to
 replicate effects of core electrons exerted on semi-core, valence electrons and
 thus reproduce correct chemical and physical properties (bonding energy, bond
 length, electron localization, magnetization,...).
+
+Of course, pseudo potentials are constructed prior to a given calculation. Thus,
+they have to constructed using some other information. As a consequence, there
+exists a question of transferability. Is a potential constructed using some
+reference molecule usable for another molecule. The exact answer is
+not possible. Many times the only way is to try, especially when transition
+elements are in question.
 
 
 \section{Dft in crystals}
@@ -376,12 +383,19 @@ However, because of already given reasons, the number of plane waves required
 for such expansion is very large. Thus, even the sum of plane waves is not a
 suitable representation of core states. For this reason, core states are
 commonly replaced by pseudo potentials in crystal dft calculations. This
-approach usually carries \emph{PW calculation} designation. 
+approach usually carries \emph{PW calculation} designation.
 
-Another improved approach is to use improved plane wave basis, called augmented
-plane wave or \emph{GAPW} approach. GAPW basis sets consist of Gaussian
-functions and plane waves. This approach is suitable for all electron
+Although, for many
+crystals this approach works well it is no good enough especially for transition elements with
+partially filled d-shells and second row elements. Electron density of transition
+metals and second row elements still varies widely in spite of use of
+pseudopotentials. For such cases an improved approach has been developed. A new
+method, called gaussian augmented plane waves or \emph{GAPW} approach. GAPW
+basis sets consist of Gaussian functions and plane waves. This approach is suitable for all electron
 calculations, where core states are expanded in Gaussian functions and valence
 electrons in plane waves. As a consequence, all electron wave calculations are
 possible for crystals avoiding pseudo potential inaccuracy issues.
+
+
+
 \end{document}
