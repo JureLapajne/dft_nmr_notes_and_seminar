@@ -355,4 +355,33 @@ thus reproduce correct chemical and physical properties (bonding energy, bond
 length, electron localization, magnetization,...).
 
 
+\section{Dft in crystals}
+Crystals are periodic structures. This fact is also reflected the shape of
+electronic  wave functions, which are Bloch states:
+\begin{equation}
+  \psi_{n, \vec k}(\vec r) = u_{n, \vec k}(\vec r)e^{i\vec k \vec r};\quad \textrm\quad u_{n,\vec k}(\vec r + \vec R) =  u_{n,\vec k}(\vec r),
+\end{equation}
+where $\vec R$ is a vector is Bravais lattice of a crystal in question.
+Functions $u_{n,\vec k}$ depend on potential at each atomic site.
+In ideal case, where core potentials are neglected,
+wave functions are simple plane waves. When potential is weak and
+reasonably smooth, it can be treated as perturbation. Unfortunately neither of
+the two conditions is true. Core potential diverges as $r \rightarrow 0$
+and as a consequence the wave functions have a cusp at the origin. For heavier
+atoms core states have large gradients and can not be represented as plane waves.
+
+The simplest solution is to expand wave functions into series of plane waves.
+Computationally this is just a discrete fourier transform of a wave function.
+However, because of already given reasons, the number of plane waves required
+for such expansion is very large. Thus, even the sum of plane waves is not a
+suitable representation of core states. For this reason, core states are
+commonly replaced by pseudo potentials in crystal dft calculations. This
+approach usually carries \emph{PW calculation} designation. 
+
+Another improved approach is to use improved plane wave basis, called augmented
+plane wave or \emph{GAPW} approach. GAPW basis sets consist of Gaussian
+functions and plane waves. This approach is suitable for all electron
+calculations, where core states are expanded in Gaussian functions and valence
+electrons in plane waves. As a consequence, all electron wave calculations are
+possible for crystals avoiding pseudo potential inaccuracy issues.
 \end{document}

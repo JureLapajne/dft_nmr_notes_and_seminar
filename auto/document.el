@@ -45,6 +45,7 @@
     "breqn"
     "xparse")
    (TeX-add-symbols
+    "arcsinh"
     "dif"
     "myint"
     "Alpha"
