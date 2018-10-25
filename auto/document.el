@@ -45,7 +45,6 @@
     "breqn"
     "xparse")
    (TeX-add-symbols
-    "arcsinh"
     "dif"
     "myint"
     "Alpha"
@@ -65,8 +64,13 @@
     "electron_hamiltonian"
     "ks_hamiltonian"
     "bijection"
+    "hamiltonian_density"
+    "phi_k"
+    "slater_determinant"
     "kinetic_inequality"
     "interaction_inequality"
-    "potential_inequality"))
+    "potential_inequality"
+    "extremal_problem"
+    "noninteracting_H"))
  :latex)
 

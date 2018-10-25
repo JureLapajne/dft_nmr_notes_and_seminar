@@ -154,7 +154,7 @@ ground state-densities determined up to phase as:
     \end{split}
   \end{equation}
 The map from $\mathcal{V}$ to $\mathcal{G}$ is surjective by definition. What we
-would like to know is if it is also injective  \ref{bijection}, i.e. can a single $\psi_0$ be a
+would like to know is if it is also injective  (\ref{bijection}), i.e. can a single $\psi_0$ be a
 ground state for two non-equivalent potentials? Suppose now that $\psi_0$ is a
 ground state for two non-equivalent potentials $V_{ext}$ and $V'_{ext}$.
 
@@ -235,7 +235,7 @@ states. Thus in degenerate case one obtains bijection between external
 potential, set of linear spans, each belonging to a certain external potential
 and a set of sets of ground state densities. Special treatment is necessary also
 for systems containing magnetic fields, where one can separate hamiltonian into
-two hamiltonians (one for each spin) of the form \ref{ks_hamiltonian}.
+two hamiltonians (one for each spin) of the form (\ref{ks_hamiltonian}).
 
 Since there exists bijection between ground state wave functions and ground
 state densities, one can formally rewrite ground state wave functions as functionals of ground
@@ -246,7 +246,7 @@ state particle density:
 and using above formula one can also rewrite operators in terms of ground state
 density. As an example, let us rewrite ground state energy as functional of
 ground state particle density:
-\begin{equation}
+\begin{equation} \label{hamiltonian_density}
   E[n_0] = \bra{\psi_0[n_0]}\hat H \ket{\psi_0[n_0]}.
   \end{equation}
 
@@ -261,7 +261,7 @@ density represents ground state density and is thus contained in $\mathcal N$.
 To see that something similar also holds in general, one has to show, that
 suitable wavefunctions can be constructed from a set of non-negative,
 normalizable densities.
-Solutions to hamiltonian of the form  \ref{electron_hamiltonian} are anti-symmetric $N$-particle
+Solutions to hamiltonian of the form  (\ref{electron_hamiltonian}) are anti-symmetric $N$-particle
 wave functions. Each such wave function represents a ground state corresponding
 to a certain potential and for each such wavefunction on can find particle
 density simpliy by applying quantum-mechanical particle density operator. But
@@ -270,7 +270,7 @@ density $n(\vec r)$, one can construct $N$ particle antisymmetric wavefunction
 as follows:
 
 \begin{dgroup*}
-\begin{dmath}
+\begin{dmath} \label{phi_k}
 \Phi_k(\vec r) = \sqrt { \frac{n(\vec r)}{N}} e^{i \left [\vec k \cdot \vec f (\vec r) + \phi
   (\vec r)\right]}; \quad  k \hiderel \in \mathbb{Z}, 
 \end{dmath}
@@ -299,8 +299,8 @@ as follows:
 Using Slater determinan one can  now construct  $N$-particle wave function from
 $\phi_k({\vec r})$:
 \end{dsuspend}
-\begin{dmath}
-  \Phi_k ({\vec r}) = \frac{1}{\sqrt{N}} S_- \left(  \phi_1
+\begin{dmath}\label{slater_determinant}
+  \Phi ({\vec r}) = \frac{1}{\sqrt{N}} \det \left(  \phi_1
     \phi_2 ...  \phi_N  \right).
   \end{dmath}
 \end{dgroup*}
@@ -333,15 +333,85 @@ density, the following has to hold separately:
   should consist of a part with a finite $\infty$-norm and a part with a
   finite ${3/2}$-norm. As it turns out, the coluomb potential satisfies all requirements.
 
+  \subsection{Variational formualtion}
+  After establishing 
+
+  
+  \section{Kohn-Sham equations}
+After establishing validity of the transition from single particle wave functions
+to particle density, we can now finally formulate out problem using $E[n]$. We
+are looking for a minimum value of energy functional $E[n]$ with respect to particle
+density n. Thus, what we have is an extremal problem: 
+\begin{equation} \label{extremal_problem}
+  \frac{\delta }{\delta n(\vec r)} \left[  E[n(\vec r)] - \mu \left(  \int n(\vec r) -N \right)  \right] =0.
+  \end{equation}
+ $E[n]$ is unfortunately still defined only formally by
+ $E[n]=\bra{\psi[n]}H\ket{\psi[n]}$. To actually solve the equation
+ \ref{extremal_problem}, we have to define $E[n(\vec r)]$ in terms of particle density
+ $n(\vec r)$.
+ 
+\subsection{Noninteracting system}
+ First let's have a look at the hamiltonian of $N$-particle non-interacting system
+ \begin{equation} \label{noninteracting_H}
+   \hat H =\hat  W_k + \hat V_{ext}, 
+ \end{equation}
+ where $V_{ext}$ is an external potential of multiplicative nature. The solution
+ to this problem can be written in the form of Slater determinant:
+
+ \[
+       \ket{\Phi_0} = \frac{1}{\sqrt{N!}}\det 
+   \begin{bmatrix}
+   \phi_{1}(\vec r_1, \sigma_1) & \phi_{2}(\vec r_1, \sigma_1) & \phi_{3}(\vec
+   r_1, \sigma_1) & \dots & \phi_{N}(\vec r_1, \sigma_1) \\
+    \phi_{1}(\vec r_2, \sigma_2) & \phi_{2}(\vec r_2, \sigma_2) & \phi_{3}(\vec
+    r_2, \sigma_2) & \dots & \phi_{N}(\vec r_2, \sigma_2) \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+     \phi_{1}(\vec r_N, \sigma_N) & \phi_{2}(\vec r_N, \sigma_N) & \phi_{3}(\vec r_N, \sigma_N) & \dots & \phi_{N}(\vec r_N, \sigma_N) \\
+\end{bmatrix},
+\]
+ which, when inserted into equation (\ref{noninteracting_H}) effectively produces
+ single particle problem:
+ \begin{equation}
+   \left(-\frac{\hbar^2}{2m}\nabla^2 + \hat V_{ext}(\vec r)\right) \psi (\vec r) = \epsilon_i \psi(\vec r).
+ \end{equation}
+ Thus, using slater determinant we have effectively converted many particle
+ problem with $3N$ coordiantes to a single particle problem.
+ The ground state of such a system is obtained using $N/2$ lowest states and
+ putting 2 electrons into each state. Calculation of kinetic energy and particle
+ density for such a system is also straight forward. As we can see, using Slater
+ determinant as ansatz for the solution of noninteracting hamiltonian offers
+ simple expressions for ground state wavefunction, kinetic energy, density
+ calculation.  
+
+Now we would like to use similar construction to solve hamiltonian
+\ref{hamiltonian_density}. Using solution ansatz in the form of Slater
+determiant or some other sum of basis functions (commonly called orbitals) offers straight forward
+calculation of kinetic energy and  particle density. It might be worth to point
+out that dft packages usually do not use Slater determinant to construct
+wavefunctions and calculate density. Using Slater Slater determinant leads to
+differentail equations for $\phi_k$ wavefunctions. Instead, they usually use
+large sets of gaussian basis functions, which allow quick integral evaluation.
+ 
+
+First we have to ask ourselves if it is at all possible to convert interacting
+$N$ particle problem ($3N$ coordinates) to a single particle (3 coordinates)
+problem. To see how this is possible consider a $N$ particle interacting system
+with $n(\vec r)_{i0}$ ground state particle density. Since it represents ground
+state,  this particle density belongs to $\mathcal H$. Further, using equation
+(\ref{slater_determinant}) one can construct non-interacting many particle wave
+function, which minimizes hamiltonian of the form (\ref{noninteracting_H})
+for some potential $V_{ext}$. Thus, we see that there exists a non-interacting
+system with exactly the same ground state particle density as originally
+considered interacting system. The question what kind of potential to use in
+place of many particle interaction operators still remains open.  
+
 \subsection{All electron dft calculations}
-All electron dft calculation is mostly used to calculate electronic structure of
+All electron dft calculations are mostly used to calculate electronic structure of
  a single molecule. The molecule should not be too big, as otherwise the problem
  may become too computationally expensive. 
 
-
-
 \subsection{Dft using pseudopotentials}
-Electronic states of an atom can be divided into three cathegories; core states,
+Electronic states of an atom can be divided into three categories; core states,
 semi-core states and valence states. The latter are the most actively included
 in formation of bonds. Valence states may be completely deformed once the atom
 is put into molecules/crystals. Semi-core state are states which do not
