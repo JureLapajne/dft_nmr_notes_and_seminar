@@ -1,4 +1,5 @@
 \documentclass[openany, longbibliography,slovene,a4paper,12pt]{article}
+%\documentclass[openany,slovene,a4paper,12pt]{article}
 \usepackage[a4paper,inner=3.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 \usepackage{braket}
@@ -164,7 +165,8 @@ ground state for two non-equivalent potentials $V_{ext}$ and $V'_{ext}$.
   \caption{Bijection between the set of potentials, their corresponding ground
     states and ground state densities. Existance of such bijection is proved by
     Kohn-Sham theorems and proves that multi-particle system is
-    uniquely determined by it's ground state particle density.}
+    uniquely determined by it's ground state particle
+    density~\cite{advanced_course}.}
   \label{bijection}
 \end{figure}
 
@@ -388,7 +390,7 @@ Now we would like to use similar construction to solve hamiltonian
 determiant or some other sum of basis functions (commonly called orbitals) offers straight forward
 calculation of kinetic energy and  particle density. It might be worth to point
 out that dft packages usually do not use Slater determinant to construct
-wavefunctions and calculate density. Using Slater Slater determinant leads to
+wavefunctions and calculate density. Using Slater determinant leads to
 differentail equations for $\phi_k$ wavefunctions. Instead, they usually use
 large sets of gaussian basis functions, which allow quick integral evaluation.
  
@@ -419,7 +421,7 @@ directly contribute to bonding, but may still be polarized or spatially
 deformed. Lastly, core states, are highly localized and are assumed to be
 unaffected by chemical bonding. This means that there should be very little loss
 of accuracy if core states are replaced by a pseudo wavefunction.
-Pseudopotentials are constructs which try to
+Pseudo potentials are constructs which try to
 replicate effects of core electrons exerted on semi-core, valence electrons and
 thus reproduce correct chemical and physical properties (bonding energy, bond
 length, electron localization, magnetization,...).
@@ -466,6 +468,9 @@ calculations, where core states are expanded in Gaussian functions and valence
 electrons in plane waves. As a consequence, all electron wave calculations are
 possible for crystals avoiding pseudo potential inaccuracy issues.
 
-
+%\newpage \phantomsection
+\addcontentsline{toc}{section}{Literatura}
+\bibliographystyle{myapsrevSLO}
+\bibliography{mybib}
 
 \end{document}
