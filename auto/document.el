@@ -71,7 +71,8 @@
     "interaction_inequality"
     "potential_inequality"
     "extremal_problem"
-    "noninteracting_H")
+    "noninteracting_H"
+    "electron_gas_exchange")
    (LaTeX-add-bibliographies
     "mybib"))
  :latex)

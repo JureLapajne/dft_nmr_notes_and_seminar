@@ -87,26 +87,31 @@
 \section{Introduction}
 One of the most important basic problems in physics is the dynamics of many-body system. Specificaly, in quantum physics and chemistry, the dynamics of electrons and their spatial distribution determine the stability of matter. But it is not just the stability that matters. Electronic structure of materials determines many macroscopic properties like thermal and electrical conductivity, their response to electronic and magnetic field, etc.
 
-Calculation of electronic structure has always been a challenge. It quickly became apparent that direct use of schroedinger equation is not a realistic prospect for calculation of electronic structure, except for some small molecules, as it's time complexity grows exponentially as a function of electron number. With the development of computers different numerical schemes for computation of electronic structure and optimization of molecular structure have emerged. One of them is also density functional theory (DFT from now on), which has been known for roughly 50 years. Through the years DFT has developed and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals.
+Calculation of electronic structure has always been a challenge. It quickly
+became apparent that direct use of Schr{\"o}dinger equation is not a realistic
+prospect for calculation of electronic structure, except for some small
+molecules, as it's time complexity grows exponentially as a function of electron
+number. With the development of computers different numerical approximations for
+computation of electronic structure and optimization of molecular structure have
+emerged. One of the most successful methods has been density functional theory (DFT from now on), which has been known for roughly 50 years. Through the years DFT has developed and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals.
 
-\section{Matter description}
-Non-relativistic hamiltonian describing the interaction system on nuclei and electrons can be
+\section{Hamilotnian}
+Non-relativistic hamiltonian describing the interaction of  nuclei and electrons can be
 written as follows:
 \begin{equation} \label{full_hamiltonian}
 \hat H= \hat T_n + \hat  T_e + \hat  W_{n-n} + \hat W_{e-e} + \hat W_{n-e} + \hat V_{ext},
 \end{equation}
 where $T_n$ and $T_e$ are kinetic energies of nuclei and electrons respectively,
 $W_{n-n}$, $W_{e-e}$ and $W_{e-n}$ represent  nuclei-nuclei, electron-electron
-and electron-nuclei interaction terms. $V_{ext}$ represents external potential
-and is strictly of multiplicative nature.  Ground state of such system is given by the solution of time independent Schr{\"o}dinger equation:
+and electron-nuclei interaction terms. $V_{ext}$ is strictly multiplicative external potential. Ground state of such system is given by the solution of time independent Schr{\"o}dinger equation:
 \begin{equation} \label{ham_solution}
 \hat H \psi = \epsilon_0 \psi_0,
 \end{equation} 
 where index $0$ denotes the solution with the lowest energy. In general $\psi_0$
 depends on $3N$ coordinates, where $N$ is total number of particles. This means
-that complex systems with more than e.g. 10 atoms are very computationally
+that systems with more than e.g. 10 atoms are very computationally
 demanding. It is common to reduce the dimensionality of the problem by employing
-Born-Oppenheimer approximation in which motion of nuclei is separated from
+Born-Oppenheimer approximation in which the motion of nuclei is separated from
 motion of electrons, sometimes even fixed. Thus, from now on we will restrict
 ourselves to hamiltonian describing only motion of electrons:
 \begin{equation} \label{electron_hamiltonian}
@@ -116,13 +121,13 @@ The number of electrons $N$ for a small molecules, like water, is of the order $
 10$. In medium sized molecules with $\sim 50-100$ atoms, the number can grow to a few
 hundred, while in large molecules, like proteins, the number can grow into
 thousands and ten-thousands. As one can imagine, solving a system of coupled differential equations
-with such huge number of coordinates ($3N$) is still too big problem for present
+with such huge number of coordinates ($3N$) is way too large for present
 computational power. This is the reason for development of approaches which,
-while still being sufficiently accurate, offer faster computational times. One
-of the most used theory today is density functional theory.
+while still being sufficiently accurate, offer faster computational times. Dft
+represents one of the most successful method to solving such systems.
 
-\section{Density functional theory - DFT}
-DFT is a method, which allows us to map many-particle problem to a
+\section{Density functional theory - Dft}
+Dft is a method, which allows us to map many-particle problem to a
 single particle problem. It effectively replaces electron wave functions with
 particle density.  The core of dft lies in Kohn-Sham theorems. These two theorems
 ensure that stationary many-particle systems are fully characterized by their
@@ -237,13 +242,13 @@ states. Thus in degenerate case one obtains bijection between external
 potential, set of linear spans, each belonging to a certain external potential
 and a set of sets of ground state densities. Special treatment is necessary also
 for systems containing magnetic fields, where one can separate hamiltonian into
-two hamiltonians (one for each spin) of the form (\ref{ks_hamiltonian}).
+spin up and spin down hamiltonian of the form (\ref{ks_hamiltonian}).
 
 Since there exists bijection between ground state wave functions and ground
-state densities, one can formally rewrite ground state wave functions as functionals of ground
+state densities, one can formally rewrite ground state wave function as functional of ground
 state particle density:
 \begin{equation}
-  \ket{\psi'_0} =  \ket{\psi'_0[n]},
+  \ket{\psi'_0} =  \ket{\psi'_0[n]}
   \end{equation}
 and using above formula one can also rewrite operators in terms of ground state
 density. As an example, let us rewrite ground state energy as functional of
@@ -258,7 +263,7 @@ $\ket{\psi [n]}$, which is only defined for densities which are in $\mathcal N$.
 In practice this is not such a problem. The reason for this is discretization of space into
 grid points. On final grid for any strictly positive particle density ($n(\vec r) > 0$),
 which is compatible with Pauli principle, there exists a  potential for which the
-density represents ground state density and is thus contained in $\mathcal N$.
+density represents ground state density and is thus contained in $\mathcal N$ \cite{advanced_cours}.
 
 To see that something similar also holds in general, one has to show, that
 suitable wavefunctions can be constructed from a set of non-negative,
@@ -404,13 +409,70 @@ state,  this particle density belongs to $\mathcal H$. Further, using equation
 function, which minimizes hamiltonian of the form (\ref{noninteracting_H})
 for some potential $V_{ext}$. Thus, we see that there exists a non-interacting
 system with exactly the same ground state particle density as originally
-considered interacting system. The question what kind of potential to use in
-place of many particle interaction operators still remains open.  
+considered interacting system. The question still remains what kind of potential
+should one use in
+place of many particle interaction operators still remains open.
 
+Intuitively, one would expect that potential belonging to effective single
+particle hamiltonian should reflect the properties geometry and potentials found
+in many particle system.
+
+\subsection{Exchange and correlation functionals}
+Exchange and correlation functionals are functionals which try to account for
+exchange and correlation interactions between particles. They can be of a
+different forms and in general one can roughly divide them into 4 groups:
+
+\subsubsection{Lda}
+Local density approximation (lda) are functionals which depend only on
+density of particles (electrons). First functional of such form dates back into
+the year 1930, when the exchange interaction for uniform gas was discovered \cite{challenges_den_fun_theor}:
+\begin{equation} \label{electron_gas_exchange}
+E_{xc}^{lda}[n]=-\frac{3}{4}\left( \frac{3}{\pi} \right)^{1/3}\int n(\vec r)^{4/3}.
+\end{equation}
+Today, there exist multiple other lda exchange functionals, but for most cases
+they are not very useful. Their only advantage are fast computational times.
+For every other purpose gga and hybrid functionals are much better suited.
+\subsubsection{Gga}
+Generalized gradient approximation (gga) functionals
+depend not only on density of particles but also on its gradient. Most commonly,
+gga functionals are build upon (\ref{electron_gas_exchange}) \cite{challenges_den_fun_theor}:
+\begin{equation}
+  E_{xc}^{gga}=\int n(\vec r)^{4/3}F(x);\quad x=|\nabla n(\vec r)|/n(\vec r)^{4/3}.
+\end{equation}
+One of most commonly used gga functional is PBE functional \cite{challenges_den_fun_theor}:
+\begin{equation}
+  E_{xc}^{pbe}=-\int  n(\vec r)^{4/3}\left[ \frac{3}{4}\left(\frac{3}{\pi}\right)^{1/3} + \frac{\mu s}{1+ \mu s^2/\kappa} \right]; \quad s=x/(2(3π2)^{1/3}).
+\end{equation}
+Gga functionals offer acceptable accuracy at fast computational times and are
+most commonly used for approximate calculation, before starting more accurate
+and more time consuming calcualtion using hybrid or meta-gga functionals.
+\subsubsection{Meta-gga}
+Meta-gga functionals build upon gga functional form and add terms containing
+higher order derivatives of particle density. Generally 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{jacobs_functional_ladder_ver2.png}.
+  \caption{Jacob’s ladder of exchange-correlation functional approximations
+    employed in dft calculations. Hartree world represents starting level where only
+    weak interparticle interaction is present. Lda approxiamtion covers
+    functionals which depend only on particle density. Gga additionally depends
+    on gradient of particle density, while mega-gga incorporates higher order
+    derivatives of particle density and in some cases even kinetic energy of
+    orbitals ($\tau$). Hyper-gga functionals, also called hybrid functionals,
+    stage represents functionals which contain exact exchange calculation (i.e.
+    the one found in Hartree-Fock method). The last level utilizes all Kohn-Sham
+    orbitals to calculate correlation and exchange interaction. This level also
+    accounts for VdW interaction, which is caused by charge fluctuations and is
+    not accounted for in previous stages.
+  }
+  \label{bijection}
+\end{figure}
 \subsection{All electron dft calculations}
 All electron dft calculations are mostly used to calculate electronic structure of
  a single molecule. The molecule should not be too big, as otherwise the problem
- may become too computationally expensive. 
+ may become too computationally expensive. Commonly used open source packages
+ are Orca and Nwchem.
 
 \subsection{Dft using pseudopotentials}
 Electronic states of an atom can be divided into three categories; core states,
@@ -426,8 +488,8 @@ replicate effects of core electrons exerted on semi-core, valence electrons and
 thus reproduce correct chemical and physical properties (bonding energy, bond
 length, electron localization, magnetization,...).
 
-Of course, pseudo potentials are constructed prior to a given calculation. Thus,
-they have to constructed using some other information. As a consequence, there
+Of course, pseudo potentials have to be constructed prior to a given calculation using
+some other much simpler system. As a consequence, there
 exists a question of transferability. Is a potential constructed using some
 reference molecule usable for another molecule. The exact answer is
 not possible. Many times the only way is to try, especially when transition
@@ -457,12 +519,11 @@ suitable representation of core states. For this reason, core states are
 commonly replaced by pseudo potentials in crystal dft calculations. This
 approach usually carries \emph{PW calculation} designation.
 
-Although, for many
-crystals this approach works well it is no good enough especially for transition elements with
-partially filled d-shells and second row elements. Electron density of transition
-metals and second row elements still varies widely in spite of use of
-pseudopotentials. For such cases an improved approach has been developed. A new
-method, called gaussian augmented plane waves or \emph{GAPW} approach. GAPW
+Although, for many crystals this approach works well it is no good enough
+especially for transition elements with partially filled d-shells and second row
+elements. Electron density of transition metals and second row elements still
+varies widely in spite of use of pseudopotentials. For such cases an improved
+approach has been developed. A new method, called gaussian augmented plane waves or \emph{GAPW} approach. GAPW
 basis sets consist of Gaussian functions and plane waves. This approach is suitable for all electron
 calculations, where core states are expanded in Gaussian functions and valence
 electrons in plane waves. As a consequence, all electron wave calculations are
