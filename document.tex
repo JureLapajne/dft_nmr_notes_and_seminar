@@ -447,12 +447,21 @@ Gga functionals offer acceptable accuracy at fast computational times and are
 most commonly used for approximate calculation, before starting more accurate
 and more time consuming calcualtion using hybrid or meta-gga functionals.
 
-\subsubsection{Meta-gga}
+\subsubsection{Meta-gga functionals}
 Since gga functionals have their short commings, meta-gga functionals were formed
 in belief that adding higher derivatives will improve accuracy. Meta-gga
 functionals are build upon gga functional form and add terms containing
 higher order derivatives of particle density. Functionals are formulated
 according to the following equation:
+
+Meta-gga functionals have higher computational cost than gga functionals
+Unfortunately, as it turned out, they are not significantly better than gga
+functionals and are thus not so popular.
+
+\subsubsection{Hybrid functionals}
+On the contrary to meta-gga functionals, hybrid functionals are much more
+successful. These functionals are not a continuation of lda, gga, meta-gga
+chain. Instead they incorporate exact Hartree-Fock exchange term. 
 
 \begin{figure}
   \centering
