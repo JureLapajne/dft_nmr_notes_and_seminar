@@ -19,8 +19,8 @@
 }
 \usepackage[multidot]{grffile}
 
-%\usepackage[slovene]{babel}      % slovenski delilni vzorci (!)
-%\usepackage[english]{babel}
+% \usepackage[slovene]{babel}      % slovenski delilni vzorci (!)
+% \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{makeidx}
 \usepackage{enumerate}
@@ -85,19 +85,25 @@
 
 \begin{document}
 \section{Introduction}
-One of the most important basic problems in physics is the dynamics of many-body system. Specificaly, in quantum physics and chemistry, the dynamics of electrons and their spatial distribution determine the stability of matter. But it is not just the stability that matters. Electronic structure of materials determines many macroscopic properties like thermal and electrical conductivity, their response to electronic and magnetic field, etc.
+One of the most important basic problems in physics is the dynamics of many-body
+systems. Specificaly, in quantum physics and chemistry, the dynamics of
+electrons and their spatial distribution determine the stability of matter. But
+it is not just the stability that matters. Electronic structure of materials
+determines many macroscopic properties like thermal and electrical conductivity, their response to electronic and magnetic fields, etc.
 
 Calculation of electronic structure has always been a challenge. It quickly
 became apparent that direct use of Schr{\"o}dinger equation is not a realistic
 prospect for calculation of electronic structure, except for some small
-molecules, as it's time complexity grows exponentially as a function of electron
+molecules, as the time consumed to solve it grows exponentially
+\cite{nobel_lecture} as a function of electron
 number. With the development of computers different numerical approximations for
 computation of electronic structure and optimization of molecular structure have
 emerged. One of the most successful methods has been density functional theory (DFT from now on), which has been known for roughly 50 years. Through the years DFT has developed and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals.
 
 \section{Hamilotnian}
-Non-relativistic hamiltonian describing the interaction of  nuclei and electrons can be
-written as follows:
+The first step in formulation of the problem is to define hamiltonian which
+describes motion of nuclei and electrons. Non-relativistic hamiltonian
+describing the interaction of  nuclei and electrons can be written as follows:
 \begin{equation} \label{full_hamiltonian}
 \hat H= \hat T_n + \hat  T_e + \hat  W_{n-n} + \hat W_{e-e} + \hat W_{n-e} + \hat V_{ext},
 \end{equation}
@@ -113,7 +119,7 @@ that systems with more than e.g. 10 atoms are very computationally
 demanding. It is common to reduce the dimensionality of the problem by employing
 Born-Oppenheimer approximation in which the motion of nuclei is separated from
 motion of electrons, sometimes even fixed. Thus, from now on we will restrict
-ourselves to hamiltonian describing only motion of electrons:
+ourselves to hamiltonians describing only the motion of electrons:
 \begin{equation} \label{electron_hamiltonian}
 \hat H=  \hat  T_e  + \hat W_{e-e} + \hat W_{n-e} + \hat V_{ext}.
 \end{equation}
@@ -121,29 +127,30 @@ The number of electrons $N$ for a small molecules, like water, is of the order $
 10$. In medium sized molecules with $\sim 50-100$ atoms, the number can grow to a few
 hundred, while in large molecules, like proteins, the number can grow into
 thousands and ten-thousands. As one can imagine, solving a system of coupled differential equations
-with such huge number of coordinates ($3N$) is way too large for present
-computational power. This is the reason for development of approaches which,
-while still being sufficiently accurate, offer faster computational times. Dft
-represents one of the most successful method to solving such systems.
+with such huge number of coordinates ($3N$) is computationally very intensive
+procedure and not suitable for mass research usage.
+This is the reason for development of approaches which, while still being
+sufficiently accurate, offer faster computational times. DFT represents one of
+the most successful methods to solving such systems.
 
-\section{Density functional theory - Dft}
-Dft is a method, which allows us to map many-particle problem to a
-single particle problem. It effectively replaces electron wave functions with
-particle density.  The core of dft lies in Kohn-Sham theorems. These two theorems
+\section{Density functional theory - DFT}
+DFT is a method, which allows us to map many-particle problem to an effectively
+single particle problem. It replaces all electron wave function with
+particle density.  The core of DFT lies in Kohn-Sham theorems. These two theorems
 ensure that stationary many-particle systems are fully characterized by their
 ground state particle density. For non-degenerate case the latter is uniquely determined
 by ground state many-particle wave function, which in turn is uniquely determined by the
-external potential. For a simple non-degenerate case we will prove this theorem. Let us consider hamiltonian of the form:
+external potential. For a simple non-degenerate case we will prove this theorem.
+Let us consider hamiltonian of the form:
 \begin{equation} \label{ks_hamiltonian}
 \hat H = \hat T + \hat W + \hat V_{ext},
 \end{equation}
-where $T$ is kinetic energy, $W$ is particle interaction and $V$ is external
+where $T$ is kinetic energy, $W$ is inter-particle interaction and $V$ is external
 potential determined up to a constant. Let $V_{ext}$ be such potential that
 ground state $\psi_0$ is non-degenerate. Consider now the set of all $H$ of the
-form (\ref{ks_hamiltonian}), which
-differ only in $V_{ext}$, with non-degenerate ground state. Since kinetic and
-inter-particle interaction terms are the same for all $H$ in such set, the latter
-can be represented by the set of all non-equivalent potentials:
+form (\ref{ks_hamiltonian}), which differ only in $V_{ext}$, with non-degenerate
+ground states. Since kinetic and inter-particle interaction terms are the same
+for all $H$ in such set, the latter can be represented by the set of all non-equivalent potentials:
 \begin{equation}
   \begin{split}
     \mathcal{V} = \{V_{ext};\quad &\textrm{V determined up to multiplication factor and a constant;}\\
@@ -160,7 +167,7 @@ ground state-densities determined up to phase as:
     \end{split}
   \end{equation}
 The map from $\mathcal{V}$ to $\mathcal{G}$ is surjective by definition. What we
-would like to know is if it is also injective  (\ref{bijection}), i.e. can a single $\psi_0$ be a
+would like to know is, if it is also injective  (\ref{bijection}), i.e., can a single $\psi_0$ be a
 ground state for two non-equivalent potentials? Suppose now that $\psi_0$ is a
 ground state for two non-equivalent potentials $V_{ext}$ and $V'_{ext}$.
 
@@ -168,7 +175,7 @@ ground state for two non-equivalent potentials $V_{ext}$ and $V'_{ext}$.
   \centering
   \includegraphics[width=0.55\textwidth]{bijekcija_med_v_psi_n.png}.
   \caption{Bijection between the set of potentials, their corresponding ground
-    states and ground state densities. Existance of such bijection is proved by
+    states and ground state densities. Existance of such bijection is proven by
     Kohn-Sham theorems and proves that multi-particle system is
     uniquely determined by it's ground state particle
     density~\cite{advanced_course}.}
@@ -196,11 +203,12 @@ subtracting above equation yields:
   (\hat V_{ext} - \hat V'_{ext})=(\epsilon_0-\epsilon'_0),
   \end{dmath}
 \end{dgroup*}
-which is contradiction, since $V_{ext}$ and $V'_{ext}$ differ for more than a
+which is contradiction, since must $V_{ext}$ and $V'_{ext}$ differ for more than a
 constant. Similarly one can show that two different grounds state wave functions,
 corresponding to two different external potentials, cannot lead to the same
 ground state densities.  To see this we compare ground state energies and rewrite
-them using ground state density, which is supposed to be the same for both wavefunctions:
+them using ground state densities, which is supposed to be the same for both
+wave functions:
 
 \begin{dgroup*}
 \begin{dmath}
@@ -242,7 +250,10 @@ states. Thus in degenerate case one obtains bijection between external
 potential, set of linear spans, each belonging to a certain external potential
 and a set of sets of ground state densities. Special treatment is necessary also
 for systems containing magnetic fields, where one can separate hamiltonian into
-spin up and spin down hamiltonian of the form (\ref{ks_hamiltonian}).
+spin up and spin down hamiltonian of the form (\ref{ks_hamiltonian}). In the
+latter case one can obtain bijections between the set of pairs $(\vec A(\vec r),
+V_{ext}(\vec r))$, $(\psi_\uparrow, \psi_{\downarrow})$ and $(n(\vec r), \vec m
+(\vec r))$.
 
 Since there exists bijection between ground state wave functions and ground
 state densities, one can formally rewrite ground state wave function as functional of ground
@@ -382,12 +393,13 @@ density n. Thus, what we have is an extremal problem:
    \left(-\frac{\hbar^2}{2m}\nabla^2 + \hat V_{ext}(\vec r)\right) \psi (\vec r) = \epsilon_i \psi(\vec r).
  \end{equation}
  Thus, using slater determinant we have effectively converted many particle
- problem with $3N$ coordiantes to a single particle problem.
+ problem with $3N$ coordinates to a single particle problem, which is the same as many-particle
+ non-interacting system.
  The ground state of such a system is obtained using $N/2$ lowest states and
  putting 2 electrons into each state. Calculation of kinetic energy and particle
  density for such a system is also straight forward. As we can see, using Slater
  determinant as ansatz for the solution of noninteracting hamiltonian offers
- simple expressions for ground state wavefunction, kinetic energy, density
+ simple expressions for ground state wavefunction, kinetic energy and particle density
  calculation.  
 
 Now we would like to use similar construction to solve hamiltonian
@@ -396,8 +408,10 @@ determiant or some other sum of basis functions (commonly called orbitals) offer
 calculation of kinetic energy and  particle density. It might be worth to point
 out that dft packages usually do not use Slater determinant to construct
 wavefunctions and calculate density. Using Slater determinant leads to
-differentail equations for $\phi_k$ wavefunctions. Instead, they usually use
-large sets of gaussian basis functions, which allow quick integral evaluation.
+differential equations for $\phi_k$ wavefunctions. Instead, they usually use
+large sets of basis functions, which in the end lead to eigenvalue problem.
+Solution is then given by populating lowest energy orbitals until all electrons
+are allocated. 
  
 
 First we have to ask ourselves if it is at all possible to convert interacting
@@ -407,15 +421,16 @@ with $n(\vec r)_{i0}$ ground state particle density. Since it represents ground
 state,  this particle density belongs to $\mathcal H$. Further, using equation
 (\ref{slater_determinant}) one can construct non-interacting many particle wave
 function, which minimizes hamiltonian of the form (\ref{noninteracting_H})
-for some potential $V_{ext}$. Thus, we see that there exists a non-interacting
-system with exactly the same ground state particle density as originally
+for some potential $V_{ext}$. Such system is called Kohn-Sham system.
+Thus, we see that there exists a non-interacting system with exactly the same ground state particle density as originally
 considered interacting system. The question still remains what kind of potential
-should one use in
-place of many particle interaction operators still remains open.
+should one use in place of many particle interaction operators still remains
+open.
 
 Intuitively, one would expect that potential belonging to effective single
-particle hamiltonian should reflect the properties geometry and potentials found
-in many particle system.
+particle hamiltonian should reflect the properties, geometry and potentials found
+in given many particle system. Hamiltonian should thus kinetic energy therm,
+inter particle interaction (coulomb repulsion),  
 
 \subsection{Exchange and correlation functionals}
 Exchange and correlation functionals are functionals which try to account for
@@ -432,6 +447,7 @@ E_{xc}^{lda}[n]=-\frac{3}{4}\left( \frac{3}{\pi} \right)^{1/3}\int n(\vec r)^{4/
 Today, there exist multiple other lda exchange functionals, but for most cases
 they are not very useful. Their only advantage are fast computational times.
 For every other purpose gga and hybrid functionals are much better suited.
+
 \subsubsection{Gga}
 Generalized gradient approximation (gga) functionals
 depend not only on density of particles but also on its gradient. Most commonly,
@@ -441,7 +457,7 @@ gga functionals are build upon (\ref{electron_gas_exchange}) \cite{challenges_de
 \end{equation}
 One of most commonly used gga functional is PBE functional \cite{challenges_den_fun_theor}:
 \begin{equation}
-  E_{xc}^{pbe}=-\int  n(\vec r)^{4/3}\left[ \frac{3}{4}\left(\frac{3}{\pi}\right)^{1/3} + \frac{\mu s}{1+ \mu s^2/\kappa} \right]; \quad s=x/(2(3π2)^{1/3}).
+  E_{xc}^{pbe}=-\int  n(\vec r)^{4/3}\left[ \frac{3}{4}\left(\frac{3}{\pi}\right)^{1/3} + \frac{\mu s}{1+ \mu s^2/\kappa} \right]; \quad s=x/(2(3\pi/2)^{1/3}).
 \end{equation}
 Gga functionals offer acceptable accuracy at fast computational times and are
 most commonly used for approximate calculation, before starting more accurate
@@ -483,9 +499,9 @@ chain. Instead they incorporate exact Hartree-Fock exchange term.
 \end{figure}
 \subsection{All electron dft calculations}
 All electron dft calculations are mostly used to calculate electronic structure of
- a single molecule. The molecule should not be too big, as otherwise the problem
- may become too computationally expensive. Commonly used open source packages
- are Orca and Nwchem.
+a single molecule. The molecule should not be too big, as otherwise the problem
+may become too computationally expensive. Commonly used open source packages
+are Orca and Nwchem.
 
 \subsection{Dft using pseudopotentials}
 Electronic states of an atom can be divided into three categories; core states,
@@ -543,6 +559,8 @@ electrons in plane waves. As a consequence, all electron wave calculations are
 possible for crystals avoiding pseudo potential inaccuracy issues.
 
 %\newpage \phantomsection
+
+
 \addcontentsline{toc}{section}{Literatura}
 \bibliographystyle{myapsrevSLO}
 \bibliography{mybib}

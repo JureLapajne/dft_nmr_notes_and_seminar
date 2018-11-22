@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2018/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: document.aux
 The style file: myapsrevSLO.bst
@@ -31,45 +31,45 @@ ptr=1, stack=
   
 ---the literal stack isn't empty for entry challenges_den_fun_theor
 while executing---line 6885 of file myapsrevSLO.bst
-You've used 2 entries,
+You've used 3 entries,
             5816 wiz_defined-function locations,
-            1604 strings with 14978 characters,
-and the built_in function-call counts, 2145 in all, are:
-= -- 122
-> -- 50
-< -- 15
-+ -- 16
-- -- 10
-* -- 346
-:= -- 217
-add.period$ -- 2
-call.type$ -- 2
-change.case$ -- 9
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 196
-empty$ -- 147
-format.name$ -- 28
-if$ -- 390
+            1613 strings with 15190 characters,
+and the built_in function-call counts, 2950 in all, are:
+= -- 185
+> -- 61
+< -- 20
++ -- 20
+- -- 12
+* -- 455
+:= -- 307
+add.period$ -- 3
+call.type$ -- 3
+change.case$ -- 14
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 272
+empty$ -- 211
+format.name$ -- 33
+if$ -- 550
 int.to.chr$ -- 1
-int.to.str$ -- 10
-missing$ -- 20
-newline$ -- 58
-num.names$ -- 6
-pop$ -- 77
+int.to.str$ -- 11
+missing$ -- 30
+newline$ -- 61
+num.names$ -- 9
+pop$ -- 109
 preamble$ -- 1
-purify$ -- 10
+purify$ -- 15
 quote$ -- 0
-skip$ -- 74
+skip$ -- 107
 stack$ -- 0
-substring$ -- 36
-swap$ -- 185
-text.length$ -- 5
+substring$ -- 62
+swap$ -- 254
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 8
-type$ -- 26
+type$ -- 38
 warning$ -- 0
-while$ -- 5
+while$ -- 8
 width$ -- 0
-write$ -- 69
+write$ -- 78
 (There were 8 error messages)
