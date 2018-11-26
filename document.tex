@@ -98,7 +98,8 @@ molecules, as the time consumed to solve it grows exponentially
 \cite{nobel_lecture} as a function of electron
 number. With the development of computers different numerical approximations for
 computation of electronic structure and optimization of molecular structure have
-emerged. One of the most successful methods has been density functional theory (DFT from now on), which has been known for roughly 50 years. Through the years DFT has developed and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals.
+emerged. One of the most successful methods has been density functional theory
+(DFT from now on), which has been known for roughly 50 years. Through the years DFT has developed and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals.
 
 \section{Hamilotnian}
 The first step in formulation of the problem is to define hamiltonian which
@@ -271,21 +272,51 @@ ground state particle density:
 for which one can find minimum energy principle: $E[n_0]<E[n]$ whenever n
 belongs to $\mathcal N$. This an obvious consequence of wave function functional
 $\ket{\psi [n]}$, which is only defined for densities which are in $\mathcal N$.
-In practice this is not such a problem. The reason for this is discretization of space into
+Thus, one has to ask himself whether every nonegative normalizable function
+$n(\vec r)$ is in $\mathcal N$.  The answer is no. A density from $\mathcal N$
+have a corresponding potential $V_{ext}$ such that it minimizes energy functional
+of the form \ref{hamiltonian_density} and consequently they are called V-representable densities. 
+
+In practice, one does not need deep knowledge about such mathematical
+definitions of functionals. The reason for this is the discretization of space into
 grid points. On final grid for any strictly positive particle density ($n(\vec r) > 0$),
 which is compatible with Pauli principle, there exists a  potential for which the
-density represents ground state density and is thus contained in $\mathcal N$ \cite{advanced_cours}.
+density represents ground state density and is thus contained in $\mathcal N$ \cite{advanced_course}.
 
-To see that something similar also holds in general, one has to show, that
-suitable wavefunctions can be constructed from a set of non-negative,
-normalizable densities.
-Solutions to hamiltonian of the form  (\ref{electron_hamiltonian}) are anti-symmetric $N$-particle
-wave functions. Each such wave function represents a ground state corresponding
-to a certain potential and for each such wavefunction on can find particle
-density simpliy by applying quantum-mechanical particle density operator. But
-more importantly, the conversely is also true. From each non-negative particle
-density $n(\vec r)$, one can construct $N$ particle antisymmetric wavefunction
-as follows:
+The set $\mathcal N$ is not know and to ensure the problem is also
+mathematically well defined, one has to make a transition from
+v-representability to N-representability. Let us first redefine our problem in
+the form of Levy-Lieb functional:
+\begin{dgroup*}
+\begin{dmath}
+E_{LL}[n]=F_{LL}[n] + \int V_{ext}(\vec r)n(\vec r)
+\end{dmath}
+\begin{dmath}
+F_{LL}=\inf_{\psi \rightarrow n }\bra{\psi} \hat T + \hat W \ket{\psi},
+\end{dmath}
+\end{dgroup*}
+where $\psi \rightarrow n$ means that infimum has to be taken over all
+N-particle wave functions, i.e. over all N-representable densities. Levy-Lieb
+functional is an extension of Kohn-Sham energy functional and it has a
+minimum for exactly the same electron density $n(\vec r)$ \cite{advanced_course}:
+\begin{dgroup*}
+\begin{dmath}
+E_{0}= \min_{n}\left( \inf_{\psi \rightarrow n}\bra{\psi} \hat H +  \hat W +
+  V_{ext} \ket{\psi}  \right) = E_{LL}[N].
+\end{dmath}
+\end{dgroup*}
+The set of v-representable densities is a subset of  N-representable densities,
+since not all N-electron wave functions necessarily represent ground state for some
+external potential $V_{ext}$ \cite{Density-functional_theory_of_atoms_and_molecules}.
+
+The next very important result is that one can construct $N$-electron anti-symmetric wave function
+from every non-negative, normalizable function $ n(\vec r)$
+\cite{Density-functional_theory_of_atoms_and_molecules, advanced_course}. Thus, Levy-Lieb
+functional is, in principle, well defined for any non-negative, normalizable
+function $n(\vec r)$.
+
+To construct an anti-symmetric N-electron wave function one can use the
+following procedure \cite{Density-functional_theory_of_atoms_and_molecules, advanced_course}:
 
 \begin{dgroup*}
 \begin{dmath} \label{phi_k}
@@ -326,7 +357,7 @@ $\phi_k({\vec r})$:
 Above discussion tells us that minimization principle indeed holds for all
 non-negative, normalizable densities, but it says nothing about definitness of
 functional. For a given functional to be even defined for given particle
-density, the following has to hold separately:
+density, the following has to hold separately \cite{advanced_course}:
 \begin{dgroup*}
   \begin{dmath} \label{kinetic_inequality}
     \bra{\psi}\hat T \ket{\psi} < \infty
@@ -341,18 +372,23 @@ density, the following has to hold separately:
   After deeper mathematical analysis of above equations, on can deduce that both
   $\psi$ and $n^{1/2}$ have to be from Sobolev space defined by:
   \begin{equation}
-    \mathbb{H} = \left\{  f; f \in \mathbb{L}^2 \textrm{ and  } \nabla f \in \mathbb{L}^2  \right\},
+    \mathcal H = \left\{  f; f \in \mathcal L ^2 \textrm{ and  } \nabla f \in \mathcal{L}^2  \right\},
     \end{equation}
-  where $\mathbb{L}$ is a space of functions with finite second norm.
+  where $\mathcal{L}$ is a space of functions with finite second norm. The of
+  N-representable densities is now known exactly:
+  \begin{equation}
+    \mathcal{N} = \left\{  n; \int n(\vec r)\dif \vec r=N;    n \in \mathcal H \textrm{ and  } 0  \leq n(\vec r)  \right\},
+  \end{equation}
+  
   Equations \ref{kinetic_inequality} and \ref{interaction_inequality} have
   imposed restrictions on permissible wavefunctions and densities. Equation
   \ref{potential_inequality} also imposes restriction on potentials. They should
-  be of the form $\mathbb{L}^{3/2}+ \mathbb{L}^{\infty}$, thus every potential
+  be of the form $\mathcal{L}^{3/2}+ \mathcal{L}^{\infty}$, thus every potential
   should consist of a part with a finite $\infty$-norm and a part with a
   finite ${3/2}$-norm. As it turns out, the coluomb potential satisfies all requirements.
 
   \subsection{Variational formualtion}
-  After establishing 
+  
 
   
   \section{Kohn-Sham equations}
@@ -437,11 +473,12 @@ inter particle interaction (coulomb repulsion),
 \subsection{Exchange and correlation functionals}
 Exchange and correlation functionals are functionals which try to account for
 exchange and correlation interactions between particles. They can be of a
-different forms and in general one can roughly divide them into 4 groups:
+different forms and in general one can roughly divide them into 4 groups \cite{challenges_den_fun_theor}:
 
 \subsubsection{Lda}
 Local density approximation (lda) are functionals which depend only on
-density of particles (electrons). First functional of such form dates back into
+density of particles (electrons) \cite{challenges_den_fun_theor}.
+First functional of such form dates back into
 the year 1930, when the exchange interaction for uniform gas was discovered \cite{challenges_den_fun_theor}:
 \begin{equation} \label{electron_gas_exchange}
 E_{xc}^{lda}[n]=-\frac{3}{4}\left( \frac{3}{\pi} \right)^{1/3}\int n(\vec r)^{4/3}.
@@ -452,12 +489,13 @@ For every other purpose gga and hybrid functionals are much better suited.
 
 \subsubsection{Gga}
 Generalized gradient approximation (gga) functionals
-depend not only on density of particles but also on its gradient. Most commonly,
+depend not only on density of particles but also on its gradient \cite{challenges_den_fun_theor}. Most commonly,
 gga functionals are build upon (\ref{electron_gas_exchange}) \cite{challenges_den_fun_theor}:
 \begin{equation}
   E_{xc}^{gga}=\int n(\vec r)^{4/3}F(x);\quad x=|\nabla n(\vec r)|/n(\vec r)^{4/3}.
 \end{equation}
-One of most commonly used gga functional is PBE functional \cite{challenges_den_fun_theor}:
+One of most commonly used gga functional is PBE functional
+\cite{challenges_den_fun_theor} \cite{challenges_den_fun_theor}:
 \begin{equation}
   E_{xc}^{pbe}=-\int  n(\vec r)^{4/3}\left[ \frac{3}{4}\left(\frac{3}{\pi}\right)^{1/3} + \frac{\mu s}{1+ \mu s^2/\kappa} \right]; \quad s=x/(2(3\pi/2)^{1/3}).
 \end{equation}
@@ -467,10 +505,14 @@ and more time consuming calcualtion using hybrid or meta-gga functionals.
 
 \subsubsection{Meta-gga functionals}
 Since gga functionals have their short commings, meta-gga functionals were formed
-in belief that adding higher derivatives will improve accuracy. Meta-gga
-functionals are build upon gga functional form and add terms containing
-higher order derivatives of particle density. Functionals are formulated
-according to the following equation:
+in belief that adding higher derivatives will improve accuracy
+\cite{challenges_den_fun_theor}. Meta-gga functionals are build upon gga
+functional form and add terms containing higher order derivatives of particle
+density. Functionals are formulated according to the following equation
+\cite{challenges_den_fun_theor}:
+\begin{equation}
+  E_{xc}^{MGGA}= \int \rho^{4/3}F(\rho(\vec r) \nabla \rho(\vec r), \nabla^2 \rho(\vec r), \tau(\vec r)); \quad \tau=\frac{1}{2}\sum_i |\nabla \phi_i(\vec r)|^2
+   \end{equation}
 
 Meta-gga functionals have higher computational cost than gga functionals
 Unfortunately, as it turned out, they are not significantly better than gga
@@ -478,8 +520,13 @@ functionals and are thus not so popular.
 
 \subsubsection{Hybrid functionals}
 On the contrary to meta-gga functionals, hybrid functionals are much more
-successful. These functionals are not a continuation of lda, gga, meta-gga
-chain. Instead they incorporate exact Hartree-Fock exchange term. 
+successful \cite{challenges_den_fun_theor}. These functionals are not a
+continuation of lda, gga, meta-gga chain. Instead they incorporate exact
+Hartree-Fock exchange term \cite{challenges_den_fun_theor}:
+\begin{equation}
+  E^{hf}_{xc}=\sum_ {i,j,\sigma}\int\frac{\phi^*_{i\sigma}(\vec r) \phi_{j\sigma}(\vec r) \phi^*_{j\sigma}(\vec r') \phi_{i\sigma}(\vec r')}{|\vec r - \vec r'|}.
+\end{equation}
+
 
 \begin{figure}
   \centering
@@ -495,10 +542,21 @@ chain. Instead they incorporate exact Hartree-Fock exchange term.
     the one found in Hartree-Fock method). The last level utilizes all Kohn-Sham
     orbitals to calculate correlation and exchange interaction. This level also
     accounts for VdW interaction, which is caused by charge fluctuations and is
-    not accounted for in previous stages.
+    not accounted for in previous stages \cite{How_theo_simul_can_address}.
   }
   \label{bijection}
 \end{figure}
+
+\subsection{Van der Waals dispersion}
+Dft does not take into account effects caused by charge fluctuations. These Van
+der Waals effects can be taken care of with different methods. The most straight
+forward way is simply to add a special non-local functional (VdW-DF method). A similar
+approach is to use highly parameterized functionals, like metahybrid
+functionals (called DFs). Another way is to add dispersion-corrected atom-centered potentials (DCACPs).
+Recently, the most promising seems to be DFT-D method
+\cite{consis_accur_ab_initio_param}, which is just a sum of terms $CR^{-6}$
+over all atom pairs.
+
 \subsection{All electron dft calculations}
 All electron dft calculations are mostly used to calculate electronic structure of
 a single molecule. The molecule should not be too big, as otherwise the problem

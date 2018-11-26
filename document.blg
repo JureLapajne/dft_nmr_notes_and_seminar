@@ -17,7 +17,6 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 bbl.techrep is an unknown function---line 4925 of file myapsrevSLO.bst
 bbl.of is an unknown function---line 4969 of file myapsrevSLO.bst
 Database file #1: mybib.bib
-Warning--I didn't find a database entry for "advanced_cours"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
 Control: key (0) 
@@ -31,45 +30,53 @@ ptr=1, stack=
   
 ---the literal stack isn't empty for entry challenges_den_fun_theor
 while executing---line 6885 of file myapsrevSLO.bst
-You've used 3 entries,
+ptr=1, stack=
+  
+---the literal stack isn't empty for entry How_theo_simul_can_address
+while executing---line 6885 of file myapsrevSLO.bst
+ptr=1, stack=
+  
+---the literal stack isn't empty for entry consis_accur_ab_initio_param
+while executing---line 6885 of file myapsrevSLO.bst
+You've used 6 entries,
             5816 wiz_defined-function locations,
-            1613 strings with 15190 characters,
-and the built_in function-call counts, 2950 in all, are:
-= -- 185
-> -- 61
-< -- 20
-+ -- 20
-- -- 12
-* -- 455
-:= -- 307
-add.period$ -- 3
-call.type$ -- 3
-change.case$ -- 14
-chr.to.int$ -- 3
-cite$ -- 3
-duplicate$ -- 272
-empty$ -- 211
-format.name$ -- 33
-if$ -- 550
+            1641 strings with 16177 characters,
+and the built_in function-call counts, 6387 in all, are:
+= -- 376
+> -- 174
+< -- 42
++ -- 56
+- -- 40
+* -- 1028
+:= -- 633
+add.period$ -- 6
+call.type$ -- 6
+change.case$ -- 28
+chr.to.int$ -- 6
+cite$ -- 6
+duplicate$ -- 590
+empty$ -- 474
+format.name$ -- 96
+if$ -- 1238
 int.to.chr$ -- 1
-int.to.str$ -- 11
-missing$ -- 30
-newline$ -- 61
-num.names$ -- 9
-pop$ -- 109
+int.to.str$ -- 14
+missing$ -- 68
+newline$ -- 70
+num.names$ -- 18
+pop$ -- 228
 preamble$ -- 1
-purify$ -- 15
+purify$ -- 30
 quote$ -- 0
-skip$ -- 107
+skip$ -- 222
 stack$ -- 0
-substring$ -- 62
-swap$ -- 254
-text.length$ -- 6
+substring$ -- 135
+swap$ -- 570
+text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 8
-type$ -- 38
+type$ -- 84
 warning$ -- 0
-while$ -- 8
+while$ -- 16
 width$ -- 0
-write$ -- 78
-(There were 8 error messages)
+write$ -- 103
+(There were 10 error messages)

@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (1) enabled
-\begin{thebibliography}{3}%
+\begin{thebibliography}{6}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -67,6 +67,14 @@
   {title} {Density Functional Theory}}},\ Theoretical and Mathematical Physics\
   (\bibinfo  {publisher} {Springer Berlin Heidelberg},\ \bibinfo {year}
   {2011})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont
+  {Parr}(1989)}]{Density-functional_theory_of_atoms_and_molecules}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Parr}},\ }\href@noop {} {\emph {\bibinfo {title} {Density-functional theory
+  of atoms and molecules}}}\ (\bibinfo  {publisher} {Oxford University Press
+  Clarendon Press},\ \bibinfo {address} {New York Oxford England},\ \bibinfo
+  {year} {1989})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cohen}\ \emph {in~dr.}(2011)\citenamefont {Cohen},
   \citenamefont {Mori-S{\'a}nchez},\ in\ \citenamefont
   {Yang}}]{challenges_den_fun_theor}%
@@ -78,4 +86,38 @@
   }\href {\doibase 10.1021/cr200107z} {\bibfield  {journal} {\bibinfo
   {journal} {Chemical Reviews}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo
   {pages} {289} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Carchini}\ \emph {in~dr.}(2013)\citenamefont
+  {Carchini}, \citenamefont {Almora-Barrios}, \citenamefont
+  {Revilla-L{\'o}pez}, \citenamefont {Bellarosa}, \citenamefont
+  {Garc{\'i}a-Muelas}, \citenamefont {Garc{\'i}a-Melchor}, \citenamefont
+  {Pogodin}, \citenamefont {Błoński},\ in\ \citenamefont
+  {L{\'o}pez}}]{How_theo_simul_can_address}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Carchini}}, \bibinfo
+  {author} {\bibfnamefont {N.}~\bibnamefont {Almora-Barrios}}, \bibinfo
+  {author} {\bibfnamefont {G.}~\bibnamefont {Revilla-L{\'o}pez}}, \bibinfo
+  {author} {\bibfnamefont {L.}~\bibnamefont {Bellarosa}}, \bibinfo {author}
+  {\bibfnamefont {R.}~\bibnamefont {Garc{\'i}a-Muelas}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Garc{\'i}a-Melchor}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Pogodin}}, \bibinfo {author} {\bibfnamefont
+  {P.}~\bibnamefont {Błoński}}\bibfield  {author} {\ in\ \bibinfo {author}
+  {\bibfnamefont {N.}~\bibnamefont {L{\'o}pez}},\ }\bibfield  {title} {\emph
+  {How Theoretical Simulations Can Address the Structure and Activity of
+  Nanoparticles},\ }\href {\doibase 10.1007/s11244-013-0093-3} {\bibfield
+  {journal} {\bibinfo  {journal} {Topics in Catalysis}\ }\textbf {\bibinfo
+  {volume} {56}},\ \bibinfo {pages} {1262} (\bibinfo {year}
+  {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Grimme}\ \emph {in~dr.}(2010)\citenamefont {Grimme},
+  \citenamefont {Antony}, \citenamefont {Ehrlich},\ in\ \citenamefont
+  {Krieg}}]{consis_accur_ab_initio_param}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Grimme}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Antony}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Ehrlich}}\bibfield  {author} {\ in\ \bibinfo {author}
+  {\bibfnamefont {H.}~\bibnamefont {Krieg}},\ }\bibfield  {title} {\emph {A
+  Consistent and Accurate Ab Initio Parametrization of Density Functional
+  Dispersion Correction (DFT-D) for the 94 Elements H-Pu},\ }\href {\doibase
+  10.1063/1.3382344} {\bibfield  {journal} {\bibinfo  {journal} {The Journal of
+  Chemical Physics}\ }\textbf {\bibinfo {volume} {132}},\ \bibinfo {pages}
+  {154104} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
 \end{thebibliography}%
