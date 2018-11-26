@@ -549,13 +549,18 @@ Hartree-Fock exchange term \cite{challenges_den_fun_theor}:
 
 \subsection{Van der Waals dispersion}
 Dft does not take into account effects caused by charge fluctuations. These Van
-der Waals effects can be taken care of with different methods. The most straight
+der Waals effects can be taken care of with different methods.
+The most straight
 forward way is simply to add a special non-local functional (VdW-DF method). A similar
 approach is to use highly parameterized functionals, like metahybrid
-functionals (called DFs). Another way is to add dispersion-corrected atom-centered potentials (DCACPs).
-Recently, the most promising seems to be DFT-D method
+functionals (called DFs). Another way is to add dispersion-corrected
+atom-centered potentials (DCACPs). Recently, the most promising seems to be DFT-D method
 \cite{consis_accur_ab_initio_param}, which is just a sum of terms $CR^{-6}$
-over all atom pairs.
+over all atom pairs. As it is generally known, for large distances Van der Waals
+potential should decay as $R^{-6}$. It is obvious that DFT-D does obey this
+rule as also does VdW-DF method. The other two unfortunately do not obey it. As
+a consequence DF and DCACP usually cause underbinding.
+
 
 \subsection{All electron dft calculations}
 All electron dft calculations are mostly used to calculate electronic structure of
