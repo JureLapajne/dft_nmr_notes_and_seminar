@@ -13,6 +13,7 @@
     "whitfield13_comput_compl_elect_struc"
     "nobel_lecture"
     "birds_eye_view_densit_funct_theor"
-    "Density-functional_theory_of_atoms_and_molecules"))
+    "Density-functional_theory_of_atoms_and_molecules"
+    "deriv_lieb_defin_energ_funct"))
  :bibtex)
 

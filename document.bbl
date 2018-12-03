@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (1) enabled
-\begin{thebibliography}{6}%
+\begin{thebibliography}{7}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -75,6 +75,17 @@
   of atoms and molecules}}}\ (\bibinfo  {publisher} {Oxford University Press
   Clarendon Press},\ \bibinfo {address} {New York Oxford England},\ \bibinfo
   {year} {1989})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gal}\ in\ \citenamefont
+  {Geerlings}(2009)}]{deriv_lieb_defin_energ_funct}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Gal}}\ in\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Geerlings}},\
+  }\bibfield  {title} {\emph {Derivative of the Lieb Definition for the Energy
+  Functional of Density Functional Theory With Respect To the Particle Number
+  and the Spin Number},\ }\href {http://arxiv.org/abs/0903.3271v7} {\bibfield
+  {journal} {\bibinfo  {journal} {CoRR}\ } (\bibinfo {year} {2009})},\ \Eprint
+  {http://arxiv.org/abs/0903.3271} {arXiv:0903.3271 [physics.atom-ph]}
+  \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cohen}\ \emph {in~dr.}(2011)\citenamefont {Cohen},
   \citenamefont {Mori-S{\'a}nchez},\ in\ \citenamefont
   {Yang}}]{challenges_den_fun_theor}%

@@ -385,10 +385,44 @@ density, the following has to hold separately \cite{advanced_course}:
   \ref{potential_inequality} also imposes restriction on potentials. They should
   be of the form $\mathcal{L}^{3/2}+ \mathcal{L}^{\infty}$, thus every potential
   should consist of a part with a finite $\infty$-norm and a part with a
-  finite ${3/2}$-norm. As it turns out, the coluomb potential satisfies all requirements.
+  finite ${3/2}$-norm. As it turns out, the coluomb potential satisfies all
+  requirements.
 
-  \subsection{Variational formualtion}
+  Above restrictions narrow the possible choices for density function to be used
+  in Levy-Lieb functional. Unfortunately, although the domain of Levy-Lieb
+  functional has now become well defined it is still not suitable for practical
+  use.
+  A very serious drawback is that the functional is not convex and may lead to several
+  non-minimum stationary points \cite{deriv_lieb_defin_energ_funct} whereas
+  Convex functionals have only stationary points which represent local minima.
+  Furthermore, convex functionals are naturally differentiable. Fortunately Lieb has
+  constructed an alternative functional, which is convex and operates on the
+  same domain as Levy Lieb functional (densities and wave functions from sobolev
+  space). To define Lieb functional let's first define general energy functional: 
+  \begin{equation}
+    E[v] = \inf_{\psi}\left{\bra{\psi} H_v \ket{\psi}   \right}; \quad \psi \in \mathcal{H} \quad \mathrm{and} \quad ||\psi||_2=1
+  \end{equation}
   
+  Using this energy functional the Lieb functional is then defined as:
+  \begin{equation}
+    F_{L}[n] = \sup_{v} \left(  E[v] - \int n(\vec r) v(\vec r) \dif \vec r \right).
+  \end{equation}
+  Of course $F_{L}[n]$ is again defined only for v-reprezentable densities,
+  since calcualtion of $E[v]$ demands conversion $n \rightarrow \psi$. At the
+  first glance, it seems that we are back to the original Kohn-Sham functional
+  domain. Fortunately, it turn out that the domain of this functional can be
+  extended to densities $n(\vec r)$ for which $n^{1/2}(\vec r)$ belongs to
+  Sobolev space. The energy is then obtained by:
+  \begin{equation}
+    E[v]=\inf_n \left( F_L[n] + \int n(\vec r)v(\vec r)\dif \vec r   \right).
+  \end{equation}
+  
+By extended we mean that it has the same value for every potential belonging to
+$\mathcal{L}^{\infty}+ \mathcal{L}^{3/2} $. The proof can be found in \cite{advanced_course}.
+
+  
+  \subsection{Variational formualtion}
+
 
   
   \section{Kohn-Sham equations}
@@ -623,7 +657,7 @@ calculations, where core states are expanded in Gaussian functions and valence
 electrons in plane waves. As a consequence, all electron wave calculations are
 possible for crystals avoiding pseudo potential inaccuracy issues.
 
-%\newpage \phantomsection
+\newpage \phantomsection
 
 
 \addcontentsline{toc}{section}{Literatura}
