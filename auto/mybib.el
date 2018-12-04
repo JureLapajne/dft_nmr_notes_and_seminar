@@ -14,6 +14,7 @@
     "nobel_lecture"
     "birds_eye_view_densit_funct_theor"
     "Density-functional_theory_of_atoms_and_molecules"
-    "deriv_lieb_defin_energ_funct"))
+    "deriv_lieb_defin_energ_funct"
+    "densit_funct_theor_elect_struc"))
  :bibtex)
 

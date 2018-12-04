@@ -413,7 +413,7 @@ density, the following has to hold separately \cite{advanced_course}:
   domain. Fortunately, it turn out that the domain of this functional can be
   extended to densities $n(\vec r)$ for which $n^{1/2}(\vec r)$ belongs to
   Sobolev space. The energy is then obtained by:
-  \begin{equation}
+  \begin{equation} \label{Lieb_energy_v}
     E[v]=\inf_n \left( F_L[n] + \int n(\vec r)v(\vec r)\dif \vec r   \right).
   \end{equation}
   
@@ -421,30 +421,53 @@ By extended we mean that it has the same value for every potential belonging to
 $\mathcal{L}^{\infty}+ \mathcal{L}^{3/2} $. The proof can be found in \cite{advanced_course}.
 
   
-  \subsection{Variational formualtion}
-
-
-  
-  \section{Kohn-Sham equations}
-After establishing validity of the transition from single particle wave functions
-to particle density, we can now finally formulate out problem using $E[n]$. We
-are looking for a minimum value of energy functional $E[n]$ with respect to particle
-density n. Thus, what we have is an extremal problem: 
+\subsection{Variational formualtion}
+Equation \ref{Lieb_energy_v} defines an extremal problem. To solve it, we have to
+find minimium of the functional $E[n]$:
+\begin{equation} \label{Lieb_energy_n}
+ E[n(\vec r)] =  F_L[n(\vec r)] + \int n(\vec r)v(\vec r)\dif \vec r 
+  \end{equation}
+ with respect to $n(\vec r)$ and at the same time fulfill predefined particle
+ number requirement:
 \begin{equation} \label{extremal_problem}
   \frac{\delta }{\delta n(\vec r)} \left[  E[n(\vec r)] - \mu \left(  \int n(\vec r) -N \right)  \right] =0.
+\end{equation}
+Substituting \ref{Lieb_energy_n} into \ref{extremal_problem} yields
+(Euler-Lagrange equations):
+\begin{equation} \label{Lieb_derivative}
+  \frac{\delta F_L[n(\vec r)]}{\delta \n(\vec r)} = -v(\vec r) + \mu.
   \end{equation}
- $E[n]$ is unfortunately still defined only formally by
- $E[n]=\bra{\psi[n]}H\ket{\psi[n]}$. To actually solve the equation
- \ref{extremal_problem}, we have to define $E[n(\vec r)]$ in terms of particle density
- $n(\vec r)$.
+  The functional derivative of Lieb functional is well defined since the
+  functional is convex. The solution of eq. \ref{Lieb_derivative} represent
+  local minima of $E[n]$ and global minimum is the same as the one in original
+  N-particle hamiltonian. We have shown that our problem is mathematically well
+  defined. Unfortunately, $F_L[n]$ is in general an unknown functional of
+  $n(\vec r)$. This prevents us to use this theory unless we find the functional
+  $F[n (\vec r)]$ or at least a good aproximation. Fortunately a lot of work has
+  been done in this area and there do exist more or less good approximations,
+  depending on the system in question. In the next section we will have a look at dft in a more practical way.
+
+  \section{DFT in practice}
+  In the previous section we have had a look at mathematical side of dft and
+  it's connection a direct approach of solving N-particle hamiltonian with
+  3N coordinates. Now we would like use the knowledge from previous section to
+  formulate an approach to solve many electron problem based on Kohn-Sham
+  theorems, where particle density has the central role.
+  
+  \section{Kohn-Sham equations}
+  Kohn-Sham (KS) equations represent a standard and most common approach to dft.
+  They are based on energy functional dependent only on electron density. To
+  introduce them in a understandable and consistent fashion, let's start with a
+  non-interacting system. 
  
 \subsection{Noninteracting system}
- First let's have a look at the hamiltonian of $N$-particle non-interacting system
+Hamiltonian of $N$-particle non-interacting system can be written in the
+following way:
  \begin{equation} \label{noninteracting_H}
    \hat H =\hat  W_k + \hat V_{ext}, 
  \end{equation}
- where $V_{ext}$ is an external potential of multiplicative nature. The solution
- to this problem can be written in the form of Slater determinant:
+ where $V_{ext}$ is an external potential of multiplicative nature. It is well
+ known the solution to this problem can be written in the form of Slater determinant:
 
  \[
        \ket{\Phi_0} = \frac{1}{\sqrt{N!}}\det 
@@ -463,10 +486,12 @@ density n. Thus, what we have is an extremal problem:
    \left(-\frac{\hbar^2}{2m}\nabla^2 + \hat V_{ext}(\vec r)\right) \psi (\vec r) = \epsilon_i \psi(\vec r).
  \end{equation}
  Thus, using slater determinant we have effectively converted many particle
- problem with $3N$ coordinates to a single particle problem, which is the same as many-particle
- non-interacting system.
- The ground state of such a system is obtained using $N/2$ lowest states and
- putting 2 electrons into each state. Calculation of kinetic energy and particle
+ problem with $3N$ coordinates to a single particle problem. Of course the
+ particles in this case do not feel each other and motion of each particle
+ should not depend on other particles, so such a breakdown is completely natural.
+ 
+ The ground state of such a system is obtained using $N/2$ lowest states by
+ putting $2$  electrons into each state. Calculation of kinetic energy and particle
  density for such a system is also straight forward. As we can see, using Slater
  determinant as ansatz for the solution of noninteracting hamiltonian offers
  simple expressions for ground state wavefunction, kinetic energy and particle density
@@ -474,7 +499,7 @@ density n. Thus, what we have is an extremal problem:
 
 Now we would like to use similar construction to solve hamiltonian
 \ref{hamiltonian_density}. Using solution ansatz in the form of Slater
-determiant or some other sum of basis functions (commonly called orbitals) offers straight forward
+determinant or some other sum of basis functions (commonly called orbitals) offers straight forward
 calculation of kinetic energy and  particle density. It might be worth to point
 out that dft packages usually do not use Slater determinant to construct
 wavefunctions and calculate density. Using Slater determinant leads to
@@ -486,7 +511,9 @@ are allocated.
 
 First we have to ask ourselves if it is at all possible to convert interacting
 $N$ particle problem ($3N$ coordinates) to a single particle (3 coordinates)
-problem. To see how this is possible consider a $N$ particle interacting system
+problem. By this we mean if there exists a noninteracting system that has the
+same groud state electron density as original interacting system.
+To see how this is possible consider a $N$ particle interacting system
 with $n(\vec r)_{i0}$ ground state particle density. Since it represents ground
 state,  this particle density belongs to $\mathcal H$. Further, using equation
 (\ref{slater_determinant}) one can construct non-interacting many particle wave
@@ -501,8 +528,7 @@ Intuitively, one would expect that potential belonging to effective single
 particle hamiltonian should reflect the properties, geometry and potentials found
 in given many particle system. Hamiltonian naturally contains kinetic energy
 term, but it should also somehow contain inter particle interactions. These
-should again be functionals of  
-inter particle interaction (coulomb repulsion), 
+should again be functionals of inter particle interaction (coulomb repulsion), 
 
 \subsection{Exchange and correlation functionals}
 Exchange and correlation functionals are functionals which try to account for
