@@ -43,6 +43,7 @@
 \newlabel{interaction_inequality}{{27}{5}{Density functional theory - DFT}{equation.3.17}{}}
 \newlabel{potential_inequality}{{28}{5}{Density functional theory - DFT}{equation.3.17}{}}
 \citation{advanced_course}
+\citation{advanced_course}
 \newlabel{Lieb_energy_v}{{33}{6}{Density functional theory - DFT}{equation.3.33}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Variational formualtion}{6}{subsection.3.1}}
 \newlabel{Lieb_energy_n}{{34}{6}{Variational formualtion}{equation.3.34}{}}
@@ -52,6 +53,10 @@
 \@writefile{toc}{\contentsline {section}{\numberline {5}Kohn-Sham equations}{7}{section.5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Noninteracting system}{7}{subsection.5.1}}
 \newlabel{noninteracting_H}{{37}{7}{Noninteracting system}{equation.5.37}{}}
+\citation{advanced_course}
+\newlabel{KS_system}{{44}{8}{Noninteracting system}{equation.5.44}{}}
+\newlabel{hartree_term1}{{45}{8}{Noninteracting system}{equation.5.45}{}}
+\citation{orca}
 \citation{challenges_den_fun_theor}
 \citation{challenges_den_fun_theor}
 \citation{challenges_den_fun_theor}
@@ -59,32 +64,35 @@
 \citation{challenges_den_fun_theor}
 \citation{challenges_den_fun_theor}
 \citation{challenges_den_fun_theor}
+\newlabel{hartree_term2}{{46}{9}{Noninteracting system}{equation.5.46}{}}
+\newlabel{ext_potential_functional}{{47}{9}{Noninteracting system}{equation.5.47}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Exchange and correlation functionals}{9}{subsection.5.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Lda}{9}{subsubsection.5.2.1}}
+\newlabel{electron_gas_exchange}{{49}{9}{Lda}{equation.5.49}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Gga}{9}{subsubsection.5.2.2}}
 \citation{challenges_den_fun_theor}
 \citation{challenges_den_fun_theor}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Exchange and correlation functionals}{8}{subsection.5.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Lda}{8}{subsubsection.5.2.1}}
-\newlabel{electron_gas_exchange}{{39}{8}{Lda}{equation.5.39}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Gga}{8}{subsubsection.5.2.2}}
 \citation{challenges_den_fun_theor}
 \citation{challenges_den_fun_theor}
 \citation{How_theo_simul_can_address}
 \citation{How_theo_simul_can_address}
 \citation{consis_accur_ab_initio_param}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.3}Meta-gga functionals}{9}{subsubsection.5.2.3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4}Hybrid functionals}{9}{subsubsection.5.2.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Van der Waals dispersion}{9}{subsection.5.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}All electron dft calculations}{9}{subsection.5.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Dft using pseudopotentials}{9}{subsection.5.5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Jacob\IeC {\textquoteright }s ladder of exchange-correlation functional approximations employed in dft calculations. Hartree world represents starting level where only weak interparticle interaction is present. Lda approxiamtion covers functionals which depend only on particle density. Gga additionally depends on gradient of particle density, while mega-gga incorporates higher order derivatives of particle density and in some cases even kinetic energy of orbitals ($\tau $). Hyper-gga functionals, also called hybrid functionals, stage represents functionals which contain exact exchange calculation (i.e. the one found in Hartree-Fock method). The last level utilizes all Kohn-Sham orbitals to calculate correlation and exchange interaction. This level also accounts for VdW interaction, which is caused by charge fluctuations and is not accounted for in previous stages \cite  {How_theo_simul_can_address}. \relax }}{10}{figure.caption.2}}
-\newlabel{bijection}{{2}{10}{Jacob’s ladder of exchange-correlation functional approximations employed in dft calculations. Hartree world represents starting level where only weak interparticle interaction is present. Lda approxiamtion covers functionals which depend only on particle density. Gga additionally depends on gradient of particle density, while mega-gga incorporates higher order derivatives of particle density and in some cases even kinetic energy of orbitals ($\tau $). Hyper-gga functionals, also called hybrid functionals, stage represents functionals which contain exact exchange calculation (i.e. the one found in Hartree-Fock method). The last level utilizes all Kohn-Sham orbitals to calculate correlation and exchange interaction. This level also accounts for VdW interaction, which is caused by charge fluctuations and is not accounted for in previous stages \cite {How_theo_simul_can_address}. \relax }{figure.caption.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Dft in crystals}{11}{section.6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.3}Meta-gga functionals}{10}{subsubsection.5.2.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4}Hybrid functionals}{10}{subsubsection.5.2.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Van der Waals dispersion}{10}{subsection.5.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}All electron dft calculations}{10}{subsection.5.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Jacob\IeC {\textquoteright }s ladder of exchange-correlation functional approximations employed in dft calculations. Hartree world represents starting level where only weak interparticle interaction is present. Lda approxiamtion covers functionals which depend only on particle density. Gga additionally depends on gradient of particle density, while mega-gga incorporates higher order derivatives of particle density and in some cases even kinetic energy of orbitals ($\tau $). Hyper-gga functionals, also called hybrid functionals, stage represents functionals which contain exact exchange calculation (i.e. the one found in Hartree-Fock method). The last level utilizes all Kohn-Sham orbitals to calculate correlation and exchange interaction. This level also accounts for VdW interaction, which is caused by charge fluctuations and is not accounted for in previous stages \cite  {How_theo_simul_can_address}. \relax }}{11}{figure.caption.2}}
+\newlabel{bijection}{{2}{11}{Jacob’s ladder of exchange-correlation functional approximations employed in dft calculations. Hartree world represents starting level where only weak interparticle interaction is present. Lda approxiamtion covers functionals which depend only on particle density. Gga additionally depends on gradient of particle density, while mega-gga incorporates higher order derivatives of particle density and in some cases even kinetic energy of orbitals ($\tau $). Hyper-gga functionals, also called hybrid functionals, stage represents functionals which contain exact exchange calculation (i.e. the one found in Hartree-Fock method). The last level utilizes all Kohn-Sham orbitals to calculate correlation and exchange interaction. This level also accounts for VdW interaction, which is caused by charge fluctuations and is not accounted for in previous stages \cite {How_theo_simul_can_address}. \relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Dft using pseudopotentials}{12}{subsection.5.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Dft in crystals}{12}{section.6}}
 \bibstyle{myapsrevSLO}
 \bibdata{mybib}
 \bibcite{nobel_lecture}{{1}{1999}{{Kohn}}{{}}}
 \bibcite{advanced_course}{{2}{2011}{{Engel\ in\ Dreizler}}{{}}}
 \bibcite{Density-functional_theory_of_atoms_and_molecules}{{3}{1989}{{Parr}}{{}}}
 \bibcite{deriv_lieb_defin_energ_funct}{{4}{2009}{{Gal\ in\ Geerlings}}{{}}}
-\bibcite{challenges_den_fun_theor}{{5}{2011}{{Cohen\ \emph  {in~dr.}}}{{Cohen, Mori-S{\'a}nchez,\ in\ Yang}}}
-\bibcite{How_theo_simul_can_address}{{6}{2013}{{Carchini\ \emph  {in~dr.}}}{{Carchini, Almora-Barrios, Revilla-L{\'o}pez, Bellarosa, Garc{\'i}a-Muelas, Garc{\'i}a-Melchor, Pogodin, B\IeC {\l }o\IeC {\'n}ski,\ in\ L{\'o}pez}}}
-\bibcite{consis_accur_ab_initio_param}{{7}{2010}{{Grimme\ \emph  {in~dr.}}}{{Grimme, Antony, Ehrlich,\ in\ Krieg}}}
-\@writefile{toc}{\contentsline {section}{Literatura}{12}{section*.3}}
+\bibcite{orca}{{5}{2017}{{Neese}}{{}}}
+\bibcite{challenges_den_fun_theor}{{6}{2011}{{Cohen\ \emph  {in~dr.}}}{{Cohen, Mori-S{\'a}nchez,\ in\ Yang}}}
+\bibcite{How_theo_simul_can_address}{{7}{2013}{{Carchini\ \emph  {in~dr.}}}{{Carchini, Almora-Barrios, Revilla-L{\'o}pez, Bellarosa, Garc{\'i}a-Muelas, Garc{\'i}a-Melchor, Pogodin, B\IeC {\l }o\IeC {\'n}ski,\ in\ L{\'o}pez}}}
+\bibcite{consis_accur_ab_initio_param}{{8}{2010}{{Grimme\ \emph  {in~dr.}}}{{Grimme, Antony, Ehrlich,\ in\ Krieg}}}
+\@writefile{toc}{\contentsline {section}{Literatura}{14}{section*.3}}

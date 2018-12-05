@@ -38,45 +38,45 @@ ptr=1, stack=
   
 ---the literal stack isn't empty for entry consis_accur_ab_initio_param
 while executing---line 6885 of file myapsrevSLO.bst
-You've used 7 entries,
+You've used 8 entries,
             5816 wiz_defined-function locations,
-            1649 strings with 16438 characters,
-and the built_in function-call counts, 7266 in all, are:
-= -- 437
-> -- 193
-< -- 47
-+ -- 62
-- -- 44
-* -- 1166
-:= -- 725
-add.period$ -- 7
-call.type$ -- 7
-change.case$ -- 33
-chr.to.int$ -- 7
-cite$ -- 7
-duplicate$ -- 677
-empty$ -- 542
-format.name$ -- 109
-if$ -- 1406
+            1657 strings with 16629 characters,
+and the built_in function-call counts, 8082 in all, are:
+= -- 501
+> -- 204
+< -- 52
++ -- 66
+- -- 46
+* -- 1276
+:= -- 816
+add.period$ -- 8
+call.type$ -- 8
+change.case$ -- 38
+chr.to.int$ -- 8
+cite$ -- 8
+duplicate$ -- 753
+empty$ -- 607
+format.name$ -- 114
+if$ -- 1569
 int.to.chr$ -- 1
-int.to.str$ -- 15
-missing$ -- 77
-newline$ -- 73
-num.names$ -- 21
-pop$ -- 268
+int.to.str$ -- 16
+missing$ -- 87
+newline$ -- 76
+num.names$ -- 24
+pop$ -- 299
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 40
 quote$ -- 0
-skip$ -- 252
+skip$ -- 287
 stack$ -- 0
-substring$ -- 148
-swap$ -- 649
-text.length$ -- 22
+substring$ -- 177
+swap$ -- 718
+text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 8
-type$ -- 97
+type$ -- 109
 warning$ -- 0
-while$ -- 18
+while$ -- 21
 width$ -- 0
-write$ -- 112
+write$ -- 121
 (There were 10 error messages)

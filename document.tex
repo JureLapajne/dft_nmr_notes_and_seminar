@@ -400,7 +400,10 @@ density, the following has to hold separately \cite{advanced_course}:
   same domain as Levy Lieb functional (densities and wave functions from sobolev
   space). To define Lieb functional let's first define general energy functional: 
   \begin{equation}
-    E[v] = \inf_{\psi}\left{\bra{\psi} H_v \ket{\psi}   \right}; \quad \psi \in \mathcal{H} \quad \mathrm{and} \quad ||\psi||_2=1
+    E[v] = \inf_{\psi}\left\{   \bra{ \psi } H_v \ket{ \psi }  \right\};
+    \quad \psi \in \mathcal {H}
+    \quad \mathrm{and}
+    \quad ||\psi||_2=1.
   \end{equation}
   
   Using this energy functional the Lieb functional is then defined as:
@@ -435,16 +438,18 @@ find minimium of the functional $E[n]$:
 Substituting \ref{Lieb_energy_n} into \ref{extremal_problem} yields
 (Euler-Lagrange equations):
 \begin{equation} \label{Lieb_derivative}
-  \frac{\delta F_L[n(\vec r)]}{\delta \n(\vec r)} = -v(\vec r) + \mu.
+  \frac{\delta F_L[n(\vec r)]}{\delta n(\vec r)} = -v(\vec r) + \mu.
   \end{equation}
   The functional derivative of Lieb functional is well defined since the
-  functional is convex. The solution of eq. \ref{Lieb_derivative} represent
-  local minima of $E[n]$ and global minimum is the same as the one in original
-  N-particle hamiltonian. We have shown that our problem is mathematically well
+  functional is convex and defined on a dense enough set. Sketch of the proof
+  and further references can be found in \cite{advanced_course}. The solution of
+  eq. \ref{Lieb_derivative} represent local minima of $E[n]$ and global minimum
+  is the same as the one in original N-particle hamiltonian. This result tells
+  us that the problem is mathematically well
   defined. Unfortunately, $F_L[n]$ is in general an unknown functional of
   $n(\vec r)$. This prevents us to use this theory unless we find the functional
-  $F[n (\vec r)]$ or at least a good aproximation. Fortunately a lot of work has
-  been done in this area and there do exist more or less good approximations,
+  $F[n (\vec r)]$ or at least a good approximation. A lot of work has
+  been done in this area and there do exist some more or less good approximations,
   depending on the system in question. In the next section we will have a look at dft in a more practical way.
 
   \section{DFT in practice}
@@ -452,12 +457,14 @@ Substituting \ref{Lieb_energy_n} into \ref{extremal_problem} yields
   it's connection a direct approach of solving N-particle hamiltonian with
   3N coordinates. Now we would like use the knowledge from previous section to
   formulate an approach to solve many electron problem based on Kohn-Sham
-  theorems, where particle density has the central role.
+  theorems, where particle density has the central role. We will concentrate on
+  construction of energy functional $E[n(\vec r)]$, which should approximate
+  $F[n(\vec r)]$ as well as possible.
   
   \section{Kohn-Sham equations}
   Kohn-Sham (KS) equations represent a standard and most common approach to dft.
-  They are based on energy functional dependent only on electron density. To
-  introduce them in a understandable and consistent fashion, let's start with a
+  They are based on energy functional dependent only on electron density $n(\vec
+  r)$. To introduce them in an understandable and consistent fashion, let's start with a
   non-interacting system. 
  
 \subsection{Noninteracting system}
@@ -495,41 +502,100 @@ following way:
  density for such a system is also straight forward. As we can see, using Slater
  determinant as ansatz for the solution of noninteracting hamiltonian offers
  simple expressions for ground state wavefunction, kinetic energy and particle density
- calculation.  
-
-Now we would like to use similar construction to solve hamiltonian
+ calculation. Particle density corresponding to such wave function can be written
+ using the following expression:
+ \begin{equation}
+   n_0(\vec r) = \sum_{\sigma=\uparrow,\downarrow}\sum_i\Theta(\epsilon_F-\epsilon_i)|\phi_i(\vec r, \sigma)|^2.
+ \end{equation}
+ The density of electrons is just a sum over all occupied orbitals. Now let's
+ remember Kohn-Sham theorems, which state that ground state density is unique
+ functional of ground state wave function:
+ \begin{equation}
+   \ket{\psi}= \ket{\psi(n(\vec r))}.
+ \end{equation}
+ One can show that there exists an even stronger connection; every $\phi_i$ is a
+ uniquely determined by ground state density. One can see this by considering a single
+ particle problem using the same potential $V_{ext}$ as found in eq.
+ (\ref{noninteracting_H}) and then gradually adding particles, thus:
+ \begin{equation}
+   \ket{\phi_i}= \ket{\phi_i(n(\vec r))}.
+ \end{equation}
+ Using this relations we can define HK functional:
+ \begin{equation}
+   E_s[n(\vec r)] = \bra{\psi[n(\vec r)]}T \ket{\psi(n(\vec r))} + \int \dif \vec r n(\vec r) V_{ext}(\vec r),
+   \end{equation}
+ where
+\begin{equation}
+   T[n(\vec r)] = \sum_i\Theta(\epsilon_F-\epsilon_i)  \sum_{\sigma=\uparrow,\downarrow}\int \phi^*_\sigma(\vec r)\frac{-i\hbar\nabla^2}{2m}\phi_\sigma(\vec r),
+ \end{equation}
+ where we have implicitly used $\ket{\phi_i(\vec r)} = \ket{ \phi[n(\vec r)] }$.
+ In practice this in not necessary, since functions $\phi(\vec r)$ are known -
+ they are direct result of calulation.
+ 
+Now we would like to use a similar construction to solve hamiltonian
 \ref{hamiltonian_density}. Using solution ansatz in the form of Slater
 determinant or some other sum of basis functions (commonly called orbitals) offers straight forward
-calculation of kinetic energy and  particle density. It might be worth to point
-out that dft packages usually do not use Slater determinant to construct
-wavefunctions and calculate density. Using Slater determinant leads to
-differential equations for $\phi_k$ wavefunctions. Instead, they usually use
-large sets of basis functions, which in the end lead to eigenvalue problem.
-Solution is then given by populating lowest energy orbitals until all electrons
-are allocated. 
+calculation of kinetic energy and  particle density. Using Slater determinant leads to
+differential equations for $\phi_k$ wavefunctions. Modern computational packages
+instead of solving differential equations usually use
+large sets of basis functions, which in the end lead to over determined set of
+algebraic equations. Solution is then given by populating lowest energy orbitals until all electrons
+are allocated.
  
 
 First we have to ask ourselves if it is at all possible to convert interacting
-$N$ particle problem ($3N$ coordinates) to a single particle (3 coordinates)
+$N$ particle problem ($3N$ coordinates) to an effectively single particle (3 coordinates)
 problem. By this we mean if there exists a noninteracting system that has the
 same groud state electron density as original interacting system.
 To see how this is possible consider a $N$ particle interacting system
-with $n(\vec r)_{i0}$ ground state particle density. Since it represents ground
+with $n(\vec r)$ ground state particle density. Since it represents ground
 state,  this particle density belongs to $\mathcal H$. Further, using equation
 (\ref{slater_determinant}) one can construct non-interacting many particle wave
 function, which minimizes hamiltonian of the form (\ref{noninteracting_H})
-for some potential $V_{ext}$. Such system is called Kohn-Sham system.
-Thus, we see that there exists a non-interacting system with exactly the same ground state particle density as originally
-considered interacting system. The question still remains what kind of potential
-should one use in place of many particle interaction operators still remains
-open.
+for some potential $V_{ext}$. Such a system is called Kohn-Sham system/equations.
+Thus, we see that there exists a non-interacting system with exactly the same
+ground state particle density as originally considered interacting system. The
+question still remains what kind of potential should one use in place of many
+particle interaction operators still remains open.
 
 Intuitively, one would expect that potential belonging to effective single
 particle hamiltonian should reflect the properties, geometry and potentials found
 in given many particle system. Hamiltonian naturally contains kinetic energy
-term, but it should also somehow contain inter particle interactions. These
-should again be functionals of inter particle interaction (coulomb repulsion), 
+term, but it should also somehow contain inter particle interactions. Usually
+Kohn-Sham hamiltonian consists of kinetic energy term, Hartree inter particle
+interaction, external potential and exchange-correlation functional \cite{advanced_course}:
+\begin{equation} \label{KS_system}
+  E[n(\vec r)]=T[n(\vec r)]] + E_H[n(\vec r)]] + E_{ext}[n(\vec r)]] + E_{xc}[n(\vec r)]].
+\end{equation}
+Hartree term is just Coulomb repulsion:
+\begin{equation} \label{hartree_term1}
+  E_H[n(\vec r)] = \int n(\vec r)w(\vec r, \vec r') n(\vec r')\dif \vec r' \dif \vec r
+\end{equation}
+including self-repulsion. It is better to calculate Coulomb term using KS wave functions:
 
+\begin{equation} \label{hartree_term2}
+   E_H[n(\vec r)] =  \sum_i\Theta(\epsilon_F-\epsilon_i)  \sum_{\sigma=\uparrow,\downarrow}\int \phi^*_\sigma(\vec r')w(\vec r, \vec r')\phi_\sigma(\vec r).
+  \end{equation}
+Computational packages often employ different approximation and optimizations
+for faster calculation of this term \cite{orca}. Functional belonging to
+external potential is well known:
+\begin{equation} \label{ext_potential_functional}
+  E_{ext}[n(\vec r)] = \int n(\vec r) V_{ext}(\vec r) \dif \vec r.
+\end{equation}
+Unfortunately exchange-correlation functional is much less well known. It is
+defined by the equation (\ref{KS_system}) and contains all inter-particle
+interactions not contained in $T[n(\vec r)]$. Hartree (\ref{hartree_term2}) and external potential
+energy functionals (\ref{ext_potential_functional}) are exact functionals, e.g.
+if $\phi_i(\vec r)$ are exact wave functions of electrons in a given system,
+then these two functional will produce correct Coulomb repulsion energy and
+correct energy of particles in external potential.  The same can not be said for
+kinetic energy functional. The difference between exact kinetic energy
+of interacting system and $T[n(\vec r)]$ is the exchange energy we are looking for:
+\begin{equation}
+  E_{xc}^{\psi_0}-E_{xc}[n(\vec r)] = \bra{\psi_0}\hat T \ket{\psi_0} - \bra{\Phi_0}\hat T \ket{\Phi_0}.
+  \end{equation}
+
+  
 \subsection{Exchange and correlation functionals}
 Exchange and correlation functionals are functionals which try to account for
 exchange and correlation interactions between particles. They can be of a
@@ -541,7 +607,7 @@ density of particles (electrons) \cite{challenges_den_fun_theor}.
 First functional of such form dates back into
 the year 1930, when the exchange interaction for uniform gas was discovered \cite{challenges_den_fun_theor}:
 \begin{equation} \label{electron_gas_exchange}
-E_{xc}^{lda}[n]=-\frac{3}{4}\left( \frac{3}{\pi} \right)^{1/3}\int n(\vec r)^{4/3}.
+E_{xc}^{lda}[n]=-\frac{3}{4}\left( \frac{3}{\pi} \right)^{1/3}\int n(\vec r)^{4/3} \dif \vec r.
 \end{equation}
 Today, there exist multiple other lda exchange functionals, but for most cases
 they are not very useful. Their only advantage are fast computational times.
