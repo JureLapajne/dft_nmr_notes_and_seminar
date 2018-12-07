@@ -504,7 +504,7 @@ following way:
  simple expressions for ground state wavefunction, kinetic energy and particle density
  calculation. Particle density corresponding to such wave function can be written
  using the following expression:
- \begin{equation}
+ \begin{equation} \label{KS_density}
    n_0(\vec r) = \sum_{\sigma=\uparrow,\downarrow}\sum_i\Theta(\epsilon_F-\epsilon_i)|\phi_i(\vec r, \sigma)|^2.
  \end{equation}
  The density of electrons is just a sum over all occupied orbitals. Now let's
@@ -525,7 +525,7 @@ following way:
    E_s[n(\vec r)] = \bra{\psi[n(\vec r)]}T \ket{\psi(n(\vec r))} + \int \dif \vec r n(\vec r) V_{ext}(\vec r),
    \end{equation}
  where
-\begin{equation}
+\begin{equation} \label{KS_kinetic_term}
    T[n(\vec r)] = \sum_i\Theta(\epsilon_F-\epsilon_i)  \sum_{\sigma=\uparrow,\downarrow}\int \phi^*_\sigma(\vec r)\frac{-i\hbar\nabla^2}{2m}\phi_\sigma(\vec r),
  \end{equation}
  where we have implicitly used $\ket{\phi_i(\vec r)} = \ket{ \phi[n(\vec r)] }$.
@@ -592,8 +592,60 @@ correct energy of particles in external potential.  The same can not be said for
 kinetic energy functional. The difference between exact kinetic energy
 of interacting system and $T[n(\vec r)]$ is the exchange energy we are looking for:
 \begin{equation}
-  E_{xc}^{\psi_0}-E_{xc}[n(\vec r)] = \bra{\psi_0}\hat T \ket{\psi_0} - \bra{\Phi_0}\hat T \ket{\Phi_0}.
-  \end{equation}
+  E_{xc}^{\psi_0}-E_{xc}[n(\vec r)] = \bra{\psi_0}\hat T \ket{\psi_0} - \bra{\Phi_0}\hat T \ket{\Phi_0},
+\end{equation}
+where $\ket{\psi_0}$ is the true ground state of interacting system. $\ket
+\psi_0$ and $\ket \Phi_0$ may yield completely different electronic states,
+but the aim here is to find such $\ket{Phi_0}$ that both functions yield the
+same electron density. *check page 62 and add here*
+
+Our goal is to minimize hamiltonian of the form (\ref{KS_system}) using Slater
+determinant as ansatz for many electron system and density calculation. By
+considering (\ref{ext_potential_functional}) and (\ref{KS_kinetic_term}) one can
+write KS equation:  
+\begin{equation}
+  \left( \hat T + v_{ext} + E_H[n(\vec r)]]  + E_{xc}[n(\vec r)]] \right) \ket \phi_i =  \epsilon_i \phi_i,  
+\end {equation}
+where density $n(\vec r)$  has to be calculated according to equation
+(\ref{KS_density}). The functions $\phi_i$ are produced by directly solving
+differential equation. They are usually determined by inserting ansatz in the
+form of gaussian basis functions from which one can
+then construct correct single particle states. Multiplying equation by $\bra
+\phi_j$ from the left side yields generalized eigenvalue problem:
+\begin{equation}
+  \bra {\phi_j} \left( \hat T + v_{ext}(\vec r) + E_H[n(\vec r)]]  + E_{xc}[n(\vec r)]] \right) \ket{\phi_i} =  \epsilon_i \braket{ \phi_j |\phi_i }.
+\end {equation}
+
+System obviously has to be solved in a self consistent fashion
+\ref{self_consistent_scheme}. One starts with the positioning of nuclei into
+desired positions and construction of nuclei potentials.In parallel with the
+alst step some meaningful density should be constructed. The next step is to
+calculate functionals $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$. In the next step
+equations are solved and new density is calculated. The latter is then used to
+construct new $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$ which are again used to
+solve KS equation. The procedure is repeated until the change in density is not
+small enough. 
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.65\textwidth]{self_consistent_scheme.png}.
+  \caption{Self consistent scheme depicting the procedure in which Kohn Sham
+    equations are solved. One starts positioning nuclei into
+    desired positions. The next step is to construct potential of nuclei and in
+    parallel one can also construct starting approximation for electronic wave
+    function. The latter is then used for constructing all other functionals of
+    density. After all functionals have been established one can solve KS
+    equations, construct new density and repeat the described procedure until
+    the change in density is not small enough.
+  }
+  \label{self_consistent_scheme}
+\end{figure}
+
+When given a certain system functionals $T$, $E_H$ and $V_{ext}$ are precisely
+determined. $E_{xc}$ is not. It is thus the determining factor for how well KS
+equations describe our system. Below, we will have a look at what kind of
+functionals are used today.
 
   
 \subsection{Exchange and correlation functionals}
