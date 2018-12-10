@@ -681,7 +681,12 @@ interacting system \cite{advanced_course}.
 \subsection{Exchange and correlation functionals}
 Exchange and correlation functionals are functionals which try to account for
 exchange and correlation interactions between particles/electrons. They can be of a
-different forms and in general one can roughly divide them into 4 groups \cite{challenges_den_fun_theor}:
+different forms and in general one can roughly divide them into 4 groups
+\cite{challenges_den_fun_theor} - Lda, Gga, meta-Gga and Hybrid functionals.
+The first three group all have in common that they explicitly depend on density
+of particles. This causes a self-interaction error, which causes excessive
+delocalization of electrons. As a solution to these problems hybrid
+functionals, which contain exact Hartree-Fock exchange, have been proposed.
 
 \subsubsection{Lda}
 Local density approximation (lda) are functionals which depend only on
@@ -692,7 +697,7 @@ the year 1930, when the exchange interaction for uniform gas was discovered \cit
 E_{xc}^{lda}[n]=-\frac{3}{4}\left( \frac{3}{\pi} \right)^{1/3}\int n(\vec r)^{4/3} \dif \vec r.
 \end{equation}
 Today, there exist multiple other lda exchange functionals, but for most cases
-they are not very useful as they tend to over delocalize electrons. Their only advantage are fast computational times.
+they are not very useful. Their only advantage are fast computational times.
 For every other purpose gga and hybrid functionals are much better suited.
 
 \subsubsection{Gga}
