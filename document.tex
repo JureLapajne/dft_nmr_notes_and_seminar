@@ -680,7 +680,7 @@ interacting system \cite{advanced_course}.
   
 \subsection{Exchange and correlation functionals}
 Exchange and correlation functionals are functionals which try to account for
-exchange and correlation interactions between particles. They can be of a
+exchange and correlation interactions between particles/electrons. They can be of a
 different forms and in general one can roughly divide them into 4 groups \cite{challenges_den_fun_theor}:
 
 \subsubsection{Lda}
@@ -692,7 +692,7 @@ the year 1930, when the exchange interaction for uniform gas was discovered \cit
 E_{xc}^{lda}[n]=-\frac{3}{4}\left( \frac{3}{\pi} \right)^{1/3}\int n(\vec r)^{4/3} \dif \vec r.
 \end{equation}
 Today, there exist multiple other lda exchange functionals, but for most cases
-they are not very useful. Their only advantage are fast computational times.
+they are not very useful as they tend to over delocalize electrons. Their only advantage are fast computational times.
 For every other purpose gga and hybrid functionals are much better suited.
 
 \subsubsection{Gga}
@@ -718,6 +718,7 @@ in belief that adding higher derivatives will improve accuracy
 functional form and add terms containing higher order derivatives of particle
 density. Functionals are formulated according to the following equation
 \cite{challenges_den_fun_theor}:
+
 \begin{equation}
   E_{xc}^{MGGA}= \int \rho^{4/3}F(\rho(\vec r) \nabla \rho(\vec r), \nabla^2 \rho(\vec r), \tau(\vec r)); \quad \tau=\frac{1}{2}\sum_i |\nabla \phi_i(\vec r)|^2
    \end{equation}
@@ -725,6 +726,7 @@ density. Functionals are formulated according to the following equation
 Meta-gga functionals have higher computational cost than gga functionals
 Unfortunately, as it turned out, they are not significantly better than gga
 functionals and are thus not so popular.
+
 
 \subsubsection{Hybrid functionals}
 On the contrary to meta-gga functionals, hybrid functionals are much more
