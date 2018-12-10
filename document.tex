@@ -596,7 +596,7 @@ of interacting system and $T[n(\vec r)]$ is the exchange energy we are looking f
 \end{equation}
 where $\ket{\psi_0}$ is the true ground state of interacting system. $\ket
 \psi_0$ and $\ket \Phi_0$ may yield completely different electronic states,
-but the aim here is to find such $\ket{Phi_0}$ that both functions yield the
+but the aim here is to find such $\ket{\Phi_0}$ that both functions yield the
 same electron density. *check page 62 and add here*
 
 Our goal is to minimize hamiltonian of the form (\ref{KS_system}) using Slater
@@ -619,12 +619,14 @@ then construct correct single particle states. Multiplying equation by $\bra
 System obviously has to be solved in a self consistent fashion
 \ref{self_consistent_scheme}. One starts with the positioning of nuclei into
 desired positions and construction of nuclei potentials.In parallel with the
-alst step some meaningful density should be constructed. The next step is to
+last step starting electron orbitals $\phi^0_i$ are be constructed. Usually they are written
+as a series of Gaussian functions. Electron density $n^0$ can then be quickly
+calculated from constructed orbitals. The next step is to
 calculate functionals $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$. In the next step
-equations are solved and new density is calculated. The latter is then used to
+equations are solved. The solution are new orbitals $\phi_i^1$  and from them new density $n^1$ is calculated. The latter is then used to
 construct new $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$ which are again used to
-solve KS equation. The procedure is repeated until the change in density is not
-small enough. 
+solve KS equation from which one gets new orbitals $\phi^3$. The procedure is
+repeated until the change in density or energy is not small enough. 
 
 
 \begin{figure}
@@ -643,10 +645,38 @@ small enough.
 \end{figure}
 
 When given a certain system functionals $T$, $E_H$ and $V_{ext}$ are precisely
-determined. $E_{xc}$ is not. It is thus the determining factor for how well KS
-equations describe our system. Below, we will have a look at what kind of
-functionals are used today.
+determined. $E_{xc}$ is not. It is thus the determining factor for how well the KS
+equations describe our system. We will present various functionals used today in
+one of the next chapters.
 
+\subsection{Degenerate ground state}
+So far we have talked little about the problem of degeneracy of KS states. In
+general degeneracy is not a problem, except at Fermi level. When there are more
+KS states than there are electrons, several possible ground states and thus also
+particle densities can be constructed. In such cases density matrix arising from
+several Slater determinants is constructed:
+\begin{equation}
+  \hat D = \sum_i d_i\ket{\Phi_i} \bra{\Phi_i}.
+  \end{equation}
+Density belonging to such ground state is just a weighted sum of densities
+corresponding to each Slater determinant $n(\vec r)=\sum_id_in_i(\vec r)$, where
+$n_i(\vec r)=\sum_j\phi_{ij}(\vec r)$. Index $i$ runs over all possible
+Slater determinants one can construct from given degenerate states and index $j$
+runs over all states in each Slater determinant. The sum of coefficients $d_k$
+is the trace of density matrix and has to be $1$. The choice of coefficients
+$d_k$ is not trivial. They have to be constructed in such a way that the new
+particle density does not break degeneracy. When a new degenerate state emerges in
+scf procedure (fig. \ref{self_consistent_scheme}), it may significantly affect
+particle density and resulting potentials and consequently break or destroy
+convergence of the procedure. An example is a boron atom where 2p orbitals are
+degenerate. Only the choice of $d_{2p^0}=d_{2p^{-1}}=d_{2p^1}=1/3$ leads to spherically symmetric potential and preservation of degeneracy\cite{advanced_course}.
+
+\subsection{Ionization potential}
+In general KS eigen functions and eigenvalues do not carry any value in relation
+to the real interacting system. There is, however, an exception. Ionization
+potential of a finite KS system (a system where density decays exponentially as
+$\vec r \rightarrow \infty$) is the same as the ionization potential of real
+interacting system \cite{advanced_course}.
   
 \subsection{Exchange and correlation functionals}
 Exchange and correlation functionals are functionals which try to account for
@@ -699,11 +729,13 @@ functionals and are thus not so popular.
 \subsubsection{Hybrid functionals}
 On the contrary to meta-gga functionals, hybrid functionals are much more
 successful \cite{challenges_den_fun_theor}. These functionals are not a
-continuation of lda, gga, meta-gga chain. Instead they incorporate exact
+continuation of lda, gga, meta-gga chain. Instead, they incorporate exact
 Hartree-Fock exchange term \cite{challenges_den_fun_theor}:
 \begin{equation}
-  E^{hf}_{xc}=\sum_ {i,j,\sigma}\int\frac{\phi^*_{i\sigma}(\vec r) \phi_{j\sigma}(\vec r) \phi^*_{j\sigma}(\vec r') \phi_{i\sigma}(\vec r')}{|\vec r - \vec r'|}.
+  E^{hf}_{xc}=\sum_ {i,j,\sigma}\int\frac{\phi^*_{i\sigma}(\vec r) \phi_{j\sigma}(\vec r) \phi^*_{j\sigma}(\vec r') \phi_{i\sigma}(\vec r')}{|\vec r - \vec r'|}\dif \vec r \dif \vec r'.
 \end{equation}
+Such functionals do not break Kohn Sham formalism since the wave functions
+$\phi_i(\vec r)$ are unique functional of densities shown in previous chapter.
 
 
 \begin{figure}
@@ -740,7 +772,9 @@ rule as also does VdW-DF method. The other two unfortunately do not obey it. As
 a consequence DF and DCACP usually cause underbinding.
 
 
-\subsection{All electron dft calculations}
+
+
+\section{All electron dft calculations}
 All electron dft calculations are mostly used to calculate electronic structure of
 a single molecule. The molecule should not be too big, as otherwise the problem
 may become too computationally expensive. Commonly used open source packages
