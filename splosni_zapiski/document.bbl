@@ -1,0 +1,142 @@
+%merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+%Control: key (0)
+%Control: author (72) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (1) required
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (1) enabled
+\begin{thebibliography}{8}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{http://dx.doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Kohn}(1999)}]{nobel_lecture}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Kohn}},\ }\bibfield  {title} {\emph {Nobel Lecture: Electronic Structure of
+  Matter-Wave Functions and Density Functionals},\ }\href {\doibase
+  10.1103/revmodphys.71.1253} {\bibfield  {journal} {\bibinfo  {journal}
+  {Reviews of Modern Physics}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo
+  {pages} {1253} (\bibinfo {year} {1999})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Engel}\ in\ \citenamefont
+  {Dreizler}(2011)}]{advanced_course}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Engel}}\ in\ \bibinfo {author} {\bibfnamefont {R.~M.}\ \bibnamefont
+  {Dreizler}},\ }\href {\doibase 10.1007/978-3-642-14090-7} {\emph {\bibinfo
+  {title} {Density Functional Theory}}},\ Theoretical and Mathematical Physics\
+  (\bibinfo  {publisher} {Springer Berlin Heidelberg},\ \bibinfo {year}
+  {2011})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont
+  {Parr}(1989)}]{Density-functional_theory_of_atoms_and_molecules}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Parr}},\ }\href@noop {} {\emph {\bibinfo {title} {Density-functional theory
+  of atoms and molecules}}}\ (\bibinfo  {publisher} {Oxford University Press
+  Clarendon Press},\ \bibinfo {address} {New York Oxford England},\ \bibinfo
+  {year} {1989})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gal}\ in\ \citenamefont
+  {Geerlings}(2009)}]{deriv_lieb_defin_energ_funct}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Gal}}\ in\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Geerlings}},\
+  }\bibfield  {title} {\emph {Derivative of the Lieb Definition for the Energy
+  Functional of Density Functional Theory With Respect To the Particle Number
+  and the Spin Number},\ }\href {http://arxiv.org/abs/0903.3271v7} {\bibfield
+  {journal} {\bibinfo  {journal} {CoRR}\ } (\bibinfo {year} {2009})},\ \Eprint
+  {http://arxiv.org/abs/0903.3271} {arXiv:0903.3271 [physics.atom-ph]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Neese}(2017)}]{orca}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Neese}},\ }\bibfield  {title} {\emph {Software Update: the Orca Program
+  System, Version 4.0},\ }\href {\doibase 10.1002/wcms.1327} {\bibfield
+  {journal} {\bibinfo  {journal} {Wiley Interdisciplinary Reviews:
+  Computational Molecular Science}\ }\textbf {\bibinfo {volume} {8}},\ \bibinfo
+  {pages} {e1327} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cohen}\ \emph {in~dr.}(2011)\citenamefont {Cohen},
+  \citenamefont {Mori-S{\'a}nchez},\ in\ \citenamefont
+  {Yang}}]{challenges_den_fun_theor}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {A.~J.}\ \bibnamefont {Cohen}}, \bibinfo
+  {author} {\bibfnamefont {P.}~\bibnamefont {Mori-S{\'a}nchez}}\bibfield
+  {author} {\ in\ \bibinfo {author} {\bibfnamefont {W.}~\bibnamefont {Yang}},\
+  }\bibfield  {title} {\emph {Challenges for Density Functional Theory},\
+  }\href {\doibase 10.1021/cr200107z} {\bibfield  {journal} {\bibinfo
+  {journal} {Chemical Reviews}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo
+  {pages} {289} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Carchini}\ \emph {in~dr.}(2013)\citenamefont
+  {Carchini}, \citenamefont {Almora-Barrios}, \citenamefont
+  {Revilla-L{\'o}pez}, \citenamefont {Bellarosa}, \citenamefont
+  {Garc{\'i}a-Muelas}, \citenamefont {Garc{\'i}a-Melchor}, \citenamefont
+  {Pogodin}, \citenamefont {Błoński},\ in\ \citenamefont
+  {L{\'o}pez}}]{How_theo_simul_can_address}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Carchini}}, \bibinfo
+  {author} {\bibfnamefont {N.}~\bibnamefont {Almora-Barrios}}, \bibinfo
+  {author} {\bibfnamefont {G.}~\bibnamefont {Revilla-L{\'o}pez}}, \bibinfo
+  {author} {\bibfnamefont {L.}~\bibnamefont {Bellarosa}}, \bibinfo {author}
+  {\bibfnamefont {R.}~\bibnamefont {Garc{\'i}a-Muelas}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Garc{\'i}a-Melchor}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Pogodin}}, \bibinfo {author} {\bibfnamefont
+  {P.}~\bibnamefont {Błoński}}\bibfield  {author} {\ in\ \bibinfo {author}
+  {\bibfnamefont {N.}~\bibnamefont {L{\'o}pez}},\ }\bibfield  {title} {\emph
+  {How Theoretical Simulations Can Address the Structure and Activity of
+  Nanoparticles},\ }\href {\doibase 10.1007/s11244-013-0093-3} {\bibfield
+  {journal} {\bibinfo  {journal} {Topics in Catalysis}\ }\textbf {\bibinfo
+  {volume} {56}},\ \bibinfo {pages} {1262} (\bibinfo {year}
+  {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Grimme}\ \emph {in~dr.}(2010)\citenamefont {Grimme},
+  \citenamefont {Antony}, \citenamefont {Ehrlich},\ in\ \citenamefont
+  {Krieg}}]{consis_accur_ab_initio_param}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Grimme}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Antony}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Ehrlich}}\bibfield  {author} {\ in\ \bibinfo {author}
+  {\bibfnamefont {H.}~\bibnamefont {Krieg}},\ }\bibfield  {title} {\emph {A
+  Consistent and Accurate Ab Initio Parametrization of Density Functional
+  Dispersion Correction (DFT-D) for the 94 Elements H-Pu},\ }\href {\doibase
+  10.1063/1.3382344} {\bibfield  {journal} {\bibinfo  {journal} {The Journal of
+  Chemical Physics}\ }\textbf {\bibinfo {volume} {132}},\ \bibinfo {pages}
+  {154104} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
+\end{thebibliography}%

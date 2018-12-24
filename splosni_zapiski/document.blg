@@ -1,0 +1,82 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: document.aux
+The style file: ../myapsrevSLO.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+bbl.th is an unknown function---line 1981 of file ../myapsrevSLO.bst
+bbl.st is an unknown function---line 1987 of file ../myapsrevSLO.bst
+bbl.nd is an unknown function---line 1991 of file ../myapsrevSLO.bst
+bbl.rd is an unknown function---line 1995 of file ../myapsrevSLO.bst
+bbl.th is an unknown function---line 1997 of file ../myapsrevSLO.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+bbl.techrep is an unknown function---line 4925 of file ../myapsrevSLO.bst
+bbl.of is an unknown function---line 4969 of file ../myapsrevSLO.bst
+Database file #1: ../mybib.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (72) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (1) required
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (1) enabled
+ptr=1, stack=
+  
+---the literal stack isn't empty for entry challenges_den_fun_theor
+while executing---line 6885 of file ../myapsrevSLO.bst
+ptr=1, stack=
+  
+---the literal stack isn't empty for entry How_theo_simul_can_address
+while executing---line 6885 of file ../myapsrevSLO.bst
+ptr=1, stack=
+  
+---the literal stack isn't empty for entry consis_accur_ab_initio_param
+while executing---line 6885 of file ../myapsrevSLO.bst
+You've used 8 entries,
+            5816 wiz_defined-function locations,
+            1657 strings with 16635 characters,
+and the built_in function-call counts, 8082 in all, are:
+= -- 501
+> -- 204
+< -- 52
++ -- 66
+- -- 46
+* -- 1276
+:= -- 816
+add.period$ -- 8
+call.type$ -- 8
+change.case$ -- 38
+chr.to.int$ -- 8
+cite$ -- 8
+duplicate$ -- 753
+empty$ -- 607
+format.name$ -- 114
+if$ -- 1569
+int.to.chr$ -- 1
+int.to.str$ -- 16
+missing$ -- 87
+newline$ -- 76
+num.names$ -- 24
+pop$ -- 299
+preamble$ -- 1
+purify$ -- 40
+quote$ -- 0
+skip$ -- 287
+stack$ -- 0
+substring$ -- 177
+swap$ -- 718
+text.length$ -- 23
+text.prefix$ -- 0
+top$ -- 8
+type$ -- 109
+warning$ -- 0
+while$ -- 21
+width$ -- 0
+write$ -- 121
+(There were 10 error messages)

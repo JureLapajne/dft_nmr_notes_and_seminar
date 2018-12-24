@@ -45,6 +45,7 @@
     "breqn"
     "xparse")
    (TeX-add-symbols
+    "arcsinh"
     "dif"
     "myint"
     "Alpha"
@@ -84,6 +85,6 @@
     "self_consistent_scheme"
     "electron_gas_exchange")
    (LaTeX-add-bibliographies
-    "mybib"))
+    "../mybib"))
  :latex)
 

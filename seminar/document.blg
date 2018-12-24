@@ -1,22 +1,22 @@
 This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: document.aux
-The style file: myapsrevSLO.bst
+The style file: ../myapsrevSLO.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-bbl.th is an unknown function---line 1981 of file myapsrevSLO.bst
-bbl.st is an unknown function---line 1987 of file myapsrevSLO.bst
-bbl.nd is an unknown function---line 1991 of file myapsrevSLO.bst
-bbl.rd is an unknown function---line 1995 of file myapsrevSLO.bst
-bbl.th is an unknown function---line 1997 of file myapsrevSLO.bst
+bbl.th is an unknown function---line 1981 of file ../myapsrevSLO.bst
+bbl.st is an unknown function---line 1987 of file ../myapsrevSLO.bst
+bbl.nd is an unknown function---line 1991 of file ../myapsrevSLO.bst
+bbl.rd is an unknown function---line 1995 of file ../myapsrevSLO.bst
+bbl.th is an unknown function---line 1997 of file ../myapsrevSLO.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-bbl.techrep is an unknown function---line 4925 of file myapsrevSLO.bst
-bbl.of is an unknown function---line 4969 of file myapsrevSLO.bst
-Database file #1: mybib.bib
+bbl.techrep is an unknown function---line 4925 of file ../myapsrevSLO.bst
+bbl.of is an unknown function---line 4969 of file ../myapsrevSLO.bst
+Database file #1: ../mybib.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
 Control: key (0) 
@@ -29,18 +29,18 @@ Control: production of eprint (1) enabled
 ptr=1, stack=
   
 ---the literal stack isn't empty for entry challenges_den_fun_theor
-while executing---line 6885 of file myapsrevSLO.bst
+while executing---line 6885 of file ../myapsrevSLO.bst
 ptr=1, stack=
   
 ---the literal stack isn't empty for entry How_theo_simul_can_address
-while executing---line 6885 of file myapsrevSLO.bst
+while executing---line 6885 of file ../myapsrevSLO.bst
 ptr=1, stack=
   
 ---the literal stack isn't empty for entry consis_accur_ab_initio_param
-while executing---line 6885 of file myapsrevSLO.bst
+while executing---line 6885 of file ../myapsrevSLO.bst
 You've used 8 entries,
             5816 wiz_defined-function locations,
-            1657 strings with 16629 characters,
+            1657 strings with 16635 characters,
 and the built_in function-call counts, 8082 in all, are:
 = -- 501
 > -- 204
