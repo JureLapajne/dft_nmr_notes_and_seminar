@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (1) enabled
-\begin{thebibliography}{8}%
+\begin{thebibliography}{9}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,6 +50,42 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{\citenamefont {Zhou}\ \emph {in~dr.}(2012)\citenamefont {Zhou},
+  \citenamefont {Long},\ in\ \citenamefont
+  {Yaghi}}]{introd_to_metal_organ_frameworks}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {H.-C.}\ \bibnamefont {Zhou}}, \bibinfo
+  {author} {\bibfnamefont {J.~R.}\ \bibnamefont {Long}}\bibfield  {author} {\
+  in\ \bibinfo {author} {\bibfnamefont {O.~M.}\ \bibnamefont {Yaghi}},\
+  }\bibfield  {title} {\emph {Introduction To Metal-Organic Frameworks},\
+  }\href {\doibase 10.1021/cr300014x} {\bibfield  {journal} {\bibinfo
+  {journal} {Chemical Reviews}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo
+  {pages} {673} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Facelli}(2011)}]{chemic_shift_tensor_review}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont
+  {Facelli}},\ }\bibfield  {title} {\emph {Chemical Shift Tensors: Theory and
+  Application To Molecular Structural Problems},\ }\href {\doibase
+  10.1016/j.pnmrs.2010.10.003} {\bibfield  {journal} {\bibinfo  {journal}
+  {Progress in Nuclear Magnetic Resonance Spectroscopy}\ }\textbf {\bibinfo
+  {volume} {58}},\ \bibinfo {pages} {176} (\bibinfo {year} {2011})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Pigliapochi}\ \emph {in~dr.}(2017)\citenamefont
+  {Pigliapochi}, \citenamefont {Pell}, \citenamefont {Seymour}, \citenamefont
+  {Grey}, \citenamefont {Ceresoli},\ in\ \citenamefont
+  {Kaupp}}]{Dft_Investigation_of_the_Effect_of_Spin_Orbit}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Pigliapochi}}, \bibinfo
+  {author} {\bibfnamefont {A.~J.}\ \bibnamefont {Pell}}, \bibinfo {author}
+  {\bibfnamefont {I.~D.}\ \bibnamefont {Seymour}}, \bibinfo {author}
+  {\bibfnamefont {C.~P.}\ \bibnamefont {Grey}}, \bibinfo {author}
+  {\bibfnamefont {D.}~\bibnamefont {Ceresoli}}\bibfield  {author} {\ in\
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Kaupp}},\ }\bibfield
+  {title} {\emph {Dft Investigation of the Effect of Spin-Orbit Coupling on the
+  Nmr Shifts in Paramagnetic Solids},\ }\href {\doibase
+  10.1103/physrevb.95.054412} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physical Review B}\ }\textbf {\bibinfo {volume} {95}},\ \bibinfo {pages}
+  {054412} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Kohn}(1999)}]{nobel_lecture}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
@@ -67,25 +103,6 @@
   {title} {Density Functional Theory}}},\ Theoretical and Mathematical Physics\
   (\bibinfo  {publisher} {Springer Berlin Heidelberg},\ \bibinfo {year}
   {2011})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont
-  {Parr}(1989)}]{Density-functional_theory_of_atoms_and_molecules}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
-  {Parr}},\ }\href@noop {} {\emph {\bibinfo {title} {Density-functional theory
-  of atoms and molecules}}}\ (\bibinfo  {publisher} {Oxford University Press
-  Clarendon Press},\ \bibinfo {address} {New York Oxford England},\ \bibinfo
-  {year} {1989})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Gal}\ in\ \citenamefont
-  {Geerlings}(2009)}]{deriv_lieb_defin_energ_funct}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
-  {Gal}}\ in\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Geerlings}},\
-  }\bibfield  {title} {\emph {Derivative of the Lieb Definition for the Energy
-  Functional of Density Functional Theory With Respect To the Particle Number
-  and the Spin Number},\ }\href {http://arxiv.org/abs/0903.3271v7} {\bibfield
-  {journal} {\bibinfo  {journal} {CoRR}\ } (\bibinfo {year} {2009})},\ \Eprint
-  {http://arxiv.org/abs/0903.3271} {arXiv:0903.3271 [physics.atom-ph]}
-  \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Neese}(2017)}]{orca}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
