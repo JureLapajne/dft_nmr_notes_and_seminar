@@ -1,10 +1,6 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: document.aux
-White space in argument---line 21 of file document.aux
- : \citation{introd_to_metal_organ_frameworks
- :                                            ,Assignment_of_Solid_State}
-I'm skipping whatever remains of this command
 The style file: ../myapsrevSLO.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -21,6 +17,11 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 bbl.techrep is an unknown function---line 4925 of file ../myapsrevSLO.bst
 bbl.of is an unknown function---line 4969 of file ../myapsrevSLO.bst
 Database file #1: ../mybib.bib
+I was expecting an "="---line 298 of file ../mybib.bib
+ :   
+ :   number =       {nil},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
 Control: key (0) 
@@ -33,6 +34,11 @@ Control: production of eprint (1) enabled
 ptr=1, stack=
   
 ---the literal stack isn't empty for entry introd_to_metal_organ_frameworks
+while executing---line 6885 of file ../myapsrevSLO.bst
+Warning--empty year in Assignment_of_Solid_State
+ptr=1, stack=
+  
+---the literal stack isn't empty for entry Assignment_of_Solid_State
 while executing---line 6885 of file ../myapsrevSLO.bst
 ptr=1, stack=
   
@@ -50,45 +56,46 @@ ptr=1, stack=
   
 ---the literal stack isn't empty for entry consis_accur_ab_initio_param
 while executing---line 6885 of file ../myapsrevSLO.bst
-You've used 9 entries,
+Warning--empty author in solid_state_physics
+You've used 12 entries,
             5816 wiz_defined-function locations,
-            1666 strings with 16972 characters,
-and the built_in function-call counts, 9683 in all, are:
-= -- 600
-> -- 261
-< -- 64
-+ -- 82
-- -- 60
-* -- 1544
-:= -- 958
-add.period$ -- 9
-call.type$ -- 9
-change.case$ -- 44
-chr.to.int$ -- 9
-cite$ -- 9
-duplicate$ -- 884
-empty$ -- 710
-format.name$ -- 143
-if$ -- 1903
+            1688 strings with 17800 characters,
+and the built_in function-call counts, 12421 in all, are:
+= -- 779
+> -- 327
+< -- 80
++ -- 104
+- -- 76
+* -- 1955
+:= -- 1230
+add.period$ -- 12
+call.type$ -- 12
+change.case$ -- 58
+chr.to.int$ -- 12
+cite$ -- 16
+duplicate$ -- 1152
+empty$ -- 930
+format.name$ -- 179
+if$ -- 2454
 int.to.chr$ -- 1
-int.to.str$ -- 17
-missing$ -- 108
-newline$ -- 79
-num.names$ -- 27
-pop$ -- 342
+int.to.str$ -- 20
+missing$ -- 139
+newline$ -- 88
+num.names$ -- 33
+pop$ -- 456
 preamble$ -- 1
-purify$ -- 45
+purify$ -- 59
 quote$ -- 0
-skip$ -- 343
+skip$ -- 443
 stack$ -- 0
-substring$ -- 229
-swap$ -- 878
-text.length$ -- 30
+substring$ -- 282
+swap$ -- 1117
+text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 8
-type$ -- 128
-warning$ -- 0
-while$ -- 26
+type$ -- 168
+warning$ -- 2
+while$ -- 32
 width$ -- 0
-write$ -- 132
-(There were 13 error messages)
+write$ -- 157
+(There were 14 error messages)

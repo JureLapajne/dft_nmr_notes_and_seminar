@@ -45,6 +45,7 @@
     "breqn"
     "xparse")
    (TeX-add-symbols
+    "arcsinh"
     "dif"
     "myint"
     "Alpha"
@@ -72,7 +73,8 @@
     "hartree_term1"
     "ext_potential_functional"
     "self_consistent_scheme"
-    "electron_gas_exchange")
+    "electron_gas_exchange"
+    "origin_dependence")
    (LaTeX-add-bibliographies
     "../mybib"))
  :latex)

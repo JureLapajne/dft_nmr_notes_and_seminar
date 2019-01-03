@@ -97,7 +97,7 @@ chemical properties they are widely used in the fields of biochemistry,
 catalysis and electrochemistry. They are especially useful in clean energy
 application as storage for gasses (eg. hydrogen) or energy through
 absorption/adsorption process \cite{introd_to_metal_organ_frameworks}. They can also be used as gas separation medium, as second harmonic generators in nonlinear optics, some of them also display interesting ferroelectric properties. Their usage is so broad thanks to numerous combinations of metallic ions and organic ligands
- \cite{introd_to_metal_organ_frameworks , Assignment_of_Solid_State}. Many
+ \cite{introd_to_metal_organ_frameworks}  \cite{Assignment_of_Solid_State}. Many
  chemical properties stem from unpaired electrons, which are often found in such
  materials. Ions commonly found in MOFs are Cu(||), Ni(||), Pb(|||). Such ions
  have unpaired electron(s) in their d orbitals and one can clearly see their
@@ -348,7 +348,7 @@ potential for which the density represents ground state density and is thus cont
   \section{DFT in practice}
 Kohn-Sham theorems unfortunately tell nothing about the explicit dependence of
 energy functional on density. Nonetheless, we would still like to use Kohn-Sham
-theorems, to construct numerical scheme where particle density has the central
+theorems, to construct numerical scheme where electron density has the central
 role. We will concentrate on  construction of energy functional $E[n(\vec r)]$,
 which should approximate $F[n(\vec r)]$ as well as possible.
   
@@ -358,7 +358,7 @@ which should approximate $F[n(\vec r)]$ as well as possible.
   r)$. To introduce them in an understandable and consistent fashion, let's start with a non-interacting system. 
  
 \subsection{Noninteracting system}
-Hamiltonian of $N$-particle non-interacting system can be written in the
+Hamiltonian of $N$-electron non-interacting system can be written in the
 following way:
  \begin{equation} \label{noninteracting_H}
    \hat H =\hat  W_k + \hat V_{ext}, 
@@ -378,21 +378,22 @@ following way:
 \end{bmatrix},
 \]
  which, when inserted into equation (\ref{noninteracting_H}) effectively produces
- single particle problem:
+ single electron problem:
  \begin{equation}
    \left(-\frac{\hbar^2}{2m}\nabla^2 + \hat V_{ext}(\vec r)\right) \psi (\vec r) = \epsilon_i \psi(\vec r).
  \end{equation}
- Thus, using slater determinant we have effectively converted many particle
- problem with $3N$ coordinates to a single particle problem. Of course the
- particles in this case do not feel each other and motion of each particle
- should not depend on other particles, so such a breakdown is completely natural.
+ Thus, using slater determinant we have effectively converted many electron
+ problem with $3N$ coordinates to a single electron problem. Of course the
+ electrons in this case do not feel each other and motion of each particle
+ should not depend on other particles, so such a breakdown is completely natural
+ (except for Pauli principle which is already built into Slater determinant).
  
  The ground state of such a system is obtained using $N/2$ lowest states by
  putting $2$  electrons into each state. Calculation of kinetic energy and
- particle  density for such a system is also straight forward. As we can see,
+ electron density for such a system is also straight forward. As we can see,
  using Slater  determinant as ansatz for the solution of noninteracting
  hamiltonian offers simple expressions for ground state wavefunction, kinetic
- energy and particle density  calculation. Particle density corresponding to
+ energy and particle density  calculation. Electron density corresponding to
  such a wave function can be written using the following expression:
  \begin{equation} \label{KS_density}
    n_0(\vec r) = \sum_{\sigma=\uparrow,\downarrow}\sum_i\Theta(\epsilon_F-\epsilon_i)|\phi_i(\vec r, \sigma)|^2.
@@ -442,7 +443,7 @@ one should use to produce the same electron density.
 Intuitively, one would expect that potential belonging to effective single
 particle hamiltonian should reflect the properties, geometry and potentials found
 in given many particle system. Hamiltonian naturally contains kinetic energy
-term, but it should also somehow contain inter particle interactions. Usually
+term, but it should also somehow contain inter-particle interactions. Usually
 Kohn-Sham hamiltonian consists of kinetic energy term, Hartree inter particle
 interaction, external potential and exchange-correlation functional \cite{advanced_course}:
 \begin{equation} \label{KS_system}
@@ -462,20 +463,32 @@ Functional belonging to external potential is well known:
 \end{equation}
 Unfortunately exchange-correlation functional is much less well known. It is
 defined by the equation (\ref{KS_system}) and contains all inter-particle
-interactions not contained in $T[n(\vec r)]$. Hartree (\ref{hartree_term2}) and external potential
-energy functionals (\ref{ext_potential_functional}) are exact functionals, e.g.
-if $\phi_i(\vec r)$ are exact wave functions of electrons in a given system,
-then these two functional will produce correct Coulomb repulsion energy and
-correct energy of particles in external potential.  The same can not be said for
-kinetic energy functional. The difference between exact kinetic energy
-of interacting system and $T[n(\vec r)]$ is the exchange energy we are looking for:
+interactions not contained in $T[n(\vec r)]$ and $ E_H[n(\vec r)]]$. Although
+the kinetic energy functional has the same form as exact functional, out basis
+functions lack correlation between particles, i.e. coordinate couplings
+$x_1x_2$,.. The second contribution comes from self-interaction contained in
+Hartree term. Thus, one can formally write the difference between
+exchange-correlation energy of real system and KS system (without $E_{xc}$ functional) as: 
 \begin{equation}
-  E_{xc}^{\psi_0}-E_{xc}[n(\vec r)] = \bra{\psi_0}\hat T \ket{\psi_0} - \bra{\Phi_0}\hat T \ket{\Phi_0},
+  E_{xc}^{\psi_0}-E_{xc} = \bra{\psi_0}\hat T + \hat W \ket{\psi_0} - \bra{\Phi_0}\hat T \ket{\Phi_0} -  E_H[n(\vec r)],
 \end{equation}
-where $\ket{\psi_0}$ is the true ground state of interacting system. $\ket
-\psi_0$ and $\ket \Phi_0$ may yield completely different electronic states,
-but the aim here is to find such $\ket{\Phi_0}$ that both functions yield the
-same electron density. *check page 62 and add here*
+where $\ket{\psi_0}$ is the true ground state of interacting system. It is
+common to divide $E_{xc}[n(\vec r)]$ into exchange $E_x[n(\vec r)]$ and
+correlation $E_c[n(\vec r)]$ part. The former is defined in such a way that
+Hartree-Fock ground state density and energy are reproduced, if correlation part
+is neglected. This is achieved if exchange part of functional has exactly the
+opposite contribution as excessive hartree term in KS equations: 
+
+\begin{equation}
+  E_{x}[n(\vec r)]=-\sum_{k,l}\Theta(\epsilon_F-\epsilon_k)\Theta(\epsilon_F-\epsilon_l)\frac{1}{2}\int \dif \vec{r} \dif \vec{r'}\phi^*_k(\vec r, \sigma)\phi_l(\vec{r}, \sigma)w(\vec{r},\vec{r'})\phi^*_l(\vec{r'}, \sigma')\phi_k(\vec{r'}, \sigma')
+\end{equation}
+The most important contribution of $E_{x}[n(\vec r)]$ is cancellation of
+self-repulsion. This term is commonly called exact exchange and is not always
+used in dft calculations. Often times exchange functionals soley based on
+electron density are employed and they do not manage to completely cancel
+self-repulsion terms. We will take a closer look at them in the following chapter.
+Correlation term is more difficult to derive and we will not dwell deeper into
+it. Instead let's have a look at how KS equations are actually solved.
 
 Our goal is to minimize hamiltonian of the form (\ref{KS_system}) using Slater
 determinant as ansatz for many electron system and density calculation. By
@@ -485,8 +498,7 @@ write KS equation:
   \left( \hat T + v_{ext} + E_H[n(\vec r)]]  + E_{xc}[n(\vec r)]] \right) \ket \phi_i =  \epsilon_i \phi_i,  
 \end {equation}
 where density $n(\vec r)$  has to be calculated according to equation
-(\ref{KS_density}). The functions $\phi_i$ are produced by directly solving
-differential equation. They are usually determined by inserting ansatz in the
+(\ref{KS_density}). They are usually determined by inserting ansatz in the
 form of gaussian basis functions from which one can
 then construct correct single particle states. Multiplying equation by $\bra
 \phi_j$ from the left side yields generalized eigenvalue problem:
@@ -496,14 +508,14 @@ then construct correct single particle states. Multiplying equation by $\bra
 
 System obviously has to be solved in a self consistent fashion
 \ref{self_consistent_scheme}. One starts with the positioning of nuclei into
-desired positions and construction of nuclei potentials.In parallel with the
-last step starting electron orbitals $\phi^0_i$ are be constructed. Usually they are written
+desired positions and construction of nuclei potentials. In parallel with the
+last step starting electron orbitals $\phi^{(0)}_i$ are constructed. Usually they are written
 as a series of Gaussian functions. Electron density $n^0$ can then be quickly
 calculated from constructed orbitals. The next step is to
 calculate functionals $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$. In the next step
-equations are solved. The solution are new orbitals $\phi_i^1$  and from them new density $n^1$ is calculated. The latter is then used to
-construct new $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$ which are again used to
-solve KS equation from which one gets new orbitals $\phi^3$. The procedure is
+equations are solved. The solution are new orbitals $\phi_i^{(1)}$  and from
+them new density $n^{(1)}$ is calculated. The latter is then used to construct new $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$ which are again used to
+solve KS equation from which one gets new orbitals $\phi^{(3)}$. The procedure is
 repeated until the change in density or energy is not small enough. 
 
 
@@ -522,7 +534,7 @@ repeated until the change in density or energy is not small enough.
   \label{self_consistent_scheme}
 \end{figure}
 
-When given a certain system functionals $T$, $E_H$ and $V_{ext}$ are precisely
+When given a certain system, functionals $T$, $E_H$ and $V_{ext}$ are precisely
 determined. $E_{xc}$ is not. It is thus the determining factor for how well the KS
 equations describe our system. We will present various functionals used today in
 one of the next chapters.
@@ -650,15 +662,7 @@ rule as also does VdW-DF method. The other two unfortunately do not obey it. As
 a consequence DF and DCACP usually cause underbinding.
 
 
-
-
-\section{All electron dft calculations}
-All electron dft calculations are mostly used to calculate electronic structure of
-a single molecule. The molecule should not be too big, as otherwise the problem
-may become too computationally expensive. Commonly used open source packages
-are Orca and Nwchem.
-
-\subsection{Dft using pseudopotentials}
+\section{All electron vs pseudopotential}
 Electronic states of an atom can be divided into three categories; core states,
 semi-core states and valence states. The latter are the most actively included
 in formation of bonds. Valence states may be completely deformed once the atom
@@ -675,43 +679,65 @@ length, electron localization, magnetization,...).
 Of course, pseudo potentials have to be constructed prior to a given calculation using
 some other much simpler system. As a consequence, there
 exists a question of transferability. Is a potential constructed using some
-reference molecule usable for another molecule. The exact answer is
+reference molecuole usable for another molecule. The exact answer is
 not possible. Many times the only way is to try, especially when transition
 elements are in question.
 
+All electron calculations avoid pseudopotential by taking into account all
+electrons. The latter does cost some computational time, but it depending on
+molecule, it may be the only way to get reliable result. Of course for large
+molecules all electron calculations are significantly more expensive.
+Commonly used open source packages are Orca and Nwchem.
+
 
 \section{Dft in crystals}
-Crystals are periodic structures. This fact is also reflected the shape of
-electronic  wave functions, which are Bloch states:
+Crystals are periodic structures. This fact is also reflected the shape of electronic  wave functions, which are Bloch states \cite{solid_state_physics}:
 \begin{equation}
-  \psi_{n, \vec k}(\vec r) = u_{n, \vec k}(\vec r)e^{i\vec k \vec r};\quad \textrm\quad u_{n,\vec k}(\vec r + \vec R) =  u_{n,\vec k}(\vec r),
+  \psi_{n,\vec k}(\vec r) =e^{i\vec k\vec r}\sum_G c_{n,\vec k}(\vec G)e^{i\vec G \vec r} \quad \mathrm{with} \quad \psi_{n,\vec k}(\vec r+\vec R)= \psi_{n,\vec k}(\vec r)
 \end{equation}
-where $\vec R$ is a vector is Bravais lattice of a crystal in question.
-Functions $u_{n,\vec k}$ depend on potential at each atomic site.
-In ideal case, where core potentials are neglected,
-wave functions are simple plane waves. When potential is weak and
-reasonably smooth, it can be treated as perturbation. Unfortunately neither of
-the two conditions is true. Core potential diverges as $r \rightarrow 0$
+where $\vec G$ is a vector of reciprocal lattice and $\vec R$ vector of bravais lattice of a crystal in question.
+In ideal case, where core potentials are neglected, wave functions are simple plane waves. When potential is weak and reasonably smooth, it can be treated as perturbation \cite{solid_state_physics}.
+Unfortunately neither of the two conditions is true. Core potential diverges as $r \rightarrow 0$
 and as a consequence the wave functions have a cusp at the origin. For heavier
 atoms core states have large gradients and can not be represented as plane waves.
 
 The simplest solution is to expand wave functions into series of plane waves.
-Computationally this is just a discrete fourier transform of a wave function.
+Computationally this is just a discrete fourier transform.
 However, because of already given reasons, the number of plane waves required
 for such expansion is very large. Thus, even the sum of plane waves is not a
 suitable representation of core states. For this reason, core states are
 commonly replaced by pseudo potentials in crystal dft calculations. This
 approach usually carries \emph{PW calculation} designation.
 
-Although, for many crystals this approach works well it is no good enough
+Although, for many crystals this approach works well it is not good enough
 especially for transition elements with partially filled d-shells and second row
 elements. Electron density of transition metals and second row elements still
-varies widely in spite of use of pseudopotentials. For such cases an improved
-approach has been developed. A new method, called gaussian augmented plane waves or \emph{GAPW} approach. GAPW
-basis sets consist of Gaussian functions and plane waves. This approach is suitable for all electron
-calculations, where core states are expanded in Gaussian functions and valence
-electrons in plane waves. As a consequence, all electron wave calculations are
-possible for crystals avoiding pseudo potential inaccuracy issues.
+varies widely in spite of use of pseudopotentials \cite{large_scale_quant_mechan_enzym}. For such cases an improved
+approach has been developed. A new method, called gaussian augmented plane waves
+or \emph{GAPW} approach. GAPW basis sets consist of Gaussian functions and plane
+waves. This approach is suitable for all electron calculations, where core
+states are expanded in Gaussian functions and valence electrons in plane waves. As a consequence, all electron wave calculations are possible for crystals avoiding pseudo potential inaccuracy issues.
+
+\section{Nmr parameters}
+The two most important nmr quantities are shielding tensor and hyperfine tensor.
+The former is important in all organic materials, while the latter is present
+only in materials with unpaired electrons.Shielding tensor is 
+proportionate to electron density at the observed  core site, whereas hyperfine
+tensor is proportionate to shielding tensor.
+\begin{minipage}[t]{0.5\linewidth}
+  \centering
+ \begin{figure}
+  \includegraphics[width=0.4\textwidth]{origin_dependance_tensor.png}
+  \caption{}
+\end{figure}  
+\end{minipage}%
+\begin{minipage}[t]{0.5\linewidth}
+  \centering
+   \label{origin_dependence}
+\end{minipage}
+
+\section{Conclusion}
+In this paper we tried to describe the most important aspects of calculation of nmr parameters.
 
 \newpage \phantomsection
 

@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (1) enabled
-\begin{thebibliography}{9}%
+\begin{thebibliography}{12}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -61,6 +61,23 @@
   }\href {\doibase 10.1021/cr300014x} {\bibfield  {journal} {\bibinfo
   {journal} {Chemical Reviews}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo
   {pages} {673} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Rouf}\ \emph {in~dr.}()\citenamefont {Rouf},
+  \citenamefont {Jakobsen}, \citenamefont {Mare{\v{s}}}, \citenamefont
+  {Jensen}, \citenamefont {McKenzie}, \citenamefont {Vaara},\ in\ \citenamefont
+  {Nielsen}}]{Assignment_of_Solid_State}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {S.~A.}\ \bibnamefont {Rouf}}, \bibinfo
+  {author} {\bibfnamefont {V.~B.}\ \bibnamefont {Jakobsen}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Mare{\v{s}}}}, \bibinfo {author}
+  {\bibfnamefont {N.~D.}\ \bibnamefont {Jensen}}, \bibinfo {author}
+  {\bibfnamefont {C.~J.}\ \bibnamefont {McKenzie}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Vaara}}\bibfield  {author} {\ in\ \bibinfo
+  {author} {\bibfnamefont {U.~G.}\ \bibnamefont {Nielsen}},\ }\bibfield
+  {title} {\emph {Assignment of Solid-State 13 C and 1 H Nmr Spectra of
+  Paramagnetic Ni(II) Acetylacetonate Complexes Aided By First-Principles
+  Computations},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Solid State Nuclear Magnetic Resonance}\ }\textbf {\bibinfo {volume}
+  {87}}}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Facelli}(2011)}]{chemic_shift_tensor_review}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont
@@ -156,4 +173,18 @@
   10.1063/1.3382344} {\bibfield  {journal} {\bibinfo  {journal} {The Journal of
   Chemical Physics}\ }\textbf {\bibinfo {volume} {132}},\ \bibinfo {pages}
   {154104} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
+\bibitem [{sol(1978)}]{solid_state_physics}%
+  \BibitemOpen
+  \bibfield  {title} {\emph {Solid State Physics. Von N. W. Ashcroft Und N. D.
+  Mermin; Holt, Rinehart and Winston, New York 1976, Xxii, 826 Seiten, 19,95},\
+  }\href {\doibase 10.1002/piuz.19780090109} {\bibfield  {journal} {\bibinfo
+  {journal} {Physik in unserer Zeit}\ }\textbf {\bibinfo {volume} {9}},\
+  \bibinfo {pages} {33} (\bibinfo {year} {1978})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lever}(2015)}]{large_scale_quant_mechan_enzym}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Lever}},\ }\href {\doibase 10.1007/978-3-319-19351-9} {\emph {\bibinfo
+  {title} {Large-Scale Quantum-Mechanical Enzymology}}},\ Springer Theses\
+  (\bibinfo  {publisher} {Springer International Publishing},\ \bibinfo {year}
+  {2015})\ str.\ \bibinfo {pages} {nil}\BibitemShut {NoStop}%
 \end{thebibliography}%
