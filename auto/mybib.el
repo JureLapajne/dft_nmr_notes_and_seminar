@@ -20,6 +20,8 @@
     "introd_to_metal_organ_frameworks"
     "chemic_shift_tensor_review"
     "Assignment_of_Solid_State"
-    "Dft_Investigation_of_the_Effect_of_Spin_Orbit"))
+    "Dft_Investigation_of_the_Effect_of_Spin_Orbit"
+    "large_scale_quant_mechan_enzym"
+    "solid_state_physics"))
  :bibtex)
 
