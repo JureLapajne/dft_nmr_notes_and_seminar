@@ -27,6 +27,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[tbtags]{mathtools}
+\usepackage{wrapfig}
 
 \usepackage[section]{placeins}
 
@@ -95,12 +96,14 @@ materials with very high porosity. Internal surface area in some cases exceeds
 6000 $\mathrm{m}^2/{g}$ \cite{introd_to_metal_organ_frameworks}. Thanks to their
 chemical properties they are widely used in the fields of biochemistry,
 catalysis and electrochemistry. They are especially useful in clean energy
-application as storage for gasses (eg. hydrogen) or energy through
-absorption/adsorption process \cite{introd_to_metal_organ_frameworks}. They can also be used as gas separation medium, as second harmonic generators in nonlinear optics, some of them also display interesting ferroelectric properties. Their usage is so broad thanks to numerous combinations of metallic ions and organic ligands
- \cite{introd_to_metal_organ_frameworks}  \cite{Assignment_of_Solid_State}. Many
- chemical properties stem from unpaired electrons, which are often found in such
- materials. Ions commonly found in MOFs are Cu(||), Ni(||), Pb(|||). Such ions
- have unpaired electron(s) in their d orbitals and one can clearly see their
+applications, as storage for gasses (eg. hydrogen) or energy through
+absorption/adsorption process \cite{introd_to_metal_organ_frameworks}. They can
+also be used as gas separation medium, as second harmonic generators in
+nonlinear optics, some of them also display interesting ferroelectric
+properties. Their usage is so broad thanks to numerous combinations of metallic
+ions and organic ligands  \cite{introd_to_metal_organ_frameworks}
+\cite{Assignment_of_Solid_State}. Many chemical properties stem from unpaired
+electrons, which are often found in such materials. Ions such as Cu(||), Ni(||) have unpaired electron(s) in their d orbitals and one can clearly see their
  effects on $^{13}C$ and $^{1}H$ nmr  spectra, one of the most common tools for
  characterization of the molecular and electronic structure of organic
  molecules. Materials presented in this work are paramagnetic. This means they exhibit weak attraction to the external magnetic field, which is a consequence of unpaired electrons in their structure. The effects of the latter are easily recognized in nmr spectra by the large paramagnetic shifts they cause.
@@ -117,7 +120,7 @@ absorption/adsorption process \cite{introd_to_metal_organ_frameworks}. They can 
   \includegraphics[width=0.9\textwidth]{hkust_spekter.png}.
   \caption{}
 \end{subfigure}
-  \caption{ An example of mof material named Hkust-1. It is a crystalline
+  \caption{ An example of MOF named Hkust-1. It is a crystalline
     material. Image (a) depicts a part of the structure used for calculation of
     nmr parameters of atoms marked with 1, 2 and 3. (b) $\mathrm{C}^{13}$-nmr
     spectra of atoms marked on image (a).
@@ -174,7 +177,7 @@ depends on $3N$ coordinates, where $N$ is total number of particles. This means
 that systems with more than e.g. 10 atoms are very computationally
 demanding. It is common practice to reduce the dimensionality of the problem by employing
 Born-Oppenheimer approximation in which the motion of nuclei is separated from
-motion of electrons, sometimes nuclei are even fixed. Thus, from now on we will
+the motion of electrons, sometimes nuclei are even fixed. Thus, from now on we will
 restrict ourselves to hamiltonians describing only the motion of electrons:
 \begin{equation} \label{electron_hamiltonian}
 \hat H=  \hat  T_e  + \hat W_{e-e} + \hat W_{n-e} + \hat V_{ext}.
@@ -182,7 +185,7 @@ restrict ourselves to hamiltonians describing only the motion of electrons:
 The number of electrons $N$ for a small molecules, like water, is of the order
 $\sim 10$. In medium sized molecules with $\sim 50-100$ atoms, the number can
 grow to a few hundred, while in large molecules, like proteins, the number can
-grow into thousands and ten-thousands. As one can imagine, solving a system of
+grow into thousands and ten-thousands \cite{ab_initio_nmr_spect_molec}. As one can imagine, solving a system of
 coupled differential equations with such huge number of coordinates ($3N$) is
 computationally an almost impossible task.
 This is the reason for development of approaches which, while still being
@@ -190,9 +193,9 @@ sufficiently accurate, offer faster computational times. DFT represents one of
 the most successful methods to solving such systems.
 
 \subsection{Density functional theory - dft}
-Dft is a method, which allows us to map many-electron problem to an effectively
-single electron problem. It replaces all electron wave function with
-particle density.  The core of dft lies in Kohn-Sham theorems. These two theorems
+Dft allows us replaces all electron wave function with
+particle density and effectively reduce the problem to a single particle problem.
+The core of dft lies in Kohn-Sham theorems. These two theorems
 ensure that stationary many-particle systems are fully characterized by their
 ground state particle density. This means that given a group of electrons, one
 only has to know ground state electron density to be able to tell all other
@@ -724,20 +727,47 @@ The former is important in all organic materials, while the latter is present
 only in materials with unpaired electrons.Shielding tensor is 
 proportionate to electron density at the observed  core site, whereas hyperfine
 tensor is proportionate to shielding tensor.
-\begin{minipage}[t]{0.5\linewidth}
-  \centering
- \begin{figure}
-  \includegraphics[width=0.4\textwidth]{origin_dependance_tensor.png}
-  \caption{}
-\end{figure}  
-\end{minipage}%
-\begin{minipage}[t]{0.5\linewidth}
-  \centering
-   \label{origin_dependence}
-\end{minipage}
 
+
+\begin{wrapfigure}{R}{0.4\textwidth}
+\centering
+\includegraphics[width=0.3\textwidth]{origin_dependance_tensor.png}
+\caption{Translation of the coordinate system for vector $\vec{Ro'}$. $\vec{R_N}$
+  points to $N$-th atom, whereas smallc case $\vec r$ point to electrons.}
+\end{wrapfigure}
+
+  There are two contributions to shielding tensor - paramagnetic and
+  diamagnetic. The former is only present in materials with unpaired electrons
+  and should not be confused with hyperfine tensor, also present such materials.
+  Diamagnetic contribution can be in the first order of perturbation calculated as \cite{chemic_shift_tensor_review}:
+  \begin{equation}
+    \sigma^d_{\alpha \beta}=\bra{\psi_0}\vec{r}_k \vec{r}_{Nk}\delta_{\alpha\beta}- \vec{r}_{k}\vec{r}_{Nk} \ket{\psi_0}
+  \end{equation}
+  and a similar expression holds also for paramagnetic contribution $\sigma^p_{\alpha\beta}$. The
+  expressions are nonlinear in $\vec r$. This seems to suggest that the values
+  depend on the origin. It turns out that the sum of both contributions does
+  not depend on origin, but only when one uses complete set of basis function,
+  which, in practice, is almost never the case. This is a serious problem
+  because the terms that should theoretically cancel out have nontrivial
+  contribution \cite{chemic_shift_tensor_review}. The issue is exaggerated by
+  the fact that diamagnetic and paramagnetic contributions are of a different
+  perturbation order.
+
+  In constrast to shielding tensor which depends only on electron density,
+  hyperfine tensor depends on spin density \cite{calcul_hyper_tensor_param_nmr}:
+  \begin{equation}
+    A_{iso}=\frac{4\pi}{6c^2}g_eg_N\beta_N\langle S_z \rangle \rho^{beta-alpha}(0),
+    \end{equation}
+where $g_e$ and $g_n$ are electronic and nuclear g-factors, $\langle S_z
+\rangle$ is the expectation value of z component of total spin.  $\rho^{beta-alpha}$ is the difference between spin up and spin
+down electron densities.
 \section{Conclusion}
-In this paper we tried to describe the most important aspects of calculation of nmr parameters.
+In this paper we tried to provide a clear and comprehensive review of steps needed
+to calculate nmr parameters. The single most important step is accurate
+calculation of electronic wave function. The latter is most commonly calculated
+using dft, which has been in use for a long time and is still actively evolving.
+Popular computational packages offer large variety of functionals, which are
+suitable for numerous systems and their property calculations. 
 
 \newpage \phantomsection
 

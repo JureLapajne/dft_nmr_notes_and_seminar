@@ -22,6 +22,7 @@
     "Assignment_of_Solid_State"
     "Dft_Investigation_of_the_Effect_of_Spin_Orbit"
     "large_scale_quant_mechan_enzym"
-    "solid_state_physics"))
+    "solid_state_physics"
+    "calcul_hyper_tensor_param_nmr"))
  :bibtex)
 

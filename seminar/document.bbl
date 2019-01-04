@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (1) enabled
-\begin{thebibliography}{12}%
+\begin{thebibliography}{13}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -173,11 +173,13 @@
   10.1063/1.3382344} {\bibfield  {journal} {\bibinfo  {journal} {The Journal of
   Chemical Physics}\ }\textbf {\bibinfo {volume} {132}},\ \bibinfo {pages}
   {154104} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
-\bibitem [{sol(1978)}]{solid_state_physics}%
+\bibitem [{\citenamefont {Ashcroft}\ in\ \citenamefont
+  {Mermin}(1978)}]{solid_state_physics}%
   \BibitemOpen
-  \bibfield  {title} {\emph {Solid State Physics. Von N. W. Ashcroft Und N. D.
-  Mermin; Holt, Rinehart and Winston, New York 1976, Xxii, 826 Seiten, 19,95},\
-  }\href {\doibase 10.1002/piuz.19780090109} {\bibfield  {journal} {\bibinfo
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.~W.}\ \bibnamefont
+  {Ashcroft}}\ in\ \bibinfo {author} {\bibfnamefont {N.~D.}\ \bibnamefont
+  {Mermin}},\ }\bibfield  {title} {\emph {Solid State Physics},\ }\href
+  {\doibase 10.1002/piuz.19780090109} {\bibfield  {journal} {\bibinfo
   {journal} {Physik in unserer Zeit}\ }\textbf {\bibinfo {volume} {9}},\
   \bibinfo {pages} {33} (\bibinfo {year} {1978})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Lever}(2015)}]{large_scale_quant_mechan_enzym}%
@@ -187,4 +189,17 @@
   {title} {Large-Scale Quantum-Mechanical Enzymology}}},\ Springer Theses\
   (\bibinfo  {publisher} {Springer International Publishing},\ \bibinfo {year}
   {2015})\ str.\ \bibinfo {pages} {nil}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Autschbach}\ \emph {in~dr.}(2011)\citenamefont
+  {Autschbach}, \citenamefont {Patchkovskii},\ in\ \citenamefont
+  {Pritchard}}]{calcul_hyper_tensor_param_nmr}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Autschbach}}, \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Patchkovskii}}\bibfield  {author}
+  {\ in\ \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Pritchard}},\
+  }\bibfield  {title} {\emph {Calculation of Hyperfine Tensors and Paramagnetic
+  Nmr Shifts Using the Relativistic Zeroth-Order Regular Approximation and
+  Density Functional Theory},\ }\href {\doibase 10.1021/ct200143w} {\bibfield
+  {journal} {\bibinfo  {journal} {Journal of Chemical Theory and Computation}\
+  }\textbf {\bibinfo {volume} {7}},\ \bibinfo {pages} {2175} (\bibinfo {year}
+  {2011})}\BibitemShut {NoStop}%
 \end{thebibliography}%
