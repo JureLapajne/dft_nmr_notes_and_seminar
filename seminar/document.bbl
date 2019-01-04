@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (1) enabled
-\begin{thebibliography}{13}%
+\begin{thebibliography}{14}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -111,6 +111,19 @@
   10.1103/revmodphys.71.1253} {\bibfield  {journal} {\bibinfo  {journal}
   {Reviews of Modern Physics}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo
   {pages} {1253} (\bibinfo {year} {1999})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ochsenfeld}\ \emph {in~dr.}(2004)\citenamefont
+  {Ochsenfeld}, \citenamefont {Kussmann},\ in\ \citenamefont
+  {Koziol}}]{ab_initio_nmr_spect_molec}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Ochsenfeld}}, \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {Kussmann}}\bibfield  {author} {\
+  in\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Koziol}},\ }\bibfield
+   {title} {\emph {Ab Initio Nmr Spectra for Molecular Systems With a Thousand
+  and More Atoms: a Linear-Scaling Method},\ }\href {\doibase
+  10.1002/anie.200460336} {\bibfield  {journal} {\bibinfo  {journal}
+  {Angewandte Chemie International Edition}\ }\textbf {\bibinfo {volume}
+  {43}},\ \bibinfo {pages} {4485} (\bibinfo {year} {2004})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Engel}\ in\ \citenamefont
   {Dreizler}(2011)}]{advanced_course}%
   \BibitemOpen

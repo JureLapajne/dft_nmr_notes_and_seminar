@@ -101,8 +101,7 @@ absorption/adsorption process \cite{introd_to_metal_organ_frameworks}. They can
 also be used as gas separation medium, as second harmonic generators in
 nonlinear optics, some of them also display interesting ferroelectric
 properties. Their usage is so broad thanks to numerous combinations of metallic
-ions and organic ligands  \cite{introd_to_metal_organ_frameworks}
-\cite{Assignment_of_Solid_State}. Many chemical properties stem from unpaired
+ions and organic ligands  \cite{introd_to_metal_organ_frameworks, Assignment_of_Solid_State}. Many chemical properties stem from unpaired
 electrons, which are often found in such materials. Ions such as Cu(||), Ni(||) have unpaired electron(s) in their d orbitals and one can clearly see their
  effects on $^{13}C$ and $^{1}H$ nmr  spectra, one of the most common tools for
  characterization of the molecular and electronic structure of organic
@@ -157,15 +156,15 @@ numerical approximations for computation of electronic wave function and
 optimization of molecular structure have emerged. One of the most successful methods has been density functional theory
 (dft from now on), which has been known for roughly 50 years. Through the years dft has evolved and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals.
 
-\subsection{Hamilotnian}
+\subsection{Hamiltonian}
 The first step in formulation of the problem is to define hamiltonian which
-describes motion of nuclei and electrons. Non-relativistic hamiltonian
+describes the motion of nuclei and electrons. Non-relativistic hamiltonian
 describing the interaction of  nuclei and electrons can be written as follows:
 \begin{equation} \label{full_hamiltonian}
 \hat H= \hat T_n + \hat  T_e + \hat  W_{n-n} + \hat W_{e-e} + \hat W_{n-e} + \hat V_{ext},
 \end{equation}
 where $T_n$ and $T_e$ are kinetic energies of nuclei and electrons respectively,
-$W_{n-n}$, $W_{e-e}$ and $W_{e-n}$ represent  nuclei-nuclei, electron-electron
+$W_{n-n}$, $W_{e-e}$ and $W_{e-n}$ represent nuclei-nuclei, electron-electron
 and electron-nuclei interaction terms. $V_{ext}$ is strictly multiplicative
 external potential. Ground state of such a system is given by the solution of
 the time independent Schr{\"o}dinger equation:
@@ -177,7 +176,7 @@ depends on $3N$ coordinates, where $N$ is total number of particles. This means
 that systems with more than e.g. 10 atoms are very computationally
 demanding. It is common practice to reduce the dimensionality of the problem by employing
 Born-Oppenheimer approximation in which the motion of nuclei is separated from
-the motion of electrons, sometimes nuclei are even fixed. Thus, from now on we will
+the motion of electrons, sometimes their positions are even fixed. Thus, from now on, we will
 restrict ourselves to hamiltonians describing only the motion of electrons:
 \begin{equation} \label{electron_hamiltonian}
 \hat H=  \hat  T_e  + \hat W_{e-e} + \hat W_{n-e} + \hat V_{ext}.
@@ -198,8 +197,8 @@ particle density and effectively reduce the problem to a single particle problem
 The core of dft lies in Kohn-Sham theorems. These two theorems
 ensure that stationary many-particle systems are fully characterized by their
 ground state particle density. This means that given a group of electrons, one
-only has to know ground state electron density to be able to tell all other
-properties of the system. For non-degenerate case the latter is uniquely
+only has to know ground state electron density to be able to tell all the other
+properties of the system. For non-degenerate cases the latter is uniquely
 determined by ground state many-particle wave function, which in turn is
 uniquely determined by the external potential. For a simple non-degenerate case
 we will prove these two theorems.
@@ -208,7 +207,7 @@ Let us consider hamiltonian of the form:
 \hat H = \hat T + \hat W + \hat V_{ext},
 \end{equation}
 where $T$ is kinetic energy, $W$ is inter-particle interaction and $V_{ext}$ is
-external potential determined up to a constant. Let $V_{ext}$ be such potential
+external potential determined up to a constant. Let $V_{ext}$ be such a potential
 that ground state $\psi_0$ is non-degenerate. Consider now the set of all $H$ of
 the form (\ref{ks_hamiltonian}), which differ only in $V_{ext}$, with
 non-degenerate ground states. Since kinetic and inter-particle interaction terms
@@ -220,7 +219,7 @@ are the same for all $H$ in such set, the latter can be represented by the set o
     \end{split}
  \end{equation}
 According to the above definition we can define the set of all corresponding
-ground state-densities determined up to phase as:
+ground state-densities determined up to a phase as:
 \begin{equation}
   \begin{split}
     \mathcal{G} = \{\psi_0; \quad &\textrm{$\psi_0$ ground state corresponding to a potential from $V$;}\\
@@ -355,7 +354,7 @@ theorems, to construct numerical scheme where electron density has the central
 role. We will concentrate on  construction of energy functional $E[n(\vec r)]$,
 which should approximate $F[n(\vec r)]$ as well as possible.
   
-  \section{Kohn-Sham equations}
+  \subsection{Kohn-Sham equations}
   Kohn-Sham (KS) equations represent a standard and most common approach to dft.
   They are based on energy functional dependent only on electron density $n(\vec
   r)$. To introduce them in an understandable and consistent fashion, let's start with a non-interacting system. 
@@ -460,22 +459,13 @@ The above expression is not the same as the one we get from Hartree-Fock
 equations and includes self-repulsion. Dft treats exchange term, also arising
 from Colulomb potential separately. Computational packages often employ different
 approximation and optimizations for faster calculation of this term \cite{orca}.
-Functional belonging to external potential is well known:
+Functional belonging to external potential is well known: 
 \begin{equation} \label{ext_potential_functional}
   E_{ext}[n(\vec r)] = \int n(\vec r) V_{ext}(\vec r) \dif \vec r.
 \end{equation}
 Unfortunately exchange-correlation functional is much less well known. It is
 defined by the equation (\ref{KS_system}) and contains all inter-particle
-interactions not contained in $T[n(\vec r)]$ and $ E_H[n(\vec r)]]$. Although
-the kinetic energy functional has the same form as exact functional, out basis
-functions lack correlation between particles, i.e. coordinate couplings
-$x_1x_2$,.. The second contribution comes from self-interaction contained in
-Hartree term. Thus, one can formally write the difference between
-exchange-correlation energy of real system and KS system (without $E_{xc}$ functional) as: 
-\begin{equation}
-  E_{xc}^{\psi_0}-E_{xc} = \bra{\psi_0}\hat T + \hat W \ket{\psi_0} - \bra{\Phi_0}\hat T \ket{\Phi_0} -  E_H[n(\vec r)],
-\end{equation}
-where $\ket{\psi_0}$ is the true ground state of interacting system. It is
+interactions not contained in $T[n(\vec r)]$ and $ E_H[n(\vec r)]]$. It is
 common to divide $E_{xc}[n(\vec r)]$ into exchange $E_x[n(\vec r)]$ and
 correlation $E_c[n(\vec r)]$ part. The former is defined in such a way that
 Hartree-Fock ground state density and energy are reproduced, if correlation part
@@ -542,7 +532,7 @@ determined. $E_{xc}$ is not. It is thus the determining factor for how well the 
 equations describe our system. We will present various functionals used today in
 one of the next chapters.
 
-\subsection{Degenerate ground state}
+\subsubsection{Degenerate ground state}
 So far we have talked little about the problem of degeneracy of KS states. In
 general degeneracy is not a problem, except at Fermi level. When there are more
 KS states than there are electrons, several possible ground states and thus also

@@ -23,6 +23,7 @@
     "Dft_Investigation_of_the_Effect_of_Spin_Orbit"
     "large_scale_quant_mechan_enzym"
     "solid_state_physics"
-    "calcul_hyper_tensor_param_nmr"))
+    "calcul_hyper_tensor_param_nmr"
+    "ab_initio_nmr_spect_molec"))
  :bibtex)
 

@@ -22,7 +22,6 @@ I was expecting an "="---line 298 of file ../mybib.bib
  :   number =       {nil},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "ab_initio_nmr_spect_molec"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
 Control: key (0) 
@@ -47,6 +46,10 @@ ptr=1, stack=
 while executing---line 6885 of file ../myapsrevSLO.bst
 ptr=1, stack=
   
+---the literal stack isn't empty for entry ab_initio_nmr_spect_molec
+while executing---line 6885 of file ../myapsrevSLO.bst
+ptr=1, stack=
+  
 ---the literal stack isn't empty for entry challenges_den_fun_theor
 while executing---line 6885 of file ../myapsrevSLO.bst
 ptr=1, stack=
@@ -61,45 +64,45 @@ ptr=1, stack=
   
 ---the literal stack isn't empty for entry calcul_hyper_tensor_param_nmr
 while executing---line 6885 of file ../myapsrevSLO.bst
-You've used 13 entries,
+You've used 14 entries,
             5816 wiz_defined-function locations,
-            1698 strings with 18090 characters,
-and the built_in function-call counts, 13727 in all, are:
-= -- 859
-> -- 371
-< -- 89
-+ -- 116
-- -- 86
-* -- 2174
-:= -- 1360
-add.period$ -- 13
-call.type$ -- 13
-change.case$ -- 63
-chr.to.int$ -- 13
-cite$ -- 14
-duplicate$ -- 1271
-empty$ -- 1019
-format.name$ -- 207
-if$ -- 2712
+            1707 strings with 18364 characters,
+and the built_in function-call counts, 14756 in all, are:
+= -- 928
+> -- 398
+< -- 95
++ -- 124
+- -- 92
+* -- 2336
+:= -- 1462
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 68
+chr.to.int$ -- 14
+cite$ -- 15
+duplicate$ -- 1366
+empty$ -- 1096
+format.name$ -- 222
+if$ -- 2918
 int.to.chr$ -- 1
-int.to.str$ -- 21
-missing$ -- 154
-newline$ -- 91
-num.names$ -- 39
-pop$ -- 499
+int.to.str$ -- 22
+missing$ -- 166
+newline$ -- 94
+num.names$ -- 42
+pop$ -- 537
 preamble$ -- 1
-purify$ -- 64
+purify$ -- 69
 quote$ -- 0
-skip$ -- 486
+skip$ -- 522
 stack$ -- 0
-substring$ -- 306
-swap$ -- 1244
-text.length$ -- 44
+substring$ -- 332
+swap$ -- 1338
+text.length$ -- 47
 text.prefix$ -- 0
 top$ -- 8
-type$ -- 184
+type$ -- 198
 warning$ -- 1
-while$ -- 37
+while$ -- 40
 width$ -- 0
-write$ -- 167
-(There were 15 error messages)
+write$ -- 176
+(There were 16 error messages)
