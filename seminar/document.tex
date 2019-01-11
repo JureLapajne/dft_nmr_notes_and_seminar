@@ -649,16 +649,10 @@ $\phi_i(\vec r)$ are unique functional of densities shown in previous chapter.
 \subsection{Van der Waals dispersion}
 Dft does not take into account effects caused by charge fluctuations. These Van
 der Waals effects can be taken care of with different methods.
-The most straight
-forward way is simply to add a special non-local functional (VdW-DF method). A similar
-approach is to use highly parameterized functionals, like metahybrid
-functionals (called DFs). Another way is to add dispersion-corrected
-atom-centered potentials (DCACPs). The most promising seems to be DFT-D method
+ The most promising seems to be the so called DFT-D method
 \cite{consis_accur_ab_initio_param}, which is just a sum of terms $CR^{-6}$
 over all atom pairs. As it is generally known, for large distances Van der Waals
-potential should decay as $R^{-6}$. It is obvious that DFT-D does obey this
-rule as also does VdW-DF method. The other two unfortunately do not obey it. As
-a consequence DF and DCACP usually cause underbinding \cite{consis_accur_ab_initio_param}.
+potential should decay as $R^{-6}$ and this interaction does fulfill this condition.
 
 
 \section{All electron vs pseudopotential}
@@ -688,34 +682,6 @@ molecule, it may be the only way to get reliable result. Of course for large
 molecules all electron calculations are significantly more expensive.
 Commonly used open source packages offering both approaches are Orca and Nwchem.
 
-
-\section{Dft in crystals}
-Crystals are periodic structures. This fact is also reflected the shape of electronic  wave functions, which are Bloch states \cite{solid_state_physics}:
-\begin{equation}
-  \psi_{n,\vec k}(\vec r) =e^{i\vec k\vec r}\sum_G c_{n,\vec k}(\vec G)e^{i\vec G \vec r} \quad \mathrm{with} \quad \psi_{n,\vec k}(\vec r+\vec R)= \psi_{n,\vec k}(\vec r)
-\end{equation}
-where $\vec G$ is a vector of reciprocal lattice and $\vec R$ vector of bravais lattice of a crystal in question.
-In ideal case, where core potentials are neglected, wave functions are simple plane waves. When potential is weak and reasonably smooth, it can be treated as perturbation \cite{solid_state_physics}.
-Unfortunately neither of the two conditions is true. Core potential diverges as $r \rightarrow 0$
-and as a consequence the wave functions have a cusp at the origin. For heavier
-atoms core states have large gradients and can not be represented as plane waves.
-
-The simplest solution is to expand wave functions into series of plane waves.
-Computationally this is just a discrete fourier transform.
-However, because of already given reasons, the number of plane waves required
-for such expansion is very large. Thus, even the sum of plane waves is not a
-suitable representation of core states. For this reason, core states are
-commonly replaced by pseudo potentials in crystal dft calculations. This
-approach usually carries \emph{PW calculation} designation.
-
-Although, for many crystals this approach works well it is not good enough
-especially for transition elements with partially filled d-shells and second row
-elements. Electron density of transition metals and second row elements still
-varies widely in spite of use of pseudopotentials \cite{large_scale_quant_mechan_enzym}. For such cases an improved
-approach has been developed. A new method, called gaussian augmented plane waves
-or \emph{GAPW} approach. GAPW basis sets consist of Gaussian functions and plane
-waves. This approach is suitable for all electron calculations, where core
-states are expanded in Gaussian functions and valence electrons in plane waves. As a consequence, all electron wave calculations are possible for crystals avoiding pseudo potential inaccuracy issues.
 
 \section{Nmr parameters}
 The two most important nmr quantities are shielding tensor and hyperfine tensor.
