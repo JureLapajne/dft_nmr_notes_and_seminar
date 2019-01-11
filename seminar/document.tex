@@ -97,7 +97,7 @@ materials with very high porosity. Internal surface area in some cases exceeds
 chemical properties they are widely used in the fields of biochemistry,
 catalysis and electrochemistry. They are especially useful in clean energy
 applications, as storage for gasses (eg. hydrogen) or energy through
-absorption/adsorption process \cite{introd_to_metal_organ_frameworks}. They can
+absorption / desorption process \cite{introd_to_metal_organ_frameworks}. They can
 also be used as gas separation medium, as second harmonic generators in
 nonlinear optics, some of them also display interesting ferroelectric
 properties. Their usage is so broad thanks to numerous combinations of metallic
@@ -105,7 +105,12 @@ ions and organic ligands  \cite{introd_to_metal_organ_frameworks, Assignment_of_
 electrons, which are often found in such materials. Ions such as Cu(||), Ni(||) have unpaired electron(s) in their d orbitals and one can clearly see their
  effects on $^{13}C$ and $^{1}H$ nmr  spectra, one of the most common tools for
  characterization of the molecular and electronic structure of organic
- molecules. Materials presented in this work are paramagnetic. This means they exhibit weak attraction to the external magnetic field, which is a consequence of unpaired electrons in their structure. The effects of the latter are easily recognized in nmr spectra by the large paramagnetic shifts they cause.
+ molecules.
+
+ Materials presented in this work are paramagnetic. This means they exhibit weak
+ attraction to the external magnetic field, which is a consequence of unpaired
+ electrons in their structure. The effects of the latter are easily recognized
+ in nmr spectra by the large paramagnetic shifts they cause \cite{Dft_Investigation_of_the_Effect_of_Spin_Orbit}.
 
  \begin{figure}
    \centering
@@ -120,18 +125,20 @@ electrons, which are often found in such materials. Ions such as Cu(||), Ni(||) 
   \caption{}
 \end{subfigure}
   \caption{ An example of MOF named Hkust-1. It is a crystalline
-    material. Image (a) depicts a part of the structure used for calculation of
-    nmr parameters of atoms marked with 1, 2 and 3. (b) $\mathrm{C}^{13}$-nmr
+    material. Image (a) depicts a part of the crystaline structure which is used for calculation of
+    nmr parameters of atoms marked with 1, 2 and 3. (b) $^{13}\mathrm{C}$-nmr
     spectra of atoms marked on image (a).
   }
   \end{figure}
 
  Nmr spectra of organic materials usually feature chemical shifts caused by
- induced currents which in turn are caused by external magnetic field
+ induced currents which in turn, are caused by external magnetic field
  \cite{chemic_shift_tensor_review}. In paramagnetic materials, this is not the
  only contribution to the total shifts visible in spectra. An important
  interaction, not present in  diamagnetic materials, is interaction between
- unpaired electrons and nuclei. Such interaction can cause large paramagnetic
+ unpaired electrons and nuclei
+ \cite{Dft_Investigation_of_the_Effect_of_Spin_Orbit}.
+ Such interaction can cause large paramagnetic
  shifts also called hyperfine shifts. Typical for such spectra are also widened
  spectral lines. These large shifts make interpretation of spectra more difficult
  \cite{Dft_Investigation_of_the_Effect_of_Spin_Orbit}. A useful tool to help
@@ -154,7 +161,7 @@ molecules, as the time consumed to solve it grows exponentially
 number at a given accuracy level. With the development of computers, different
 numerical approximations for computation of electronic wave function and
 optimization of molecular structure have emerged. One of the most successful methods has been density functional theory
-(dft from now on), which has been known for roughly 50 years. Through the years dft has evolved and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals.
+(dft from now on), which has been known for roughly 50 years \cite{nobel_lecture}. Through the years dft has evolved and today it represents one of the main tools for calculation of electronic structure especially for complex molecules and crystals.
 
 \subsection{Hamiltonian}
 The first step in formulation of the problem is to define hamiltonian which
@@ -176,7 +183,8 @@ depends on $3N$ coordinates, where $N$ is total number of particles. This means
 that systems with more than e.g. 10 atoms are very computationally
 demanding. It is common practice to reduce the dimensionality of the problem by employing
 Born-Oppenheimer approximation in which the motion of nuclei is separated from
-the motion of electrons, sometimes their positions are even fixed. Thus, from now on, we will
+the motion of electrons, sometimes their positions are even fixed
+\cite{advanced_course, nobel_lecture}. Thus, from now on, we will
 restrict ourselves to hamiltonians describing only the motion of electrons:
 \begin{equation} \label{electron_hamiltonian}
 \hat H=  \hat  T_e  + \hat W_{e-e} + \hat W_{n-e} + \hat V_{ext}.
@@ -185,21 +193,21 @@ The number of electrons $N$ for a small molecules, like water, is of the order
 $\sim 10$. In medium sized molecules with $\sim 50-100$ atoms, the number can
 grow to a few hundred, while in large molecules, like proteins, the number can
 grow into thousands and ten-thousands \cite{ab_initio_nmr_spect_molec}. As one can imagine, solving a system of
-coupled differential equations with such huge number of coordinates ($3N$) is
+coupled differential equations with so large number of coordinates ($3N$) is
 computationally an almost impossible task.
 This is the reason for development of approaches which, while still being
 sufficiently accurate, offer faster computational times. DFT represents one of
-the most successful methods to solving such systems.
+the most successful methods for solving such systems.
 
 \subsection{Density functional theory - dft}
 Dft allows us replaces all electron wave function with
-particle density and effectively reduce the problem to a single particle problem.
+electron density and effectively reduce the problem to a single electron problem.
 The core of dft lies in Kohn-Sham theorems. These two theorems
-ensure that stationary many-particle systems are fully characterized by their
-ground state particle density. This means that given a group of electrons, one
+ensure that stationary many-electron systems are fully characterized by their
+ground state electron density. This means that given a group of electrons, one
 only has to know ground state electron density to be able to tell all the other
-properties of the system. For non-degenerate cases the latter is uniquely
-determined by ground state many-particle wave function, which in turn is
+properties of the system \cite{nobel_lecture}. For non-degenerate cases, the latter is uniquely
+determined by the ground state many-electron wave function, which in turn is
 uniquely determined by the external potential. For a simple non-degenerate case
 we will prove these two theorems.
 Let us consider hamiltonian of the form:
@@ -209,12 +217,12 @@ Let us consider hamiltonian of the form:
 where $T$ is kinetic energy, $W$ is inter-particle interaction and $V_{ext}$ is
 external potential determined up to a constant. Let $V_{ext}$ be such a potential
 that ground state $\psi_0$ is non-degenerate. Consider now the set of all $H$ of
-the form (\ref{ks_hamiltonian}), which differ only in $V_{ext}$, with
+the form (\ref{ks_hamiltonian}), which differ only in the $V_{ext}$, with
 non-degenerate ground states. Since kinetic and inter-particle interaction terms
-are the same for all $H$ in such set, the latter can be represented by the set of all non-equivalent potentials:
+are the same for all $H$ in such a set, the latter can be represented by the set of all non-equivalent potentials:
 \begin{equation}
   \begin{split}
-    \mathcal{V} = \{V_{ext};\quad &\textrm{V determined up to multiplication factor and a constant;}\\
+    \mathcal{V} = \{V_{ext};\quad &\textrm{V determined up to a constant;}\\
     & \textrm{$\ket{\psi_o}$ exists and is non-degenerate}\}
     \end{split}
  \end{equation}
@@ -222,7 +230,7 @@ According to the above definition we can define the set of all corresponding
 ground state-densities determined up to a phase as:
 \begin{equation}
   \begin{split}
-    \mathcal{G} = \{\psi_0; \quad &\textrm{$\psi_0$ ground state corresponding to a potential from $V$;}\\
+    \mathcal{G} = \{\psi_0; \quad &\textrm{$\psi_0$ ground state corresponding to external potential $V_{ext}$;}\\
 &\textrm{ $\psi_0\sim\psi_0e^{i\phi}$   }
     \}
     \end{split}
@@ -254,10 +262,10 @@ that $\psi_0$ is a ground state for two non-equivalent potentials $V_{ext}$ and 
 subtracting above equation yields:
 \end{dsuspend}
 \begin{dmath}
-(\hat V_{ext} - \hat V'_{ext})\ket{\psi_0}=(\epsilon_0-\epsilon'_0)\ket{\psi_0}
+(\hat V_{ext} - \hat V'_{ext})\ket{\psi_0}=(\epsilon_0-\epsilon'_0)\ket{\psi_0}.
 \end{dmath}.
 \begin{dsuspend}
- due to multiplicative nature of potentials, we can just divide the whole
+ Due to multiplicative nature of potentials, we can just divide the whole
  equation by $\ket{\psi_0}$ and obtain: 
 \end{dsuspend}
 \begin{dmath}
@@ -299,14 +307,14 @@ for both wave functions:
   \epsilon_0 + \epsilon'_0< \epsilon_0 + \epsilon'_0,
 \end{dmath}
 \end{dgroup*}
-which proves that for hamiltonians which yield non-degenerate ground states,
-each ground state leads to a different ground state particle density. Ground
-state particle densities form a set where each density corresponds to a single
+which proves that for hamiltonians, which yield non-degenerate ground states,
+each ground state leads to a different ground state electron density. Ground
+state electron densities form a set where each density corresponds to a single
 wave function from $\mathcal G$:
 \begin{equation}
-  \mathcal N = \left\{n; n=\bra{\psi}\hat n \ket{\psi}, \psi \in \mathcal G \right\},
+  \mathcal N = \left\{n; n=\bra{\psi_0}\hat n \ket{\psi_0}, \psi_0 \in \mathcal G \right\},
 \end{equation}
-where $\hat n$ is quantum mechanical particle density operator.
+where $\hat n$ is quantum mechanical electron density operator.
 
 Extension of this simple proof to hamiltonians with degenerate ground states is
 possible by replacing ground state wave functions by linear span of degenerate
@@ -321,15 +329,15 @@ V_{ext}(\vec r))$, $(\psi_\uparrow, \psi_{\downarrow})$ and $(n(\vec r), \vec m
 
 Since there exists bijection between ground state wave functions and ground
 state densities, one can formally rewrite ground state wave function as
-functional of ground state particle density:
+functional of ground state electron density:
 \begin{equation}
-  \ket{\psi'_0} =  \ket{\psi'_0[n]}
+  \ket{\psi'_0} =  \ket{\Psi[n'_0]}
   \end{equation}
 and using above formula one can also rewrite operators in terms of ground state
 density. As an example, let us rewrite ground state energy as functional of
-ground state particle density:
+ground state electron density:
 \begin{equation} \label{hamiltonian_density}
-  E[n_0] = \bra{\psi_0[n_0]}\hat H \ket{\psi_0[n_0]},
+  E[n_0] = \bra{\Psi[n_0]}\hat H \ket{\Psi[n_0]},
   \end{equation}
 
 for which one can find minimum energy principle: $E[n_0]<E[n]$ whenever n
@@ -342,16 +350,15 @@ of the form \ref{hamiltonian_density} and consequently they are called V-represe
 
 In practice, one does not need deep knowledge about such mathematical
 definitions of functionals. The reason for this is the discretization of space
-into grid points. On final grid for any strictly positive particle density
-($n(\vec r) > 0$), which is compatible with Pauli principle, there exists a
-potential for which the density represents ground state density and is thus contained in $\mathcal N$ \cite{advanced_course}.
+into grid points. On final grid for any strictly positive electron density
+($n(\vec r) > 0$) there exists a potential for which the density represents ground state density and is thus contained in $\mathcal N$ \cite{advanced_course}.
 
 
   \section{DFT in practice}
 Kohn-Sham theorems unfortunately tell nothing about the explicit dependence of
 energy functional on density. Nonetheless, we would still like to use Kohn-Sham
 theorems, to construct numerical scheme where electron density has the central
-role. We will concentrate on  construction of energy functional $E[n(\vec r)]$,
+role. From now on will concentrate on construction suitable dft scheme and finding energy functional $E[n(\vec r)]$,
 which should approximate $F[n(\vec r)]$ as well as possible.
   
   \subsection{Kohn-Sham equations}
@@ -366,10 +373,10 @@ following way:
    \hat H =\hat  W_k + \hat V_{ext}, 
  \end{equation}
  where $V_{ext}$ is an external potential of multiplicative nature. It is well
- known the solution to this problem can be written in the form of Slater determinant:
+ known that the solution to this problem can be written in the form of Slater determinant:
 
  \[
-       \ket{\Phi_0} = \frac{1}{\sqrt{N!}}\det 
+      \frac{1}{\sqrt{N!}}\det 
    \begin{bmatrix}
    \phi_{1}(\vec r_1, \sigma_1) & \phi_{2}(\vec r_1, \sigma_1) & \phi_{3}(\vec
    r_1, \sigma_1) & \dots & \phi_{N}(\vec r_1, \sigma_1) \\
@@ -382,20 +389,20 @@ following way:
  which, when inserted into equation (\ref{noninteracting_H}) effectively produces
  single electron problem:
  \begin{equation}
-   \left(-\frac{\hbar^2}{2m}\nabla^2 + \hat V_{ext}(\vec r)\right) \psi (\vec r) = \epsilon_i \psi(\vec r).
+   \left(-\frac{\hbar^2}{2m}\nabla^2 + \hat V_{ext}(\vec r)\right) \phi_i (\vec r) = \epsilon_i \phi_i(\vec r).
  \end{equation}
  Thus, using slater determinant we have effectively converted many electron
  problem with $3N$ coordinates to a single electron problem. Of course the
- electrons in this case do not feel each other and motion of each particle
- should not depend on other particles, so such a breakdown is completely natural
+ electrons in this case do not feel each other and motion of each electron
+ should not depend on other electrons, so such a breakdown is completely natural
  (except for Pauli principle which is already built into Slater determinant).
  
  The ground state of such a system is obtained using $N/2$ lowest states by
  putting $2$  electrons into each state. Calculation of kinetic energy and
- electron density for such a system is also straight forward. As we can see,
+ electron density for such a system is straight forward. As we can see,
  using Slater  determinant as ansatz for the solution of noninteracting
  hamiltonian offers simple expressions for ground state wavefunction, kinetic
- energy and particle density  calculation. Electron density corresponding to
+ energy and electron density  calculation. Electron density corresponding to
  such a wave function can be written using the following expression:
  \begin{equation} \label{KS_density}
    n_0(\vec r) = \sum_{\sigma=\uparrow,\downarrow}\sum_i\Theta(\epsilon_F-\epsilon_i)|\phi_i(\vec r, \sigma)|^2.
@@ -404,48 +411,44 @@ following way:
  remember Kohn-Sham theorems, which state that ground state density is unique
  functional of the ground state wave function:
  \begin{equation}
-   \ket{\psi}= \ket{\psi(n(\vec r))}.
+   \ket{\psi(\vec r)}= \ket{\Psi[n(\vec r)]}.
  \end{equation}
  One can show that there exists an even stronger connection; every $\phi_i$ is a
- uniquely determined by ground state density. One can see this by considering a single particle problem using the same potential $V_{ext}$ as found in eq.
- (\ref{noninteracting_H}) and then gradually adding particles, thus:
+ uniquely determined by ground state density. One can see this by considering a single electron problem using the same potential $V_{ext}$ as found in eq.
+ (\ref{noninteracting_H}) and then gradually adding electrons, thus:
  \begin{equation}
-   \ket{\phi_i}= \ket{\phi_i(n(\vec r))}.
+   \ket{\phi_i(\vec r)}= \ket{\Phi_i[n(\vec r)]}.
  \end{equation}
  Using this relations we can define HK functional:
  \begin{equation}
-   E_s[n(\vec r)] = \bra{\psi[n(\vec r)]}T \ket{\psi(n(\vec r))} + \int \dif \vec r n(\vec r) V_{ext}(\vec r),
+   E_s[n(\vec r)] = \bra{\Psi[n(\vec r)]}T \ket{\Psi(n(\vec r))} + \int n(\vec r) V_{ext}(\vec r)  \dif \vec r,
    \end{equation}
  where
 \begin{equation} \label{KS_kinetic_term}
    T[n(\vec r)] = \sum_i\Theta(\epsilon_F-\epsilon_i)  \sum_{\sigma=\uparrow,\downarrow}\int \phi^*_\sigma(\vec r)\frac{-i\hbar\nabla^2}{2m}\phi_\sigma(\vec r),
  \end{equation}
- where we have implicitly used $\ket{\phi_i(\vec r)} = \ket{ \phi[n(\vec r)] }$.
- In practice this in not necessary, since functions $\phi(\vec r)$ are known -
- they are direct result of calculation.
+ where we have implicitly used $\ket{\phi_i(\vec r)} = \ket{ \Phi_i[n(\vec r)] }$.
+ In practice this in not necessary, since functions $\phi(\vec r)$ are known.
  
 Now we would like to use a similar construction to solve hamiltonian
 \ref{hamiltonian_density}. Using solution ansatz in the form of Slater
-determinant offers straight forward calculation of kinetic energy and particle
+determinant offers straight forward calculation of kinetic energy and electron
 density. Using Slater determinant leads to differential equations for $\phi_k$
 wavefunctions. Modern computational packages instead of solving differential
 equations use large sets of basis functions, which in the end lead to
-over determined set of algebraic equations. Solution is then given by populating
+eigenvalue problem. Solution is then given by populating
 lowest energy orbitals until all electrons are allocated.
- 
-First we have to ask ourselves if it is at all possible to convert interacting
-$N$ particle problem ($3N$ coordinates) to an effectively single particle (3 coordinates)
-problem. By this we mean if there exists a noninteracting system that has the
-same groud state electron density as original interacting system. It turns out
-that for every $N$-electron interacting system with ground state density
-$n_0(\vec r)$ there also exists a noninteracting system with exactly the same
-ground state density. The question still remains what kind of external potential
+
+To solve interacting system using dft one relies on the fact, that for every
+interacting hamiltonian with ground state density $n_0$, there exists
+noninteracting hamilotnian with exactly the same ground state density \cite{advanced_course}.
+This fact still does not tell us what kind of external potential
 one should use to produce the same electron density.
 
 Intuitively, one would expect that potential belonging to effective single
-particle hamiltonian should reflect the properties, geometry and potentials found
-in given many particle system. Hamiltonian naturally contains kinetic energy
-term, but it should also somehow contain inter-particle interactions. Usually
+electron hamiltonian should reflect the properties, geometry and potentials found
+in a given interacting system. Hamiltonian naturally contains kinetic energy
+term, but it should also somehow contain inter particle interactions. Usually
 Kohn-Sham hamiltonian consists of kinetic energy term, Hartree inter particle
 interaction, external potential and exchange-correlation functional \cite{advanced_course}:
 \begin{equation} \label{KS_system}
@@ -457,14 +460,14 @@ Hartree term accounts for Coulomb repulsion:
 \end{equation}
 The above expression is not the same as the one we get from Hartree-Fock
 equations and includes self-repulsion. Dft treats exchange term, also arising
-from Colulomb potential separately. Computational packages often employ different
+from Coluomb potential, separately. Computational packages often employ different
 approximation and optimizations for faster calculation of this term \cite{orca}.
 Functional belonging to external potential is well known: 
 \begin{equation} \label{ext_potential_functional}
   E_{ext}[n(\vec r)] = \int n(\vec r) V_{ext}(\vec r) \dif \vec r.
 \end{equation}
 Unfortunately exchange-correlation functional is much less well known. It is
-defined by the equation (\ref{KS_system}) and contains all inter-particle
+defined by the equation (\ref{KS_system}) and contains all the inter-particle
 interactions not contained in $T[n(\vec r)]$ and $ E_H[n(\vec r)]]$. It is
 common to divide $E_{xc}[n(\vec r)]$ into exchange $E_x[n(\vec r)]$ and
 correlation $E_c[n(\vec r)]$ part. The former is defined in such a way that
@@ -473,12 +476,12 @@ is neglected. This is achieved if exchange part of functional has exactly the
 opposite contribution as excessive hartree term in KS equations: 
 
 \begin{equation}
-  E_{x}[n(\vec r)]=-\sum_{k,l}\Theta(\epsilon_F-\epsilon_k)\Theta(\epsilon_F-\epsilon_l)\frac{1}{2}\int \dif \vec{r} \dif \vec{r'}\phi^*_k(\vec r, \sigma)\phi_l(\vec{r}, \sigma)w(\vec{r},\vec{r'})\phi^*_l(\vec{r'}, \sigma')\phi_k(\vec{r'}, \sigma')
+  E_{x}[n(\vec r)]=-\frac{1}{2}\sum_{k,l}\Theta(\epsilon_F-\epsilon_k)\Theta(\epsilon_F-\epsilon_l)\int \dif \vec{r} \dif \vec{r'}\phi^*_k(\vec r, \sigma)\phi_l(\vec{r}, \sigma)w(\vec{r},\vec{r'})\phi^*_l(\vec{r'}, \sigma')\phi_k(\vec{r'}, \sigma')
 \end{equation}
 The most important contribution of $E_{x}[n(\vec r)]$ is cancellation of
 self-repulsion. This term is commonly called exact exchange and is not always
-used in dft calculations. Often times exchange functionals soley based on
-electron density are employed and they do not manage to completely cancel
+used in dft calculations. Exchange functionals based only on
+electron density are often employed and they do not manage to completely cancel
 self-repulsion terms. We will take a closer look at them in the following chapter.
 Correlation term is more difficult to derive and we will not dwell deeper into
 it. Instead let's have a look at how KS equations are actually solved.
@@ -488,26 +491,26 @@ determinant as ansatz for many electron system and density calculation. By
 considering (\ref{ext_potential_functional}) and (\ref{KS_kinetic_term}) one can
 write KS equation:  
 \begin{equation}
-  \left( \hat T + v_{ext} + E_H[n(\vec r)]]  + E_{xc}[n(\vec r)]] \right) \ket \phi_i =  \epsilon_i \phi_i,  
+  \left( \hat T + v_{ext} + E_H[n(\vec r)]]  + E_{xc}[n(\vec r)]] \right) \ket \phi_i =  \epsilon_i \ket{\phi_i},  
 \end {equation}
 where density $n(\vec r)$  has to be calculated according to equation
 (\ref{KS_density}). They are usually determined by inserting ansatz in the
 form of gaussian basis functions from which one can
-then construct correct single particle states. Multiplying equation by $\bra
+then construct correct single electron states. Multiplying equation by $\bra
 \phi_j$ from the left side yields generalized eigenvalue problem:
 \begin{equation}
   \bra {\phi_j} \left( \hat T + v_{ext}(\vec r) + E_H[n(\vec r)]]  + E_{xc}[n(\vec r)]] \right) \ket{\phi_i} =  \epsilon_i \braket{ \phi_j |\phi_i }.
 \end {equation}
 
 System obviously has to be solved in a self consistent fashion
-\ref{self_consistent_scheme}. One starts with the positioning of nuclei into
+(fig. \ref{self_consistent_scheme}). One starts with the positioning of nuclei into
 desired positions and construction of nuclei potentials. In parallel with the
 last step starting electron orbitals $\phi^{(0)}_i$ are constructed. Usually they are written
 as a series of Gaussian functions. Electron density $n^0$ can then be quickly
-calculated from constructed orbitals. The next step is to
-calculate functionals $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$. In the next step
+calculated from constructed orbitals. After that one
+calculates functionals $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$. In the next step
 equations are solved. The solution are new orbitals $\phi_i^{(1)}$  and from
-them new density $n^{(1)}$ is calculated. The latter is then used to construct new $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$ which are again used to
+them, the new density $n^{(1)}$ is calculated. The latter is then used to construct new $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$ which are again used to
 solve KS equation from which one gets new orbitals $\phi^{(3)}$. The procedure is
 repeated until the change in density or energy is not small enough. 
 
@@ -516,7 +519,7 @@ repeated until the change in density or energy is not small enough.
   \centering
   \includegraphics[width=0.65\textwidth]{self_consistent_scheme.png}.
   \caption{Self consistent scheme depicting the procedure in which Kohn Sham
-    equations are solved. One starts positioning nuclei into
+    equations are solved. One starts with the positioning of nuclei into
     desired positions. The next step is to construct potential of nuclei and in
     parallel one can also construct starting approximation for electronic wave
     function. The latter is then used for constructing all other functionals of
@@ -536,37 +539,37 @@ one of the next chapters.
 So far we have talked little about the problem of degeneracy of KS states. In
 general degeneracy is not a problem, except at Fermi level. When there are more
 KS states than there are electrons, several possible ground states and thus also
-particle densities can be constructed. In such cases density matrix arising from
-several Slater determinants is constructed:
+electron densities can be constructed. In such cases density matrix arising from
+several Slater determinants is constructed \cite{advanced_course}:
 \begin{equation}
   \hat D = \sum_i d_i\ket{\Phi_i} \bra{\Phi_i}.
   \end{equation}
 Density belonging to such ground state is just a weighted sum of densities
 corresponding to each Slater determinant $n(\vec r)=\sum_id_in_i(\vec r)$, where
-$n_i(\vec r)=\sum_j\phi_{ij}(\vec r)$. Index $i$ runs over all possible
+$n_i(\vec r)=\sum_j|\phi_{ij}(\vec r)|^2$. Index $i$ runs over all possible
 Slater determinants one can construct from given degenerate states and index $j$
 runs over all states in each Slater determinant. The sum of coefficients $d_k$
 is the trace of density matrix and has to be $1$. The choice of coefficients
 $d_k$ is not trivial. They have to be constructed in such a way that the new
-particle density does not break degeneracy. When a new degenerate state emerges in
+electron density does not break degeneracy. When a new degenerate state emerges in
 scf procedure (fig. \ref{self_consistent_scheme}), it may significantly affect
-particle density and resulting potentials and consequently break or destroy
+electron density and resulting potentials and consequently break or destroy
 convergence of the procedure. An example is a boron atom where 2p orbitals are
 degenerate. Only the choice of $d_{2p^0}=d_{2p^{-1}}=d_{2p^1}=1/3$ leads to spherically symmetric potential and preservation of degeneracy\cite{advanced_course}.
 
 \subsection{Exchange and correlation functionals}
 Exchange and correlation functionals are functionals which try to account for
-exchange and correlation interactions between particles/electrons. They can be of a
+exchange and correlation interactions between electrons. They can be of a
 different forms and in general one can roughly divide them into 4 groups
 \cite{challenges_den_fun_theor} - Lda, Gga, meta-Gga and Hybrid functionals.
 The first three group all have in common that they explicitly depend on density
-of particles. This causes a self-interaction error, which causes excessive
+of electrons. This causes a self-interaction error, which causes excessive
 delocalization of electrons. As a solution to these problems hybrid
 functionals, which contain exact Hartree-Fock exchange, have been proposed.
 
 \subsubsection{Lda}
 Local density approximation (lda) are functionals which depend only on
-density of particles (electrons) \cite{challenges_den_fun_theor}.
+ electron density \cite{challenges_den_fun_theor}.
 First functional of such form dates back into
 the year 1930, when the exchange interaction for uniform gas was discovered \cite{challenges_den_fun_theor}:
 \begin{equation} \label{electron_gas_exchange}
@@ -578,7 +581,7 @@ For every other purpose gga and hybrid functionals are much better suited.
 
 \subsubsection{Gga}
 Generalized gradient approximation (gga) functionals
-depend not only on density of particles but also on its gradient \cite{challenges_den_fun_theor}. Most commonly,
+depend not only on electron density but also on its gradient \cite{challenges_den_fun_theor}. Most commonly,
 gga functionals are build upon (\ref{electron_gas_exchange}) \cite{challenges_den_fun_theor}:
 \begin{equation}
   E_{xc}^{gga}=\int n(\vec r)^{4/3}F(x);\quad x=|\nabla n(\vec r)|/n(\vec r)^{4/3}.
@@ -588,15 +591,15 @@ One of most commonly used gga functional is PBE functional
 \begin{equation}
   E_{xc}^{pbe}=-\int  n(\vec r)^{4/3}\left[ \frac{3}{4}\left(\frac{3}{\pi}\right)^{1/3} + \frac{\mu s}{1+ \mu s^2/\kappa} \right]; \quad s=x/(2(3\pi/2)^{1/3}).
 \end{equation}
-Gga functionals offer acceptable accuracy at fast computational times and are
-most commonly used for approximate calculation, before starting more accurate
-and more time consuming calcualtion using hybrid or meta-gga functionals.
+Gga functionals offer acceptable accuracy and fast computational times and are
+most commonly used for approximate calculations, before starting more accurate
+and more time consuming calculations using hybrid or meta-gga functionals.
 
 \subsubsection{Meta-gga functionals}
 Since gga functionals have their short commings, meta-gga functionals were formed
 in belief that adding higher derivatives will improve accuracy
 \cite{challenges_den_fun_theor}. Meta-gga functionals are build upon gga
-functional form and add terms containing higher order derivatives of particle
+functional form and add terms containing higher order derivatives of electron
 density. Functionals are formulated according to the following equation
 \cite{challenges_den_fun_theor}:
 
@@ -627,9 +630,9 @@ $\phi_i(\vec r)$ are unique functional of densities shown in previous chapter.
   \caption{Jacob’s ladder of exchange-correlation functional approximations
     employed in dft calculations. Hartree world represents starting level where only
     weak interparticle interaction is present. Lda approxiamtion covers
-    functionals which depend only on particle density. Gga additionally depends
-    on gradient of particle density, while mega-gga incorporates higher order
-    derivatives of particle density and in some cases even kinetic energy of
+    functionals which depend only on electron density. Gga additionally depends
+    on gradient of electron density, while mega-gga incorporates higher order
+    derivatives of electron density and in some cases even kinetic energy of
     orbitals ($\tau$). Hyper-gga functionals, also called hybrid functionals,
     stage represents functionals which contain exact exchange calculation (i.e.
     the one found in Hartree-Fock method). The last level utilizes all Kohn-Sham
@@ -647,40 +650,40 @@ The most straight
 forward way is simply to add a special non-local functional (VdW-DF method). A similar
 approach is to use highly parameterized functionals, like metahybrid
 functionals (called DFs). Another way is to add dispersion-corrected
-atom-centered potentials (DCACPs). Recently, the most promising seems to be DFT-D method
+atom-centered potentials (DCACPs). The most promising seems to be DFT-D method
 \cite{consis_accur_ab_initio_param}, which is just a sum of terms $CR^{-6}$
 over all atom pairs. As it is generally known, for large distances Van der Waals
 potential should decay as $R^{-6}$. It is obvious that DFT-D does obey this
 rule as also does VdW-DF method. The other two unfortunately do not obey it. As
-a consequence DF and DCACP usually cause underbinding.
+a consequence DF and DCACP usually cause underbinding \cite{consis_accur_ab_initio_param}.
 
 
 \section{All electron vs pseudopotential}
-Electronic states of an atom can be divided into three categories; core states,
+Electronic states of an atom can be divided into three categories: core states,
 semi-core states and valence states. The latter are the most actively included
 in formation of bonds. Valence states may be completely deformed once the atom
-is put into molecules/crystals. Semi-core state are states which do not
+is put into molecules/crystals. Semi-core states are states which do not
 directly contribute to bonding, but may still be polarized or spatially
 deformed. Lastly, core states, are highly localized and are assumed to be
 unaffected by chemical bonding. This means that there should be very little loss
-of accuracy if core states are replaced by a pseudo wavefunction.
+of accuracy, if core states are replaced by a pseudo wavefunction.
 Pseudo potentials are constructs which try to
 replicate effects of core electrons exerted on semi-core, valence electrons and
-thus reproduce correct chemical and physical properties (bonding energy, bond
+thus reproduce the correct chemical and physical properties (bonding energy, bond
 length, electron localization, magnetization,...).
 
 Of course, pseudo potentials have to be constructed prior to a given calculation using
 some other much simpler system. As a consequence, there
 exists a question of transferability. Is a potential constructed using some
-reference molecuole usable for another molecule. The exact answer is
+reference molecule usable for another molecule. The exact answer is
 not possible. Many times the only way is to try, especially when transition
 elements are in question.
 
 All electron calculations avoid pseudopotential by taking into account all
-electrons. The latter does cost some computational time, but it depending on
+electrons. The latter does cost some computational time, but depending on the
 molecule, it may be the only way to get reliable result. Of course for large
 molecules all electron calculations are significantly more expensive.
-Commonly used open source packages are Orca and Nwchem.
+Commonly used open source packages offering both approaches are Orca and Nwchem.
 
 
 \section{Dft in crystals}
@@ -714,29 +717,29 @@ states are expanded in Gaussian functions and valence electrons in plane waves. 
 \section{Nmr parameters}
 The two most important nmr quantities are shielding tensor and hyperfine tensor.
 The former is important in all organic materials, while the latter is present
-only in materials with unpaired electrons.Shielding tensor is 
+only in materials with unpaired electrons. Shielding tensor is 
 proportionate to electron density at the observed  core site, whereas hyperfine
-tensor is proportionate to shielding tensor.
+tensor is proportionate to the shielding tensor.
 
 
 \begin{wrapfigure}{R}{0.4\textwidth}
 \centering
 \includegraphics[width=0.3\textwidth]{origin_dependance_tensor.png}
 \caption{Translation of the coordinate system for vector $\vec{Ro'}$. $\vec{R_N}$
-  points to $N$-th atom, whereas smallc case $\vec r$ point to electrons.}
+  points to $N$-th atom, whereas small case $\vec r$ point to electrons.}
 \end{wrapfigure}
 
-  There are two contributions to shielding tensor - paramagnetic and
+  There are two contributions to the shielding tensor - paramagnetic and
   diamagnetic. The former is only present in materials with unpaired electrons
-  and should not be confused with hyperfine tensor, also present such materials.
-  Diamagnetic contribution can be in the first order of perturbation calculated as \cite{chemic_shift_tensor_review}:
+  and should not be confused with hyperfine tensor, also present in such materials.
+  Diamagnetic contribution can be, in the first order of perturbation, calculated as \cite{chemic_shift_tensor_review}:
   \begin{equation}
     \sigma^d_{\alpha \beta}=\bra{\psi_0}\vec{r}_k \vec{r}_{Nk}\delta_{\alpha\beta}- \vec{r}_{k}\vec{r}_{Nk} \ket{\psi_0}
   \end{equation}
-  and a similar expression holds also for paramagnetic contribution $\sigma^p_{\alpha\beta}$. The
+  and a similar expression holds also for paramagnetic contribution $\sigma^p_{\alpha\beta}$. Both
   expressions are nonlinear in $\vec r$. This seems to suggest that the values
-  depend on the origin. It turns out that the sum of both contributions does
-  not depend on origin, but only when one uses complete set of basis function,
+  depend on the origin. It turns out, that the sum of both contributions does
+  not depend on the origin, but only when one uses complete set of basis functions,
   which, in practice, is almost never the case. This is a serious problem
   because the terms that should theoretically cancel out have nontrivial
   contribution \cite{chemic_shift_tensor_review}. The issue is exaggerated by
@@ -751,6 +754,7 @@ tensor is proportionate to shielding tensor.
 where $g_e$ and $g_n$ are electronic and nuclear g-factors, $\langle S_z
 \rangle$ is the expectation value of z component of total spin.  $\rho^{beta-alpha}$ is the difference between spin up and spin
 down electron densities.
+
 \section{Conclusion}
 In this paper we tried to provide a clear and comprehensive review of steps needed
 to calculate nmr parameters. The single most important step is accurate
