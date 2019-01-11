@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (1) enabled
-\begin{thebibliography}{14}%
+\begin{thebibliography}{15}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -78,15 +78,6 @@
   Computations},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
   {Solid State Nuclear Magnetic Resonance}\ }\textbf {\bibinfo {volume}
   {87}}}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Facelli}(2011)}]{chemic_shift_tensor_review}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont
-  {Facelli}},\ }\bibfield  {title} {\emph {Chemical Shift Tensors: Theory and
-  Application To Molecular Structural Problems},\ }\href {\doibase
-  10.1016/j.pnmrs.2010.10.003} {\bibfield  {journal} {\bibinfo  {journal}
-  {Progress in Nuclear Magnetic Resonance Spectroscopy}\ }\textbf {\bibinfo
-  {volume} {58}},\ \bibinfo {pages} {176} (\bibinfo {year} {2011})}\BibitemShut
-  {NoStop}%
 \bibitem [{\citenamefont {Pigliapochi}\ \emph {in~dr.}(2017)\citenamefont
   {Pigliapochi}, \citenamefont {Pell}, \citenamefont {Seymour}, \citenamefont
   {Grey}, \citenamefont {Ceresoli},\ in\ \citenamefont
@@ -103,6 +94,15 @@
   10.1103/physrevb.95.054412} {\bibfield  {journal} {\bibinfo  {journal}
   {Physical Review B}\ }\textbf {\bibinfo {volume} {95}},\ \bibinfo {pages}
   {054412} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Facelli}(2011)}]{chemic_shift_tensor_review}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont
+  {Facelli}},\ }\bibfield  {title} {\emph {Chemical Shift Tensors: Theory and
+  Application To Molecular Structural Problems},\ }\href {\doibase
+  10.1016/j.pnmrs.2010.10.003} {\bibfield  {journal} {\bibinfo  {journal}
+  {Progress in Nuclear Magnetic Resonance Spectroscopy}\ }\textbf {\bibinfo
+  {volume} {58}},\ \bibinfo {pages} {176} (\bibinfo {year} {2011})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Kohn}(1999)}]{nobel_lecture}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
@@ -111,6 +111,15 @@
   10.1103/revmodphys.71.1253} {\bibfield  {journal} {\bibinfo  {journal}
   {Reviews of Modern Physics}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo
   {pages} {1253} (\bibinfo {year} {1999})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Engel}\ in\ \citenamefont
+  {Dreizler}(2011)}]{advanced_course}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Engel}}\ in\ \bibinfo {author} {\bibfnamefont {R.~M.}\ \bibnamefont
+  {Dreizler}},\ }\href {\doibase 10.1007/978-3-642-14090-7} {\emph {\bibinfo
+  {title} {Density Functional Theory}}},\ Theoretical and Mathematical Physics\
+  (\bibinfo  {publisher} {Springer Berlin Heidelberg},\ \bibinfo {year}
+  {2011})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Ochsenfeld}\ \emph {in~dr.}(2004)\citenamefont
   {Ochsenfeld}, \citenamefont {Kussmann},\ in\ \citenamefont
   {Koziol}}]{ab_initio_nmr_spect_molec}%
@@ -124,15 +133,6 @@
   {Angewandte Chemie International Edition}\ }\textbf {\bibinfo {volume}
   {43}},\ \bibinfo {pages} {4485} (\bibinfo {year} {2004})}\BibitemShut
   {NoStop}%
-\bibitem [{\citenamefont {Engel}\ in\ \citenamefont
-  {Dreizler}(2011)}]{advanced_course}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
-  {Engel}}\ in\ \bibinfo {author} {\bibfnamefont {R.~M.}\ \bibnamefont
-  {Dreizler}},\ }\href {\doibase 10.1007/978-3-642-14090-7} {\emph {\bibinfo
-  {title} {Density Functional Theory}}},\ Theoretical and Mathematical Physics\
-  (\bibinfo  {publisher} {Springer Berlin Heidelberg},\ \bibinfo {year}
-  {2011})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Neese}(2017)}]{orca}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
@@ -152,6 +152,22 @@
   }\href {\doibase 10.1021/cr200107z} {\bibfield  {journal} {\bibinfo
   {journal} {Chemical Reviews}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo
   {pages} {289} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Perdew}\ \emph {in~dr.}(2005)\citenamefont {Perdew},
+  \citenamefont {Ruzsinszky}, \citenamefont {Tao}, \citenamefont {Staroverov},
+  \citenamefont {Scuseria},\ in\ \citenamefont
+  {Csonka}}]{presc_desig_selec_densit_funct_approx}%
+  \BibitemOpen
+\bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont {Perdew}}, \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {Ruzsinszky}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Tao}}, \bibinfo {author} {\bibfnamefont
+  {V.~N.}\ \bibnamefont {Staroverov}}, \bibinfo {author} {\bibfnamefont
+  {G.~E.}\ \bibnamefont {Scuseria}}\bibfield  {author} {\ in\ \bibinfo {author}
+  {\bibfnamefont {G.~I.}\ \bibnamefont {Csonka}},\ }\bibfield  {title} {\emph
+  {Prescription for the Design and Selection of Density Functional
+  Approximations: More Constraint Satisfaction With Fewer Fits},\ }\href
+  {\doibase 10.1063/1.1904565} {\bibfield  {journal} {\bibinfo  {journal} {The
+  Journal of Chemical Physics}\ }\textbf {\bibinfo {volume} {123}},\ \bibinfo
+  {pages} {062201} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Carchini}\ \emph {in~dr.}(2013)\citenamefont
   {Carchini}, \citenamefont {Almora-Barrios}, \citenamefont
   {Revilla-L{\'o}pez}, \citenamefont {Bellarosa}, \citenamefont

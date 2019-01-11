@@ -54,6 +54,10 @@ ptr=1, stack=
 while executing---line 6885 of file ../myapsrevSLO.bst
 ptr=1, stack=
   
+---the literal stack isn't empty for entry presc_desig_selec_densit_funct_approx
+while executing---line 6885 of file ../myapsrevSLO.bst
+ptr=1, stack=
+  
 ---the literal stack isn't empty for entry How_theo_simul_can_address
 while executing---line 6885 of file ../myapsrevSLO.bst
 ptr=1, stack=
@@ -64,45 +68,45 @@ ptr=1, stack=
   
 ---the literal stack isn't empty for entry calcul_hyper_tensor_param_nmr
 while executing---line 6885 of file ../myapsrevSLO.bst
-You've used 14 entries,
+You've used 15 entries,
             5816 wiz_defined-function locations,
-            1707 strings with 18364 characters,
-and the built_in function-call counts, 14756 in all, are:
-= -- 928
-> -- 398
-< -- 95
-+ -- 124
-- -- 92
-* -- 2336
-:= -- 1462
-add.period$ -- 14
-call.type$ -- 14
-change.case$ -- 68
-chr.to.int$ -- 14
-cite$ -- 15
-duplicate$ -- 1366
-empty$ -- 1096
-format.name$ -- 222
-if$ -- 2918
+            1716 strings with 18715 characters,
+and the built_in function-call counts, 16098 in all, are:
+= -- 1002
+> -- 446
+< -- 104
++ -- 138
+- -- 104
+* -- 2566
+:= -- 1584
+add.period$ -- 15
+call.type$ -- 15
+change.case$ -- 73
+chr.to.int$ -- 15
+cite$ -- 16
+duplicate$ -- 1485
+empty$ -- 1193
+format.name$ -- 249
+if$ -- 3190
 int.to.chr$ -- 1
-int.to.str$ -- 22
-missing$ -- 166
-newline$ -- 94
-num.names$ -- 42
-pop$ -- 537
+int.to.str$ -- 23
+missing$ -- 181
+newline$ -- 97
+num.names$ -- 45
+pop$ -- 580
 preamble$ -- 1
-purify$ -- 69
+purify$ -- 74
 quote$ -- 0
-skip$ -- 522
+skip$ -- 567
 stack$ -- 0
-substring$ -- 332
-swap$ -- 1338
-text.length$ -- 47
+substring$ -- 364
+swap$ -- 1465
+text.length$ -- 53
 text.prefix$ -- 0
 top$ -- 8
-type$ -- 198
+type$ -- 215
 warning$ -- 1
-while$ -- 40
+while$ -- 43
 width$ -- 0
-write$ -- 176
-(There were 16 error messages)
+write$ -- 185
+(There were 17 error messages)
