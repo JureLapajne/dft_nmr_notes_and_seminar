@@ -85,7 +85,7 @@
 
 
 \begin{document}
-
+\includepdf{naslovna.pdf}
 
 
 \section{Introduction}
@@ -678,7 +678,7 @@ elements are in question.
 
 All electron calculations avoid pseudopotential by taking into account all
 electrons. The latter does cost some computational time, but depending on the
-molecule, it may be the only way to get reliable result. Of course for large
+molecule, it may be the only way to get reliable result. Of course, for large
 molecules all electron calculations are significantly more expensive.
 Commonly used open source packages offering both approaches are Orca and Nwchem.
 
@@ -691,11 +691,11 @@ proportionate to electron density at the observed  core site, whereas hyperfine
 tensor is proportionate to the shielding tensor.
 
 
-\begin{wrapfigure}{R}{0.4\textwidth}
+\begin{wrapfigure}{R}{0.5\textwidth}
 \centering
 \includegraphics[width=0.3\textwidth]{origin_dependance_tensor.png}
 \caption{Translation of the coordinate system for vector $\vec{Ro'}$. $\vec{R_N}$
-  points to $N$-th atom, whereas small case $\vec r$ point to electrons.}
+  points to $N$-th atom, whereas small case $\vec r$ point to electrons  \cite{chemic_shift_tensor_review}.}
 \end{wrapfigure}
 
   There are two contributions to the shielding tensor - paramagnetic and
@@ -715,14 +715,23 @@ tensor is proportionate to the shielding tensor.
   the fact that diamagnetic and paramagnetic contributions are of a different
   perturbation order.
 
-  In constrast to shielding tensor which depends only on electron density,
-  hyperfine tensor depends on spin density \cite{calcul_hyper_tensor_param_nmr}:
+  In contrast to shielding tensor, which depends only on electron density,
+  hyperfine tensor depends on spin density \cite{calcul_hyper_tensor_param_nmr}.
+  The anisotropic part of the tensor, also called Fermi contact term, is
+  calculated as follows:
   \begin{equation}
     A_{iso}=\frac{4\pi}{6c^2}g_eg_N\beta_N\langle S_z \rangle \rho^{beta-alpha}(0),
     \end{equation}
 where $g_e$ and $g_n$ are electronic and nuclear g-factors, $\langle S_z
 \rangle$ is the expectation value of z component of total spin.  $\rho^{beta-alpha}$ is the difference between spin up and spin
-down electron densities.
+down electron densities. Fermi contact term stems from magnetic dipole
+interaction between unpaired electron and nucleus. Dipole dipole interaction
+also has anisotropic contribution to tensor, which is called dipolar term. Higher
+order contributions are caused by the relativistic spin-orbit coupling and
+the relativistic dipolar terms.
+Relative sizes of hyperfine and chemical shifts vary greatly depending on
+electronic configuration of molecule, however,
+hyperfine shifts can reach much larger values than chemical shifts. 
 
 \section{Conclusion}
 In this paper we tried to provide a clear and comprehensive review of steps needed
