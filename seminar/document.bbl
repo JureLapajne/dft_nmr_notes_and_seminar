@@ -61,7 +61,7 @@
   }\href {\doibase 10.1021/cr300014x} {\bibfield  {journal} {\bibinfo
   {journal} {Chemical Reviews}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo
   {pages} {673} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Rouf}\ \emph {in~dr.}()\citenamefont {Rouf},
+\bibitem [{\citenamefont {Rouf}\ \emph {in~dr.}(2017)\citenamefont {Rouf},
   \citenamefont {Jakobsen}, \citenamefont {Mare{\v{s}}}, \citenamefont
   {Jensen}, \citenamefont {McKenzie}, \citenamefont {Vaara},\ in\ \citenamefont
   {Nielsen}}]{Assignment_of_Solid_State}%
@@ -75,9 +75,10 @@
   {author} {\bibfnamefont {U.~G.}\ \bibnamefont {Nielsen}},\ }\bibfield
   {title} {\emph {Assignment of Solid-State 13 C and 1 H Nmr Spectra of
   Paramagnetic Ni(II) Acetylacetonate Complexes Aided By First-Principles
-  Computations},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
-  {Solid State Nuclear Magnetic Resonance}\ }\textbf {\bibinfo {volume}
-  {87}}}\BibitemShut {NoStop}%
+  Computations},\ }\href {\doibase 10.1016/j.ssnmr.2017.07.003} {\bibfield
+  {journal} {\bibinfo  {journal} {Solid State Nuclear Magnetic Resonance}\
+  }\textbf {\bibinfo {volume} {87}},\ \bibinfo {pages} {29} (\bibinfo {year}
+  {2017})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Pigliapochi}\ \emph {in~dr.}(2017)\citenamefont
   {Pigliapochi}, \citenamefont {Pell}, \citenamefont {Seymour}, \citenamefont
   {Grey}, \citenamefont {Ceresoli},\ in\ \citenamefont

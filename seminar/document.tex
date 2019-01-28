@@ -156,11 +156,9 @@ ions and organic ligands  \cite{introd_to_metal_organ_frameworks,
  tensors. The former is responsible for large shifts caused by unpaired
  electrons whereas the latter is present in all molecules and is caused by
  currents induced by external magentic field. Although most common computational
- packages offer computations of these two tensors, total chemical shifts for paramagnetic materials / MOFs have not yet been systematically tested and documented in literature.
-
- In this work we will present the most common approach to calculation of NMR
- parameters of paramagnetic materials,  which is based on density functional
- theory (DFT). First we  will present basics of DFT, which is the most important part of the whole procedure. Values of NMR parameters completely depend on electronic configuration, consequently it's accurate calculation is of a paramount importance. 
+ packages offer computations of these two tensors, total chemical shifts for
+ paramagnetic materials / MOFs have not yet been systematically tested and
+ documented in the literature.
 
 \section{Calculation of electronic wavefunction}
 Accurate calculation of electronic structure has always been a challenge. It
@@ -585,11 +583,11 @@ induced by external magnetic fields. It defined by the following equation:
 The tensor is not measured directly, instead one measures just a relative
 deviation from some reference molecule called chemical shift:
 \begin{equation}
-  \underline{\underline{\delta}}= ( \underline{\underline{\sigma}}_{ref} -  \underline{\underline{\sigma}}_{sample})  (I-\underline{\underline{\sigma}}_{ref}})^{-1}  \rightarrow \delta ^{iso}\approx \sigma^{iso}_{ref} -  \sigma^{iso}_{sample}.
+  \underline{\underline{\delta}}= ( \underline{\underline{\sigma}}_{ref} -  \underline{\underline{\sigma}}_{sample})  (I-\underline{\underline{\sigma}}_{ref})^{-1}  \rightarrow \delta ^{iso}\approx \sigma^{iso}_{ref} -  \sigma^{iso}_{sample}.
 \end{equation}
 The left part of equation is the rigorous definition. More commonly, the right
 part is used, which is a trace of the left side under the assumption that
-$(\underline{\underline{\sigma}}_{ref}})_{ij} \ll 1$. The latter is basically
+$(\underline{\underline{\sigma}}_{ref})_{ij} \ll 1$. The latter is basically
 always true.
 .
 The other important tensor is hyperfine shielding tensor. It describes magnetic
@@ -627,23 +625,71 @@ The other important tensor is hyperfine shielding tensor. It describes magnetic
     A_{iso}=\frac{4\pi}{6c^2}g_eg_N\beta_N\langle S_z \rangle \rho^{beta-alpha}(0),
     \end{equation}
 where $g_e$ and $g_n$ are electronic and nuclear g-factors, $\langle S_z
-\rangle$ is the expectation value of z component of total spin.  $\rho^{beta-alpha}$ is the difference between spin up and spin
-down electron densities. Fermi contact term stems from magnetic dipole
-interaction between unpaired electron and nucleus. Dipole dipole interaction
+\rangle$ is the expectation value of z component of total spin.
+$\rho^{beta-alpha}$ is the difference between spin up and spin down electron
+densities. Fermi contact term stems from magnetic dipole interaction between unpaired electron and nucleus. Dipole dipole interaction
 also has anisotropic contribution to tensor, which is called dipolar term. Higher
-order contributions are caused by the relativistic spin-orbit coupling and
-the relativistic dipolar terms.
+order contributions are caused by the relativistic effects.
 Relative sizes of hyperfine and chemical shifts vary greatly depending on
 electronic configuration of molecule, however,
 hyperfine shifts can reach much larger values than chemical shifts. 
 
-\section{Conclusion}
-In this paper we tried to provide a clear and comprehensive review of steps needed
-to calculate NMR parameters. The single most important step is accurate
-calculation of electronic wave function. The latter is most commonly calculated
-using DFT, which has been in use for a long time and is still actively evolving.
-Popular computational packages offer large variety of functionals, which are
-suitable for numerous systems and their property calculations. 
+\section{Purpose}
+The purpose of this work and the follow on work associated with phd thesis, is to
+systematically test various approaches and computational packages. Since MOFs
+are crystalline materials one can choose periodic boundary conditions. The other
+options is to use large cut-out of crystal structure and non-periodic boundary conditions to calculate
+electronic structure. In the latter case one need to add atoms at the
+boundaries, so that one does not end up with radicals. Of course, the former
+approach also has downsides. These are mainly associated with the use of plane
+waves as basis sets and their inability to fit steep, multi nodal, high angular
+momentum states of $d$ shell electrons. For the same reason, the inner electrons
+are often replaced by pseudo wave function, also called pseudopotential.
+Although pseudopotentials are carefully constructed, they still represent an
+approximation which may yield significant inaccuracies.
+
+The other source of inaccuracies is the DFT method itself. Depending on
+exchange---correlation functional used, one may obtain very different results.
+The self interaction error of common dft poses a significant error especially
+for metals, where valence electrons get over delocalized, causing large error in
+electron density and thus also NMR parameters. To conclude this seminar, we are
+attaching examples of two MOFs, for which NMR parameters were measured and
+calculated. One is already discussed HKUST-1 and the other consists of central
+copper ion and two molecules of acetil---acetonat.
+\\
+
+\begin{minipage}[]{0.7\linewidth}
+  \centering 
+  \begin{tabular}{|c ||c| c| c| c| c|}  \hline
+    \multicolumn{6}{|c|}{ $\mathrm{Cu-(acetilacetonat)_2}$ } \\ \hline
+  & \multicolumn{2}{|c|}{QE: PBE} & \multicolumn{2}{|c|} {ORCA: PBE0} &   \\ \hline
+  C & $\delta^{cs} $ &  $\delta^{tot}$ & $\sigma^{cs} $ &  $\delta^{tot}$ & eks. \\ \hline
+  4 & 118  & 59  & 109   & 80  & 108   \\ \hline
+  6 & 37  & 270   & 30 & 199    & -53 \\ \hline
+  10 & 209  & 199   & 196 & 186  & 97  \\ \hline
+  \end{tabular}
+  \captionof{table}{This is an example of a molecule where calculations differ
+    significantly from experiments. Using two different computational packages
+    and two completely different approaches yields quite similar results, but
+    unfortunately both are quite far from the measurements.}
+\end{minipage}
+
+\vspace{0.5cm}
+
+\begin{minipage}[]{1.0\linewidth}
+  \centering 
+  \begin{tabular}{|c ||c| c| c| c| c| c| c|}  \hline
+    \multicolumn{8}{|c|}{HKUST - 1} \\ \hline
+  & \multicolumn{2}{|c|}{PBE}   &  \multicolumn{2}{|c|}{PBE0}   & \multicolumn{2}{|c|}{TPSS0} &  \\ \hline
+  C & $\delta^{cs} $ &  $\delta^{tot}$  & $\delta^{cs} $  &  $\delta^{tot}$  & $\delta^{cs} $  &  $\delta^{tot}$ & eks. \\ \hline
+  36 & 178  & -171.3 & 175 & -76.5 & 171 & -81.2 & -50  \\ \hline
+  37 & 140  & 1028.4 &  134 & 802.7 & 130 & 798.2 & 853   \\ \hline
+  38 & 138  & 299.8 & 138 & 218.6 & 136 & 216.6 &  228  \\ \hline
+ \end{tabular}
+ \captionof{table}{HKUST-1 calculation data compared to experimental values. The
+ values are quite close for both hybrid functionals - PBE0 and TPSS0. Gga
+ fucntional PBE fared much worse.}
+\end{minipage}
 
 \newpage \phantomsection
 
