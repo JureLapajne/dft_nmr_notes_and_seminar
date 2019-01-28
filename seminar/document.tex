@@ -562,35 +562,8 @@ der Waals effects can be taken care of with different methods.
  The most promising seems to be the so called DFT-D method
 \cite{consis_accur_ab_initio_param}, which is just a sum of terms $CR^{-6}$
 over all atom pairs. As it is generally known, for large distances Van der Waals
-potential should decay as $R^{-6}$ and this interaction does fulfill this condition.
-
-
-\section{All electron vs pseudopotential}
-Electronic states of an atom can be divided into three categories: core states,
-semi-core states and valence states. The latter are the most actively included
-in formation of bonds. Valence states may be completely deformed once the atom
-is put into molecules/crystals. Semi-core states are states which do not
-directly contribute to bonding, but may still be polarized or spatially
-deformed. Lastly, core states, are highly localized and are assumed to be
-unaffected by chemical bonding. This means that there should be very little loss
-of accuracy, if core states are replaced by a pseudo wavefunction.
-Pseudo potentials are constructs which try to
-replicate effects of core electrons exerted on semi-core, valence electrons and
-thus reproduce the correct chemical and physical properties (bonding energy, bond
-length, electron localization, magnetization,...).
-
-Of course, pseudo potentials have to be constructed prior to a given calculation using
-some other much simpler system. As a consequence, there
-exists a question of transferability. Is a potential constructed using some
-reference molecule usable for another molecule. The exact answer is
-not possible. Many times the only way is to try, especially when transition
-elements are in question.
-
-All electron calculations avoid pseudopotential by taking into account all
-electrons. The latter does cost some computational time, but depending on the
-molecule, it may be the only way to get reliable result. Of course, for large
-molecules all electron calculations are significantly more expensive.
-Commonly used open source packages offering both approaches are Orca and Nwchem.
+potential should decay as $R^{-6}$ and this interaction does fulfill this
+condition.
 
 
 \section{NMR measurements}
