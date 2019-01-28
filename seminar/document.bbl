@@ -144,10 +144,8 @@
 \bibitem [{\citenamefont {Piccinin}(2013)}]{qe_tutorial}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {Piccinin}},\ }\href
-  {https://www.quantum-espresso.org/resources/tutorials/shanghai-2013/getting-started/-lecture1.pdf}
-  {\emph {First steps with QE: total energy and relaxations}},\ \bibinfo
-  {howpublished}
+  {Piccinin}},\ }\href@noop {} {\emph {First steps with QE: total energy and
+  relaxations}},\ \bibinfo {howpublished}
   {\url{https://www.quantum-espresso.org/resources/tutorials/shanghai-2013/getting-started/lecture1.pdf}}
   (\bibinfo {year} {2013}),\ \bibinfo {note} {[Online; accessed
   28-January-2019]}\BibitemShut {NoStop}%

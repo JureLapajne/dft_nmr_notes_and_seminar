@@ -70,8 +70,8 @@ ptr=1, stack=
 while executing---line 6885 of file ../myapsrevSLO.bst
 You've used 14 entries,
             5816 wiz_defined-function locations,
-            1705 strings with 18655 characters,
-and the built_in function-call counts, 15017 in all, are:
+            1704 strings with 18559 characters,
+and the built_in function-call counts, 15018 in all, are:
 = -- 931
 > -- 425
 < -- 97
@@ -93,7 +93,7 @@ int.to.str$ -- 22
 missing$ -- 167
 newline$ -- 94
 num.names$ -- 42
-pop$ -- 533
+pop$ -- 534
 preamble$ -- 1
 purify$ -- 69
 quote$ -- 0
