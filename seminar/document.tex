@@ -455,11 +455,11 @@ term, but it should also somehow contain inter particle interactions. Usually
 Kohn-Sham hamiltonian consists of kinetic energy term, Hartree inter particle
 interaction, external potential and exchange-correlation functional \cite{advanced_course}:
 \begin{equation} \label{KS_system}
-  E[n(\vec r)]=T[n(\vec r)]] + E_H[n(\vec r)]] + E_{ext}[n(\vec r)]] + E_{xc}[n(\vec r)]].
+  E[n(\vec r)]=T[n(\vec r)] + E_H[n(\vec r)] + E_{ext}[n(\vec r)] + E_{xc}[n(\vec r)].
 \end{equation}
 Hartree term accounts for Coulomb repulsion:
 \begin{equation} \label{hartree_term1}
-  E_H[n(\vec r)] = \int n(\vec r)w(\vec r, \vec r') n(\vec r')\dif \vec r' \dif \vec r.
+  E_H[n(\vec r)] = \int\frac{ n(\vec r) n(\vec r')}{|\vec r, \vec r'|} \dif \vec r' \dif \vec r.
 \end{equation}
 The above expression is not the same as the one we get from Hartree-Fock
 equations and includes self-repulsion. DFT treats exchange term, also arising
@@ -471,7 +471,7 @@ Functional belonging to external potential is well known:
 \end{equation}
 Unfortunately exchange-correlation functional is much less well known. It is
 defined by the equation (\ref{KS_system}) and contains all the inter-particle
-interactions not contained in $T[n(\vec r)]$ and $ E_H[n(\vec r)]]$. It is
+interactions not contained in $T[n(\vec r)]$ and $ E_H[n(\vec r)]$. It is
 common to divide $E_{xc}[n(\vec r)]$ into exchange $E_x[n(\vec r)]$ and
 correlation $E_c[n(\vec r)]$ part. The former is defined in such a way that
 Hartree-Fock ground state density and energy are reproduced, if correlation part
@@ -489,12 +489,12 @@ self-repulsion terms. We will take a closer look at them in the following chapte
 Correlation term is more difficult to derive and we will not dwell deeper into
 it. Instead let's have a look at how KS equations are actually solved.
 
-Our goal is to minimize hamiltonian of the form (\ref{KS_system}) using Slater
+Our goal is to minimize energy of the form (\ref{KS_system}) using Slater
 determinant as ansatz for many electron system and density calculation. By
 considering (\ref{ext_potential_functional}) and (\ref{KS_kinetic_term}) one can
 write KS equation:  
 \begin{equation}
-  \left( \hat T + v_{ext} + E_H[n(\vec r)]]  + E_{xc}[n(\vec r)]] \right) \ket \phi_i =  \epsilon_i \ket{\phi_i},  
+  \left( \hat T + V_{ext} + E_H[n(\vec r)]  + E_{xc}[n(\vec r)] \right) \ket \phi_i =  \epsilon_i \ket{\phi_i},  
 \end {equation}
 where density $n(\vec r)$  has to be calculated according to equation
 (\ref{KS_density}). They are usually determined by inserting ansatz in the
@@ -502,7 +502,7 @@ form of gaussian basis functions from which one can
 then construct correct single electron states. Multiplying equation by $\bra
 \phi_j$ from the left side yields generalized eigenvalue problem:
 \begin{equation}
-  \bra {\phi_j} \left( \hat T + v_{ext}(\vec r) + E_H[n(\vec r)]]  + E_{xc}[n(\vec r)]] \right) \ket{\phi_i} =  \epsilon_i \braket{ \phi_j |\phi_i }.
+  \bra {\phi_j} \left( \hat T + V_{ext}(\vec r) + E_H[n(\vec r)]  + E_{xc}[n(\vec r)] \right) \ket{\phi_i} =  \epsilon_i \braket{ \phi_j |\phi_i }.
 \end {equation}
 
 System obviously has to be solved in a self consistent fashion
@@ -514,8 +514,8 @@ calculated from constructed orbitals. After that one
 calculates functionals $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$. In the next step
 equations are solved. The solution are new orbitals $\phi_i^{(1)}$  and from
 them, the new density $n^{(1)}$ is calculated. The latter is then used to construct new $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$ which are again used to
-solve KS equation from which one gets new orbitals $\phi^{(3)}$. The procedure is
-repeated until the change in density or energy is not small enough. 
+solve KS equation from which one gets new orbitals $\phi^{(2)}$. The procedure is
+repeated until the change in density or energy is small enough. 
 
 
 \begin{figure}
@@ -528,7 +528,7 @@ repeated until the change in density or energy is not small enough.
     function. The latter is then used for constructing all other functionals of
     density. After all functionals have been established one can solve KS
     equations, construct new density and repeat the described procedure until
-    the change in density is not small enough.
+    the change in density is not small enough \cite{qe_tutorial}.
   }
   \label{self_consistent_scheme}
 \end{figure}
@@ -562,8 +562,8 @@ degenerate. Only the choice of $d_{2p^0}=d_{2p^{-1}}=d_{2p^1}=1/3$ leads to sphe
 
 \subsection{Exchange and correlation functionals}
 Exchange and correlation functionals are functionals which try to account for
-exchange and correlation interactions between electrons. They can be of a
-different forms and in general one can roughly divide them into 4 groups
+exchange and correlation interactions between electrons. They can be of
+different forms and in general one can roughly divide them into four groups
 \cite{challenges_den_fun_theor, presc_desig_selec_densit_funct_approx}: Lda, Gga, meta-Gga and Hybrid functionals.
 The first three groups all have in common that they explicitly depend on density
 of electrons. This causes a self-interaction error, which causes excessive
@@ -588,7 +588,7 @@ For every other purpose gga and hybrid functionals are much better suited.
 \subsubsection{Gga}
 Generalized gradient approximation (gga) functionals
 depend not only on electron density but also on its gradient
-\cite{challenges_den_fun_theor}. Most commonly, gga functionals are build upon (\ref{electron_gas_exchange}) \cite{challenges_den_fun_theor}:
+\cite{challenges_den_fun_theor}. Most commonly, gga functionals are built upon (\ref{electron_gas_exchange}) \cite{challenges_den_fun_theor}:
 \begin{equation}
   E_{xc}^{gga}=\int n(\vec r)^{4/3}F(x);\quad x=|\nabla n(\vec r)|/n(\vec r)^{4/3}.
 \end{equation}
@@ -604,7 +604,7 @@ and more time consuming calculations using hybrid or meta-gga functionals.
 \subsubsection{Meta-gga functionals}
 Since gga functionals have their short commings, meta-gga functionals were formed
 in belief that adding higher derivatives will improve accuracy
-\cite{challenges_den_fun_theor}. Meta-gga functionals are build upon gga
+\cite{challenges_den_fun_theor}. Meta-gga functionals are built upon gga
 functional form and add terms containing higher order derivatives of electron
 density. Functionals are formulated according to the following equation
 \cite{challenges_den_fun_theor}:
@@ -627,7 +627,7 @@ Hartree-Fock exchange term \cite{challenges_den_fun_theor}:
   E^{hf}_{xc}=\sum_ {i,j,\sigma}\int\frac{\phi^*_{i\sigma}(\vec r) \phi_{j\sigma}(\vec r) \phi^*_{j\sigma}(\vec r') \phi_{i\sigma}(\vec r')}{|\vec r - \vec r'|}\dif \vec r \dif \vec r'.
 \end{equation}
 Such functionals do not break Kohn Sham formalism since the wave functions
-$\phi_i(\vec r)$ are unique functional of densities shown in previous chapter.
+$\phi_i(\vec r)$ are unique functional of densities as shown in previous chapter.
 
 
 \begin{figure}[!ht]

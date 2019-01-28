@@ -68,45 +68,45 @@ ptr=1, stack=
   
 ---the literal stack isn't empty for entry calcul_hyper_tensor_param_nmr
 while executing---line 6885 of file ../myapsrevSLO.bst
-You've used 15 entries,
+You've used 14 entries,
             5816 wiz_defined-function locations,
-            1716 strings with 18715 characters,
-and the built_in function-call counts, 16098 in all, are:
-= -- 1002
-> -- 446
-< -- 104
-+ -- 138
-- -- 104
-* -- 2566
-:= -- 1584
-add.period$ -- 15
-call.type$ -- 15
-change.case$ -- 73
-chr.to.int$ -- 15
-cite$ -- 16
-duplicate$ -- 1485
-empty$ -- 1193
-format.name$ -- 249
-if$ -- 3190
+            1705 strings with 18655 characters,
+and the built_in function-call counts, 15017 in all, are:
+= -- 931
+> -- 425
+< -- 97
++ -- 132
+- -- 100
+* -- 2418
+:= -- 1478
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 70
+chr.to.int$ -- 14
+cite$ -- 15
+duplicate$ -- 1373
+empty$ -- 1099
+format.name$ -- 236
+if$ -- 2966
 int.to.chr$ -- 1
-int.to.str$ -- 23
-missing$ -- 181
-newline$ -- 97
-num.names$ -- 45
-pop$ -- 580
+int.to.str$ -- 22
+missing$ -- 167
+newline$ -- 94
+num.names$ -- 42
+pop$ -- 533
 preamble$ -- 1
-purify$ -- 74
+purify$ -- 69
 quote$ -- 0
-skip$ -- 567
+skip$ -- 522
 stack$ -- 0
-substring$ -- 364
-swap$ -- 1465
-text.length$ -- 53
+substring$ -- 340
+swap$ -- 1367
+text.length$ -- 50
 text.prefix$ -- 0
 top$ -- 8
-type$ -- 215
+type$ -- 203
 warning$ -- 1
-while$ -- 43
+while$ -- 39
 width$ -- 0
-write$ -- 185
+write$ -- 176
 (There were 17 error messages)

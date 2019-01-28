@@ -24,6 +24,7 @@
     "large_scale_quant_mechan_enzym"
     "solid_state_physics"
     "calcul_hyper_tensor_param_nmr"
-    "ab_initio_nmr_spect_molec"))
+    "ab_initio_nmr_spect_molec"
+    "qe_tutorial"))
  :bibtex)
 

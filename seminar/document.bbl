@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (1) enabled
-\begin{thebibliography}{15}%
+\begin{thebibliography}{14}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -141,6 +141,16 @@
   {journal} {\bibinfo  {journal} {Wiley Interdisciplinary Reviews:
   Computational Molecular Science}\ }\textbf {\bibinfo {volume} {8}},\ \bibinfo
   {pages} {e1327} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Piccinin}(2013)}]{qe_tutorial}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Piccinin}},\ }\href
+  {https://www.quantum-espresso.org/resources/tutorials/shanghai-2013/getting-started/-lecture1.pdf}
+  {\emph {First steps with QE: total energy and relaxations}},\ \bibinfo
+  {howpublished}
+  {\url{https://www.quantum-espresso.org/resources/tutorials/shanghai-2013/getting-started/lecture1.pdf}}
+  (\bibinfo {year} {2013}),\ \bibinfo {note} {[Online; accessed
+  28-January-2019]}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cohen}\ \emph {in~dr.}(2011)\citenamefont {Cohen},
   \citenamefont {Mori-S{\'a}nchez},\ in\ \citenamefont
   {Yang}}]{challenges_den_fun_theor}%
@@ -202,22 +212,6 @@
   10.1063/1.3382344} {\bibfield  {journal} {\bibinfo  {journal} {The Journal of
   Chemical Physics}\ }\textbf {\bibinfo {volume} {132}},\ \bibinfo {pages}
   {154104} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Ashcroft}\ in\ \citenamefont
-  {Mermin}(1978)}]{solid_state_physics}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.~W.}\ \bibnamefont
-  {Ashcroft}}\ in\ \bibinfo {author} {\bibfnamefont {N.~D.}\ \bibnamefont
-  {Mermin}},\ }\bibfield  {title} {\emph {Solid State Physics},\ }\href
-  {\doibase 10.1002/piuz.19780090109} {\bibfield  {journal} {\bibinfo
-  {journal} {Physik in unserer Zeit}\ }\textbf {\bibinfo {volume} {9}},\
-  \bibinfo {pages} {33} (\bibinfo {year} {1978})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Lever}(2015)}]{large_scale_quant_mechan_enzym}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
-  {Lever}},\ }\href {\doibase 10.1007/978-3-319-19351-9} {\emph {\bibinfo
-  {title} {Large-Scale Quantum-Mechanical Enzymology}}},\ Springer Theses\
-  (\bibinfo  {publisher} {Springer International Publishing},\ \bibinfo {year}
-  {2015})\ str.\ \bibinfo {pages} {nil}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Autschbach}\ \emph {in~dr.}(2011)\citenamefont
   {Autschbach}, \citenamefont {Patchkovskii},\ in\ \citenamefont
   {Pritchard}}]{calcul_hyper_tensor_param_nmr}%
