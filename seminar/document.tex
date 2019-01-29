@@ -91,7 +91,7 @@
 
 \section{Introduction}
 
-Metallo-organic frameworks or MOFs are materials consisting of one or multiple
+Metal-organic frameworks or MOFs are materials consisting of one or multiple
 central metallic ions and surrounding organic ligands.  They are crystalline
 materials with very high porosity. Internal surface area in some cases exceeds
 6000 $\mathrm{m}^2/{g}$ \cite{introd_to_metal_organ_frameworks}. Thanks to their
@@ -184,10 +184,10 @@ and electron-nuclei interaction terms. $V_{ext}$ is strictly multiplicative
 external potential. Ground state of such a system is given by the solution of
 the time independent Schr{\"o}dinger equation:
 \begin{equation} \label{ham_solution}
-\hat H \ket { \psi } = \epsilon_0 \ket{ \psi_0 },
+\hat H \ket { \psi_0 } = \epsilon_0 \ket{ \psi_0 },
 \end{equation} 
 where index $0$ denotes the solution with the lowest energy. In general $\psi_0$
-depends on $3N$ coordinates, where $N$ is total number of particles. This means
+depends on $3N$ coordinates, where $N$ is the total number of particles. This means
 that systems with more than e.g. 10 atoms are very computationally
 demanding. It is common practice to reduce the dimensionality of the problem by employing
 Born-Oppenheimer approximation in which the motion of nuclei is separated from
@@ -248,7 +248,7 @@ ground state electron density:
   \end{equation}
 for which one can find minimum energy principle: $E[n_0]<E[n]$ whenever $n(\vec r)$
 belongs to $\mathcal N$. This is an obvious consequence of wave function functional
-$\ket{\psi [n]}$, which is only defined for densities which are in $\mathcal N$.
+$\ket{\Psi [n]}$, which is only defined for densities which are in $\mathcal N$.
 Thus, one has to ask himself whether every nonegative normalizable function
 $n(\vec r)$ is in $\mathcal N$.  The answer is no. A density from $\mathcal N$
 has a corresponding potential $V_{ext}$ such that it minimizes energy functional
@@ -292,15 +292,15 @@ following way:
 \end{bmatrix},
 \]
  which, when inserted into equation (\ref{noninteracting_H}) effectively produces
-a set of single electron problem:
+a set of single electron problems:
  \begin{equation}
    \left(-\frac{\hbar^2}{2m}\nabla^2 + \hat V_{ext}(\vec r)\right) \phi_i (\vec r) = \epsilon_i \phi_i(\vec r).
  \end{equation}
- Thus, using slater determinant we have effectively converted many electron
+ Thus, using slater determinant, we have effectively converted many electron
  problem with $3N$ coordinates to a single electron problem. Of course the
  electrons in this case do not feel each other and motion of each electron
  should not depend on other electrons, so such a breakdown is completely natural
- (except for Pauli principle which is already built into Slater determinant).
+ (except for Pauli principle, which is already built into the Slater determinant).
  
  The ground state of such a system is obtained by putting pairs of electrons
  into each of  $N/2$ lowest states. Calculation of kinetic energy and
@@ -310,8 +310,8 @@ a set of single electron problem:
  energy and electron density  calculation. Electron density corresponding to
  such a wave function can be written using the following expression:
  \begin{equation} \label{KS_density}
-   n_0(\vec r) = \sum_{\sigma=\uparrow,\downarrow}\sum_i\Theta(\epsilon_F-\epsilon_i)|\phi_i(\vec r, \sigma)|^2.
- \end{equation},
+   n_0(\vec r) = \sum_{\sigma=\uparrow,\downarrow}\sum_i\Theta(\epsilon_F-\epsilon_i)|\phi_i(\vec r, \sigma)|^2,
+ \end{equation}
  where $\Theta$ is a Heavyside function.
  The density of electrons is just a sum over all occupied orbitals. Now let's
  remember Kohn-Sham theorems, which state that ground state density is unique
@@ -342,7 +342,7 @@ determinant offers straight forward calculation of kinetic energy and electron
 density. Using Slater determinant leads to differential equations for $\phi_k$
 wavefunctions. Modern computational packages instead of solving differential
 equations use large sets of basis functions, which in the end lead to
-eigenvalue problem. Solution is then given by populating
+an eigenvalue problem. Solution is then given by populating
 lowest energy orbitals until all electrons are allocated.
 
 To solve interacting system using DFT one relies on the fact, that for every
@@ -362,7 +362,7 @@ interaction, external potential and exchange-correlation functional \cite{advanc
 \end{equation}
 Hartree term accounts for Coulomb repulsion:
 \begin{equation} \label{hartree_term1}
-  E_H[n(\vec r)] = \int\frac{ n(\vec r) n(\vec r')}{|\vec r, \vec r'|} \dif \vec r' \dif \vec r.
+  E_H[n(\vec r)] = \int\frac{ n(\vec r) n(\vec r')}{|\vec r -  \vec r'|} \dif \vec r' \dif \vec r.
 \end{equation}
 The above expression is not the same as the one we get from Hartree-Fock
 equations and includes self-repulsion. DFT treats exchange term, also arising
@@ -417,7 +417,7 @@ calculated from constructed orbitals. After that one
 calculates functionals $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$. In the next step
 equations are solved. The solution are new orbitals $\phi_i^{(1)}$  and from
 them, the new density $n^{(1)}$ is calculated. The latter is then used to construct new $E_H[n(\vec r)]$ and $E_{xc}[n(\vec r)]$ which are again used to
-solve KS equation from which one gets new orbitals $\phi^{(2)}$. The procedure is
+solve KS equation from which one gets new orbitals $\phi_i^{(2)}$. The procedure is
 repeated until the change in density or energy is small enough. 
 
 
@@ -510,12 +510,12 @@ For every other purpose gga and hybrid functionals are much better suited.
 
 \subsubsection{Gga}
 Generalized gradient approximation (gga) functionals
-depend not only on electron density but also on its gradient
+depend not only on electron density, but also on its gradient
 \cite{challenges_den_fun_theor}. Most commonly, gga functionals are built upon (\ref{electron_gas_exchange}) \cite{challenges_den_fun_theor}:
 \begin{equation}
   E_{xc}^{gga}=\int n(\vec r)^{4/3}F(x);\quad x=|\nabla n(\vec r)|/n(\vec r)^{4/3}.
 \end{equation}
-One of most commonly used gga functional is PBE functional
+One of most commonly used gga functionals is PBE functional
  \cite{challenges_den_fun_theor}:
 \begin{equation}
   E_{xc}^{pbe}=-\int  n(\vec r)^{4/3}\left[ \frac{3}{4}\left(\frac{3}{\pi}\right)^{1/3} + \frac{\mu s}{1+ \mu s^2/\kappa} \right]; \quad s=x/(2(3\pi/2)^{1/3}).
