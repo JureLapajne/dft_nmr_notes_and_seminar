@@ -3,7 +3,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
-\usetheme[sectionpage=none, subsectionpage=none, numbering=none, progressbar=foot]{metropolis} % izbira nastavitev oblike in barv strani
+\usetheme[sectionpage=none, subsectionpage=none, numbering=none, progressbar=frametitle]{metropolis} % izbira nastavitev oblike in barv strani
 \usecolortheme{seahorse}
 \usepackage{tikz}
 \usepackage[slovene]{babel}
@@ -23,9 +23,12 @@
 \setbeamercolor{background canvas}{
  use=palette primary,
  bg=White}
-\setbeamercolor{title seaprator}{
- use=palette primary,
- bg=Blue}
+
+\setbeamercolor{progress bar}{
+  fg=Blue}
+
+\setbeamercolor{progress bar in head/foot}{
+  fg=Red}
 
 
 
