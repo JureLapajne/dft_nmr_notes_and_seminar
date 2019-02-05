@@ -1,0 +1,67 @@
+% Glava dokumenta
+\documentclass[slovene, usenames,dvipsnames]{beamer}
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usetheme[sectionpage=none, subsectionpage=none, numbering=none, progressbar=foot]{metropolis} % izbira nastavitev oblike in barv strani
+\usecolortheme{seahorse}
+\usepackage{tikz}
+\usepackage[slovene]{babel}
+%\usetikzlibrary{arrows}
+\usepgflibrary{arrows}% for more options on arrows
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usepackage{varwidth}
+\usepackage{color}
+\usepackage{amsmath} 
+\usepackage{xcolor}
+
+\setbeamercolor{frametitle}{
+  use=palette primary,
+  bg=RoyalBlue}
+
+\setbeamercolor{background canvas}{
+ use=palette primary,
+ bg=White}
+\setbeamercolor{title seaprator}{
+ use=palette primary,
+ bg=Blue}
+
+
+
+
+\uselanguage{slovene}
+\languagepath{slovene}
+\deftranslation[to=slovene]{Definition}{Definicija}
+\usepackage{outlines}
+\usepackage[document]{ragged2e}
+
+\usepackage[customcolors,norndcorners]{hf-tikz}
+\usetikzlibrary{calc} %% added
+
+\graphicspath{{./slike/}{./slike/fazni_diagrami/}{../eps_pdf/}}
+\DeclareGraphicsExtensions{.eps,.jpeg,.png,.gif,.pdf}
+\usepackage[outdir=../uporabljene_slike/]{epstopdf}
+\epstopdfsetup{
+	suffix=,
+}
+
+\newcommand{\Alpha}{A}
+\newcommand{\Beta}{B}
+\newcommand{\Epsilon}{E}
+\newcommand{\Kappa}{K}
+\newcommand{\dif}{\mathrm{d}}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+
+
+\begin{document}
+\titlepage
+\begin{frame}{slide1}
+  \end{frame}
+\end{document}
