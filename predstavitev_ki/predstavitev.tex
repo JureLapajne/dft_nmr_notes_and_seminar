@@ -3,8 +3,19 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
-\usetheme[sectionpage=none, subsectionpage=none, numbering=none, progressbar=frametitle]{metropolis} % izbira nastavitev oblike in barv strani
+
+% usetheme is the same as usepackage
+% it just automatically prepends the 'beamertheme'
+%\usetheme[]{progressbar}
+\usefonttheme{progressbar}
+\useoutertheme{progressbar}
+\useinnertheme{progressbar}
+\progressbaroptions{titlepage=normal, frametitle=normal}
 \usecolortheme{seahorse}
+%\usecolortheme{progressbar}
+
+% \usetheme[sectionpage=none, subsectionpage=none, numbering=none, progressbar=frametitle]{metropolis} % izbira nastavitev oblike in barv strani
+%\usecolortheme{seahorse}
 \usepackage{tikz}
 \usepackage[slovene]{babel}
 %\usetikzlibrary{arrows}
@@ -16,19 +27,19 @@
 \usepackage{amsmath} 
 \usepackage{xcolor}
 
-\setbeamercolor{frametitle}{
-  use=palette primary,
-  bg=RoyalBlue}
+%\setbeamercolor{frametitle}{
+%  use=palette primary,
+%  bg=RoyalBlue}
 
-\setbeamercolor{background canvas}{
- use=palette primary,
- bg=White}
+%\setbeamercolor{background canvas}{
+% use=palette primary,
+% bg=White}
 
-\setbeamercolor{progress bar}{
-  fg=Blue}
+%\setbeamercolor{progress bar}{
+%  fg=Blue}
 
-\setbeamercolor{progress bar in head/foot}{
-  fg=Red}
+%\setbeamercolor{progress bar in head/foot}{
+%  fg=Red}
 
 
 
@@ -62,9 +73,46 @@
 \setlength{\abovedisplayskip}{0pt}
 \setlength{\belowdisplayskip}{0pt}
 
+\author{Jure Lapajne}
+\title{Calculation of nmr parameters in paramagnetic metal-organic materials}
 
 \begin{document}
-\titlepage
-\begin{frame}{slide1}
-  \end{frame}
+\maketitle
+
+\begin{frame}{Presentation plan}
+  \begin{enumerate}
+  \item NMR --- what and why \pause
+  \item MOFs = Metal---organic frameworks \pause
+  \item NMR parameter calculation \pause
+  \item DFT \pause
+  \item Preliminary results \pause
+  \end{enumerate}
+\end{frame}
+
+\section{NMR}
+\begin{frame}{Nuclei and external magnetic field}
+  \begin{itemize}
+  \item strong external magnetic field: several T
+  \item nuclei with magnetic moment: lowest energy state splits
+    \item two new states $\Delta E$ apart
+  \item radio frequency spectrum: excitations from low to high energy states
+  \item absorption peak at $\Delta E=\hbar \omega_{res}$
+    \item $\omega_{res}$ depends on $B_{eff}(observed nucleus)$
+    \end{itemize}
+    \begin{minipage}[]{\textwidth}
+      \centering
+    \includegraphics[width=0.5\textwidth]{spin_energy_states.png}
+\end{minipage}
+\end{frame}
+
+\section{NMR}
+\begin{frame}{}
+  Several parameters affect $B_{eff}(nucleus)$ and $\omega_{res}$:
+  \begin{itemize}
+  \item electronic structure -- shielding of external magnetic field 
+  \item spin--spin coupling to nearby nuclei and unpaired electrons
+   \item unpaired electrons: large paramagnetic shifts
+    \end{itemize}
+\end{frame}
+
 \end{document}
