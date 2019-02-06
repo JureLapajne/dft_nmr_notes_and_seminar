@@ -1,0 +1,13 @@
+\select@language {slovene}
+\beamer@sectionintoc {1}{Lipidni vesikli}{2}{0}{1}
+\beamer@sectionintoc {2}{Fizikalni opis vesiklov}{6}{0}{2}
+\beamer@sectionintoc {3}{Model}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{Oblike}{8}{0}{3}
+\beamer@subsectionintoc {3}{2}{Analiza}{11}{0}{3}
+\beamer@sectionintoc {4}{Fazni diagrami}{12}{0}{4}
+\beamer@subsectionintoc {4}{1}{$R=0.3$}{13}{0}{4}
+\beamer@subsectionintoc {4}{2}{$R=0.5$}{15}{0}{4}
+\beamer@subsectionintoc {4}{3}{Interpretacija}{16}{0}{4}
+\beamer@sectionintoc {5}{Zaklju\IeC {\v c}ek}{17}{0}{5}
+\beamer@sectionintoc {6}{Dodatno}{18}{0}{6}
+\beamer@sectionintoc {7}{Fizikalni opis vesiklov}{23}{0}{7}
