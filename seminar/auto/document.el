@@ -46,6 +46,7 @@
     "breqn"
     "xparse")
    (TeX-add-symbols
+    "arcsinh"
     "dif"
     "myint"
     "Alpha"
@@ -60,10 +61,11 @@
     "pol"
     "svec")
    (LaTeX-add-labels
+    "mof_molecule"
+    "mof_spectre"
     "full_hamiltonian"
     "ham_solution"
     "electron_hamiltonian"
-    "ks_hamiltonian"
     "bijection"
     "hamiltonian_density"
     "noninteracting_H"
@@ -73,7 +75,9 @@
     "hartree_term1"
     "ext_potential_functional"
     "self_consistent_scheme"
-    "electron_gas_exchange")
+    "ladder"
+    "electron_gas_exchange"
+    "cu_acac")
    (LaTeX-add-bibliographies
     "../mybib"))
  :latex)

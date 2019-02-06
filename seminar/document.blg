@@ -17,11 +17,6 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 bbl.techrep is an unknown function---line 4925 of file ../myapsrevSLO.bst
 bbl.of is an unknown function---line 4969 of file ../myapsrevSLO.bst
 Database file #1: ../mybib.bib
-I was expecting an "="---line 298 of file ../mybib.bib
- :   
- :   number =       {nil},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
 Control: key (0) 
@@ -35,7 +30,6 @@ ptr=1, stack=
   
 ---the literal stack isn't empty for entry introd_to_metal_organ_frameworks
 while executing---line 6885 of file ../myapsrevSLO.bst
-Warning--empty year in Assignment_of_Solid_State
 ptr=1, stack=
   
 ---the literal stack isn't empty for entry Assignment_of_Solid_State
@@ -68,45 +62,45 @@ ptr=1, stack=
   
 ---the literal stack isn't empty for entry calcul_hyper_tensor_param_nmr
 while executing---line 6885 of file ../myapsrevSLO.bst
-You've used 15 entries,
+You've used 14 entries,
             5816 wiz_defined-function locations,
-            1716 strings with 18715 characters,
-and the built_in function-call counts, 16098 in all, are:
-= -- 1002
-> -- 446
-< -- 104
-+ -- 138
-- -- 104
-* -- 2566
-:= -- 1584
-add.period$ -- 15
-call.type$ -- 15
-change.case$ -- 73
-chr.to.int$ -- 15
-cite$ -- 16
-duplicate$ -- 1485
-empty$ -- 1193
-format.name$ -- 249
-if$ -- 3190
+            1708 strings with 18637 characters,
+and the built_in function-call counts, 15107 in all, are:
+= -- 941
+> -- 427
+< -- 98
++ -- 132
+- -- 100
+* -- 2433
+:= -- 1485
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 70
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 1378
+empty$ -- 1104
+format.name$ -- 236
+if$ -- 2988
 int.to.chr$ -- 1
-int.to.str$ -- 23
-missing$ -- 181
-newline$ -- 97
-num.names$ -- 45
-pop$ -- 580
+int.to.str$ -- 22
+missing$ -- 168
+newline$ -- 94
+num.names$ -- 42
+pop$ -- 528
 preamble$ -- 1
-purify$ -- 74
+purify$ -- 70
 quote$ -- 0
-skip$ -- 567
+skip$ -- 528
 stack$ -- 0
-substring$ -- 364
-swap$ -- 1465
-text.length$ -- 53
+substring$ -- 348
+swap$ -- 1379
+text.length$ -- 50
 text.prefix$ -- 0
 top$ -- 8
-type$ -- 215
-warning$ -- 1
-while$ -- 43
+type$ -- 203
+warning$ -- 0
+while$ -- 40
 width$ -- 0
-write$ -- 185
-(There were 17 error messages)
+write$ -- 177
+(There were 16 error messages)
