@@ -201,6 +201,33 @@
     Calculation of NMR parameters:\\\bf{accurate electronic wave function needed!}
   \end{frame}
 
+  \section{DFT}
+
+  \begin{frame}{electronic wave function calculation}
+    \begin{itemize}
+    \item direct solution of coupled pde not feasible
+    \item at a given accuracy level: time needed grows exponentially as a function
+      of number of particles
+    \end{itemize}
+    \centering approximations
+    \begin{minipage}{\textwidth}
+\begin{tikzpicture}[remember picture,overlay]
+  \def \center {current page.center}
+
+  \def \xArrowCenter {0}
+  \def \yArrowCenter {-1.0cm}
+
+  \coordinate (arrow1) at ($ (\xArrowCenter, \yArrowCenter) +  (-0.5,-0.2) $);
+	
+	\draw  [->, thick, blue] ($ (\center) + (\xArrowCenter, \yArrowCenter) $) -- (arrow1) node[below, black, align=center] {};
+	
+\end{tikzpicture}
+    \end{minipage}    
+  \end{frame}
+
+  
+  \begin{frame}{density functional theory --- DFT}
+  \end{frame}
   
 
 
