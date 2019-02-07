@@ -27,6 +27,7 @@
     "amsmath"
     "amsthm"
     "xcolor"
+    "enumerate"
     "outlines"
     "ragged2e"
     "hf-tikz"

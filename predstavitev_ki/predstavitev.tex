@@ -27,7 +27,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{xcolor}
-
+\usepackage{enumerate}
 %\setbeamercolor{frametitle}{
 %  use=palette primary,
 %  bg=RoyalBlue}
@@ -94,7 +94,7 @@
 \section{MOFs}
 \begin{frame}{MOF = METAL-ORGANIC FRAMEWORK }
   \begin{minipage}[]{0.5\textwidth}
-    \begin{itemize}
+    \begin{itemize}[]
       \onslide<2-> \item crystal structure: central metallic ions + organic ligands 
       \onslide<3-> \item diversity: large number of possible combinations  
       \onslide<4-> \item wide usage: gas storage, clean energy applications,
@@ -136,7 +136,7 @@
 
 \section{NMR}
 \begin{frame}{Nuclei in external magnetic field}
-  \begin{itemize}
+  \begin{itemize}[]
   \onslide<2-> \item strong external magnetic field: several T
   \onslide<3->\item nuclei with magnetic moment: lowest energy state splits
   \onslide<4->  \item two new states $\Delta E$ apart
@@ -153,7 +153,7 @@
 
 \begin{frame}{Effective magnetic field}
   Several parameters affect $B_{eff}(nucleus)$ and $\omega_{res}$: \pause
-  \begin{itemize}
+  \begin{itemize}[]
   \item electronic structure -- shielding of external magnetic field \pause 
   \item spin--spin coupling to nearby nuclei and unpaired electrons \pause
   \item unpaired electrons: large paramagnetic shifts \pause
@@ -165,7 +165,7 @@
  \end{minipage}%
  \begin{minipage}[]{0.6\textwidth}
    \centering
-    \begin{itemize}
+    \begin{itemize}[]
     \item MOFs: metal-organic frameworks \pause
     \item transition metal atoms: unpaired electrons \pause
    \end{itemize}
@@ -187,46 +187,78 @@
   \centering Two sources of chemical shifts:
   
   \begin{minipage}[t]{0.5\textwidth}
-    \begin{itemize}
+    \begin{itemize}[]
     \onslide<3-> \item electron density change caused by applied external magnetic field
     \onslide<3-> \item depends on electron density $n(\vec r)$
       \end{itemize}
   \end{minipage}%
   \begin{minipage}[t]{0.5\textwidth}
-    \begin{itemize}
+    \begin{itemize}[]
     \onslide<3->  \item coupling between unpaired electron and observed nuclei
     \onslide<3-> \item depends on spin density $n_{\uparrow}(\vec r_{nuclei}) - n_{\downarrow}(\vec r_{nuclei})$
       \end{itemize}
     \end{minipage}
-    Calculation of NMR parameters:\\\bf{accurate electronic wave function needed!}
+    Calculation of NMR parameters:\\ \bf{accurate electronic wave function needed!}
   \end{frame}
 
   \section{DFT}
 
+  
   \begin{frame}{electronic wave function calculation}
-    \begin{itemize}
-    \item direct solution of coupled pde not feasible
-    \item at a given accuracy level: time needed grows exponentially as a function
+  \onslide<2->  \begin{equation}\nonumber
+      \hat H = T_n + T_e + W_{n-n} +  W_{e-n} + W_{e-e} +V_{ext}
+    \end{equation}
+
+\onslide<3->    \begin{tikzpicture}[remember picture,overlay]
+
+      \def \center {current page.center};
+      \coordinate (center1) at ($(\center) + (-2.9cm, 2.25cm)$);
+      \coordinate (start1) at ($(center1) + 0.5*(0cm, -1cm)$);
+      \coordinate (end1) at ($(center1) + 0.5*(1cm, -2cm)$);
+
+      \coordinate (center2) at ($(\center) + (-1cm, 2.25cm)$);
+      \coordinate (start2) at ($(center2) + 0.6*(0cm, -1cm)$);
+      \coordinate (end2) at ($(center2) + 0.6*(1cm, -2cm)$);
+ % \coordinate (arrow1) at ($ (\xArrowCenter, \yArrowCenter) +  (-0.5,-0.2) $);
+    	\draw  [thick, blue] (start1) -- (end1);
+      \draw  [thick, blue] (start2) -- (end2);
+    \end{tikzpicture}
+    
+    \begin{itemize}[]
+    \onslide<3->\item Born-Oppenheimer approximation
+    \onslide<4->\item direct solution of coupled pde not feasible
+    \onslide<5->\item at a given accuracy level: time needed grows exponentially as a function
       of number of particles
     \end{itemize}
-    \centering approximations
-    \begin{minipage}{\textwidth}
-\begin{tikzpicture}[remember picture,overlay]
-  \def \center {current page.center}
-
-  \def \xArrowCenter {0}
-  \def \yArrowCenter {-1.0cm}
-
-  \coordinate (arrow1) at ($ (\xArrowCenter, \yArrowCenter) +  (-0.5,-0.2) $);
-	
-	\draw  [->, thick, blue] ($ (\center) + (\xArrowCenter, \yArrowCenter) $) -- (arrow1) node[below, black, align=center] {};
-	
-\end{tikzpicture}
-    \end{minipage}    
+    
   \end{frame}
 
   
   \begin{frame}{density functional theory --- DFT}
+
+    \centering Approximations
+    \\
+    \begin{minipage}[t]{0.5\textwidth}
+
+      \centering  DFT
+      \begin{itemize}
+      \item most widely used
+      \item good tradeoff between accuracy and speed
+       \item highly customizable - suitable for various molecules
+      \end{itemize}
+      
+    \end{minipage}%
+    \begin{minipage}[t]{0.5\textwidth}
+       \centering  Alternatives
+      \centering
+      \begin{enumerate}[$\ast$]
+      \item Hartree---Fock
+      \item Quantum Monte Carlo
+      \item Coupled-Cluster methods
+      \end{enumerate}
+      \centering  $\vdots$
+    \end{minipage}
+    
   \end{frame}
   
 
