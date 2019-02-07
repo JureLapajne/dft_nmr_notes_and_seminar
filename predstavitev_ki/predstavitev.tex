@@ -10,7 +10,7 @@
 \usefonttheme{progressbar}
 \useoutertheme{progressbar}
 \useinnertheme{progressbar}
-\progressbaroptions{titlepage=normal, frametitle=normal}
+\progressbaroptions{ headline=sections, titlepage=normal, frametitle=normal}
 \usecolortheme{seahorse}
 %\usecolortheme{progressbar}
 
@@ -24,7 +24,8 @@
 \usetikzlibrary{positioning}
 \usepackage{varwidth}
 \usepackage{color}
-\usepackage{amsmath} 
+\usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{xcolor}
 
 %\setbeamercolor{frametitle}{
@@ -41,7 +42,9 @@
 %\setbeamercolor{progress bar in head/foot}{
 %  fg=Red}
 
-
+\usepackage{varwidth}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
 
 
 \uselanguage{slovene}
@@ -49,7 +52,6 @@
 \deftranslation[to=slovene]{Definition}{Definicija}
 \usepackage{outlines}
 \usepackage[document]{ragged2e}
-
 \usepackage[customcolors,norndcorners]{hf-tikz}
 \usetikzlibrary{calc} %% added
 
@@ -77,42 +79,129 @@
 \title{Calculation of nmr parameters in paramagnetic metal-organic materials}
 
 \begin{document}
-\maketitle
+\titlepage
 
 \begin{frame}{Presentation plan}
   \begin{enumerate}
-  \item NMR --- what and why \pause
   \item MOFs = Metal---organic frameworks \pause
+  \item NMR --- what and why \pause
   \item NMR parameter calculation \pause
   \item DFT \pause
-  \item Preliminary results \pause
+  \item Preliminary results
   \end{enumerate}
 \end{frame}
 
+\section{MOFs}
+\begin{frame}{MOF = METAL-ORGANIC FRAMEWORK }
+  \begin{minipage}[]{0.5\textwidth}
+    \begin{itemize}
+      \onslide<2-> \item crystal structure: central metallic ions + organic ligands 
+      \onslide<3-> \item diversity: large number of possible combinations  
+      \onslide<4-> \item wide usage: gas storage, clean energy applications,
+      nonlinear optics, catalysts
+      \onslide<5-> \item metallic ions commonly feature unpaired electrons
+      \onslide<6-> \item NMR spectra feature large shifts caused by unpaired electrons
+    \end{itemize}
+  \end{minipage}%
+\onslide<2->  \begin{minipage}[]{0.5\textwidth}
+    \begin{minipage}[]{\textwidth}
+      \centering
+      \includegraphics[width=0.6\textwidth]{hkust.png}
+    \end{minipage}
+    
+    \begin{minipage}[]{\textwidth}
+      \centering
+      \begin{tikzpicture}[remember picture,overlay]
+      
+        \def \dx {-1.2cm}
+        \def \dy {-0.2cm}
+        \def \Sdim {0.2cm}
+        \definecolor{FillColor1}{RGB}{102,178,255};
+        \definecolor{FillColor1}{RGB}{102,178,255};
+        \def \ygap {0.5cm}
+        \def \xgap {1.5cm}
+        \def \radius {0.07}
+
+        \draw [fill=black, thick, fill opacity=0.5] ($(\dx, \dy)$) circle [radius=\radius] node[right, black] {carbon};
+     
+        \draw [fill=red, red, thick] ($(\dx, \dy) + (0, -\ygap)$) circle [radius=\radius] node[right, black, align=center] {oxygen};
+
+        \draw [fill=brown, thick, orange] ($(\dx, \dy) + (\xgap,  0.0)$) circle [radius=\radius] node[right, black] {copper};
+
+        \draw [thick, draw=black, fill=white] ($(\dx, \dy) + (\xgap, -\ygap)$) circle [radius=\radius] node[right, black] {hydrogen};
+      \end{tikzpicture}
+    \end{minipage}
+  \end{minipage}  
+\end{frame}
+
 \section{NMR}
-\begin{frame}{Nuclei and external magnetic field}
+\begin{frame}{Nuclei in external magnetic field}
   \begin{itemize}
-  \item strong external magnetic field: several T
-  \item nuclei with magnetic moment: lowest energy state splits
-    \item two new states $\Delta E$ apart
-  \item radio frequency spectrum: excitations from low to high energy states
-  \item absorption peak at $\Delta E=\hbar \omega_{res}$
+  \onslide<2-> \item strong external magnetic field: several T
+  \onslide<3->\item nuclei with magnetic moment: lowest energy state splits
+  \onslide<4->  \item two new states $\Delta E$ apart
+  \onslide<5-> \item radio frequency spectrum: excitations from low to high energy states
+  \onslide<6-> \item absorption peak at $\Delta E=\hbar \omega_{res}$
     \item $\omega_{res}$ depends on $B_{eff}(observed nucleus)$
     \end{itemize}
-    \begin{minipage}[]{\textwidth}
+    \onslide<3->   \begin{minipage}[]{\textwidth}
       \centering
     \includegraphics[width=0.5\textwidth]{spin_energy_states.png}
 \end{minipage}
 \end{frame}
 
-\section{NMR}
-\begin{frame}{}
-  Several parameters affect $B_{eff}(nucleus)$ and $\omega_{res}$:
+
+\begin{frame}{Effective magnetic field}
+  Several parameters affect $B_{eff}(nucleus)$ and $\omega_{res}$: \pause
   \begin{itemize}
-  \item electronic structure -- shielding of external magnetic field 
-  \item spin--spin coupling to nearby nuclei and unpaired electrons
-   \item unpaired electrons: large paramagnetic shifts
-    \end{itemize}
+  \item electronic structure -- shielding of external magnetic field \pause 
+  \item spin--spin coupling to nearby nuclei and unpaired electrons \pause
+  \item unpaired electrons: large paramagnetic shifts \pause
+    \item calculation of nmr parameters: accurate knowledge of electronic wavefunction
+   \end{itemize}
+ \begin{minipage}[]{0.4\textwidth}
+      \centering
+    \includegraphics[width=0.8\textwidth]{cuacac_spin_density.png}
+ \end{minipage}%
+ \begin{minipage}[]{0.6\textwidth}
+   \centering
+    \begin{itemize}
+    \item MOFs: metal-organic frameworks \pause
+    \item transition metal atoms: unpaired electrons \pause
+   \end{itemize}
+ \end{minipage}
 \end{frame}
+
+
+\begin{frame}{Chemical and hyperfine shifts}
+
+     \onslide<2->    \begin{definition}
+ Total shift tensor $\underline{\underline{\sigma}}$ is defined by:
+        \vspace*{-0.5\baselineskip}
+        \centering
+    \begin{equation} \nonumber
+      \vec{B}_{eff}=\vec{B}_0\left( \underline{\underline{ \mathrm I }} - \underline{\underline{ \sigma}} \right).
+    \end{equation}
+  \end{definition}
+
+  \centering Two sources of chemical shifts:
+  
+  \begin{minipage}[t]{0.5\textwidth}
+    \begin{itemize}
+    \onslide<3-> \item electron density change caused by applied external magnetic field
+    \onslide<3-> \item depends on electron density $n(\vec r)$
+      \end{itemize}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\textwidth}
+    \begin{itemize}
+    \onslide<3->  \item coupling between unpaired electron and observed nuclei
+    \onslide<3-> \item depends on spin density $n_{\uparrow}(\vec r_{nuclei}) - n_{\downarrow}(\vec r_{nuclei})$
+      \end{itemize}
+    \end{minipage}
+    Calculation of NMR parameters:\\\bf{accurate electronic wave function needed!}
+  \end{frame}
+
+  
+
 
 \end{document}
