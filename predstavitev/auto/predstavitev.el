@@ -28,16 +28,20 @@
     "amsthm"
     "xcolor"
     "enumerate"
+    "braket"
     "outlines"
     "ragged2e"
     "hf-tikz"
     "epstopdf")
    (TeX-add-symbols
+    '("ExtractCoordinate" 1)
     "Alpha"
     "Beta"
     "Epsilon"
     "Kappa"
-    "dif")
+    "dif"
+    "XCoord"
+    "YCoord")
    (LaTeX-add-xcolor-definecolors
     "FillColor1"))
  :latex)

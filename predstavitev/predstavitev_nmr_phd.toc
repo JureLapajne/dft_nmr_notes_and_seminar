@@ -1,5 +1,0 @@
-\select@language {slovene}
-\beamer@sectionintoc {1}{First Section}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{dsfsf}{2}{0}{1}
-\beamer@sectionintoc {2}{First Sectiondasdsa}{3}{0}{2}
-\beamer@subsectionintoc {2}{1}{dsfsfdsd}{3}{0}{2}
